@@ -1,0 +1,63 @@
+\documentclass[11pt,twoside,openright]{book}
+
+% ============================================================
+% PREAMBLE — BAYES INSTITUTE THEME (to be completed)
+% ============================================================
+% Fonts: EB Garamond (display) + Manrope (body)
+% Colors: Burgundy #5B0F1A · Ink #211D1E · Soft Ink #696164
+% Geometry: 6in x 9in twoside
+% ============================================================
+
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.875in,
+  outer=0.75in,
+  top=0.75in,
+  bottom=0.75in,
+  headheight=14pt,
+  headsep=10pt,
+  footskip=20pt,
+  includeheadfoot
+}
+\usepackage{microtype}
+\usepackage{import}
+
+\title{The Engine}
+\author{Sagar Udasi}
+\date{}
+
+\begin{document}
+
+\frontmatter
+
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\small\scshape Building What Lasts — Book Three of Five\par}
+  \vspace{1.5cm}
+  {\Huge\itshape The Engine\par}
+  \vspace{0.5cm}
+  {\large Can I make money from it, and can I grow?\par}
+  \vfill
+  {\large Sagar Udasi\par}
+  \vspace{0.5cm}
+  {\small Bayes Institute\par}
+\end{titlepage}
+
+\tableofcontents
+
+\mainmatter
+
+\subimport{chapters/}{ch15-willingness-to-pay.tex}
+\subimport{chapters/}{ch16-pricing-value-capture.tex}
+\subimport{chapters/}{ch17-business-models-unit-economics.tex}
+\subimport{chapters/}{ch18-financial-survival.tex}
+\subimport{chapters/}{ch19-trust-credibility.tex}
+\subimport{chapters/}{ch20-distribution.tex}
+\subimport{chapters/}{ch21-sales-conversion.tex}
+\subimport{chapters/}{ch22-retention-organic-growth.tex}
+
+\end{document}

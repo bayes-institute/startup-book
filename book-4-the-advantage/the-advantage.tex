@@ -1,0 +1,64 @@
+\documentclass[11pt,twoside,openright]{book}
+
+% ============================================================
+% PREAMBLE — BAYES INSTITUTE THEME (to be completed)
+% ============================================================
+% Fonts: EB Garamond (display) + Manrope (body)
+% Colors: Burgundy #5B0F1A · Ink #211D1E · Soft Ink #696164
+% Geometry: 6in x 9in twoside
+% ============================================================
+
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.875in,
+  outer=0.75in,
+  top=0.75in,
+  bottom=0.75in,
+  headheight=14pt,
+  headsep=10pt,
+  footskip=20pt,
+  includeheadfoot
+}
+\usepackage{microtype}
+\usepackage{import}
+
+\title{The Advantage}
+\author{Sagar Udasi}
+\date{}
+
+\begin{document}
+
+\frontmatter
+
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\small\scshape Building What Lasts — Book Four of Five\par}
+  \vspace{1.5cm}
+  {\Huge\itshape The Advantage\par}
+  \vspace{0.5cm}
+  {\large Can I build a company that is genuinely hard to displace?\par}
+  \vfill
+  {\large Sagar Udasi\par}
+  \vspace{0.5cm}
+  {\small Bayes Institute\par}
+\end{titlepage}
+
+\tableofcontents
+
+\mainmatter
+
+\subimport{chapters/}{ch23-hiring-talent-selection.tex}
+\subimport{chapters/}{ch24-specialized-hiring.tex}
+\subimport{chapters/}{ch25-operational-excellence.tex}
+\subimport{chapters/}{ch26-organizational-design-culture.tex}
+\subimport{chapters/}{ch27-theory-of-scaling.tex}
+\subimport{chapters/}{ch28-competitive-advantage-moats.tex}
+\subimport{chapters/}{ch29-strategic-adjacencies.tex}
+\subimport{chapters/}{ch30-ecosystems-partnerships.tex}
+\subimport{chapters/}{ch31-international-expansion.tex}
+
+\end{document}
