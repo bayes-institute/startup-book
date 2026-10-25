@@ -1,0 +1,102 @@
+\section*{Analytical Appendices: Working with the Theory}
+
+\subsection*{Appendix A: A Worked Economic-Value-to-Customer Calculation}
+
+Suppose a hypothetical company spends ₹12,00,000 annually on a manual quality-control workflow. An independent new service promises to reduce manual effort and prevent rework. The founders estimate annual staff-capacity value of ₹4,00,000 and reduced rework value of ₹2,00,000. The service would also impose ₹1,50,000 of 1-time integration effort and ₹80,000 in ongoing supervision costs. A naive gross-benefit estimate of ₹6 lakh overstates what the buyer obtains. Ignoring discounting and other effects, 1st-year incremental economic benefit \emph{before the vendor fee} is:
+
+\begin{equation}
+\Delta B_{\text{net}} = ₹6{,}00{,}000 - ₹1{,}50{,}000 - ₹80{,}000 = \text{₹}3{,}70{,}000,
+\end{equation}
+where $\Delta B_{\text{net}}$ is 1st-year incremental benefit before the vendor fee.
+
+But that is still not necessarily the buyer's WTP. Ask 4 counterfactual questions:
+\begin{enumerate}
+\item \textbf{Incrementality:} Would an existing internal tool produce the same improvement for less?
+\item \textbf{Realizability:} Does removing staff minutes lead to avoided cash spending, capacity for valuable work, or merely time nobody can redeploy?
+\item \textbf{Reliability:} What is the probability that the service actually yields the claimed reduction?
+\item \textbf{Risk:} Could a failure in quality inspection create a costly production incident?
+\end{enumerate}
+
+The credible value may be much smaller than ₹3,70,000. If a competitor provides a close substitute, the new vendor's incremental pricing room narrows.
+
+The proper output is not a single ``maximum price = 30 percent of savings'' slogan. It is a low, base, and high value model with each assumption labeled observed, estimated, or untested; a practical pilot specification; and a maximum buyer exposure the decision-maker can approve. Value-based analysis is strongest when it teaches the buyer and seller \emph{which assumptions matter}, rather than pretending their expected values are already known.
+
+\subsection*{Appendix B: The Buyer-Choice Paradox: Expensive Can Be Cheap}
+
+A buyer has 3 alternatives for a recurring technical task:
+
+\begin{table*}[t]
+\centering
+\small
+\caption{The Buyer-Choice Paradox: Evaluating Three Alternatives on First-Year Total Cost}
+\begin{tabularx}{\textwidth}{p{0.36\textwidth}rrrX}
+\toprule
+\textbf{Annual Cost Component} & \textbf{Internal Process} & \textbf{Vendor A} & \textbf{Vendor B} & \textbf{Strategic Assessment} \\
+\midrule
+Vendor software/service fee & ₹0 & ₹1,20,000 & ₹2,40,000 & Vendor B invoice is double Vendor A \\
+Internal labor and rework & ₹4,50,000 & ₹2,80,000 & ₹1,40,000 & Vendor B reduces internal friction by 69\% \\
+Implementation / administration & ₹0 & ₹20,000 & ₹35,000 & Higher onboarding overhead for Vendor B \\
+\midrule
+\textbf{First-Year Modeled Total Cost} & \textbf{₹4,50,000} & \textbf{₹4,20,000} & \textbf{₹4,15,000} & \textbf{Vendor B is lowest total cost on paper} \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Vendor B has the largest invoice but the lowest modeled 1st-year total cost. Yet the buyer might still choose Vendor A, or remain internal, because Vendor B is unproven, integration uncertainty is high, and the modeled labor gains are hard to realize in practice. The example exposes the distinction between \emph{economically modeled value} and \emph{believed, feasible value}. A founder must learn which dimension is genuinely binding. Proving that B's implementation can be completed safely may be more important than reducing the ₹2,40,000 fee.
+
+If the cost of Vendor B's integration unexpectedly doubles, its 1st-year total would rise by ₹35,000 to ₹4,50,000, eliminating the modeled saving over the internal process. A pricing decision should examine such break points and not merely repeat the base-case ranking.
+
+\subsection*{Appendix C: A Two-Dimensional Market: Value and Capacity to Pay}
+
+Imagine 4 hypothetical prospective learners considering 1 intensive professional program:
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Two-Dimensional Market Segmentation: Believed Value Versus Safe Budget}
+\begin{tabularx}{\textwidth}{p{0.26\textwidth}rrX}
+\toprule
+\textbf{Prospective Learner Persona} & \textbf{Believed Relative Value} & \textbf{Safe Present Budget} & \textbf{Likely Commercial and Educational Diagnosis} \\
+\midrule
+A: Urgent production practitioner & ₹60,000 & ₹75,000 & Viable candidate for a premium, intensive review \\
+B: Curious career explorer & ₹8,000 & ₹80,000 & High ability to pay, but low perceived urgency \\
+C: Urgent, liquidity-constrained & ₹55,000 & ₹12,000 & High willingness, but constrained by cash liquidity \\
+D: Skeptical senior engineer & ₹15,000 & ₹70,000 & Proof, scope, or alternative workarounds bind \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+These are hypothetical perceptions, not elicited data. Notice why segmenting only by disposable income fails. Learner B can easily afford the course but has little reason to purchase. Learner C might benefit substantially but should not be pushed into unaffordable debt. Learner D may have strong technical skills and simply need a smaller service. Learner A may be the best buyer for a tightly scoped intensive review.
+
+The founder's duty is not to raise every person's hypothetical WTP. It is to decide which people should receive which complete product, whether a different payer is appropriate, and where the organization ought to make access possible through a financially sound scholarship or sponsorship policy.
+
+\subsection*{Appendix D: A Decision-Theoretic View of Uncertainty in WTP}
+
+Let the buyer choose between a known alternative with utility $U_A$ and a new offering whose outcome is uncertain. Suppose successful delivery provides value $V$ and failure imposes loss $L$, both in a simplified common monetary-equivalent model; the buyer believes the provider succeeds with probability $p$ and pays price $P$. A risk-neutral illustrative expected payoff is:
+
+\begin{equation}
+E[\Pi_{\text{buyer}}] = pV - (1-p)L - P.
+\end{equation}
+The buyer prefers the offer to the alternative only if this expectation exceeds $U_A$, with identical accounting of all benefits and costs.
+
+For a toy example take $V = \text{₹}50{,}000$, $L = \text{₹}10{,}000$, $p = 0.5$, and $U_A = \text{₹}5{,}000$. Expected net value before price is:
+
+\begin{equation}
+\begin{aligned}
+E[V_{\text{net}}] &= 0.5(₹50{,}000) - 0.5(₹10{,}000) \\
+&= ₹25{,}000 - ₹5{,}000 = \text{₹}20{,}000.
+\end{aligned}
+\end{equation}
+Subtracting the baseline alternative $U_A = \text{₹}5{,}000$, the implied reservation fee under these assumptions is ₹15,000.
+
+If credible proof raises the believed success probability to 0.7, the expected net value before price becomes:
+
+\begin{equation}
+\begin{aligned}
+E[V_{\text{net}}] &= 0.7(₹50{,}000) - 0.3(₹10{,}000) \\
+&= ₹35{,}000 - ₹3{,}000 = \text{₹}32{,}000,
+\end{aligned}
+\end{equation}
+and the reservation price rises to $₹32{,}000 - ₹5{,}000 = \text{₹}27{,}000$. No new features were added; the buyer's beliefs about reliability changed.
+
+This exercise is not a universal model of people. Buyers may be risk averse, overweight rare outcomes, have nonlinear utility of wealth, and face liquidity constraints. The value of the exercise is to show that \emph{risk reduction and evidence can change the economic comparison itself}. A founder who calculates only best-case benefit is not doing value-based pricing.
