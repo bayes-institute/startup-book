@@ -25,6 +25,9 @@ build/
 
 # Compiled PDFs (build artifacts)
 *.pdf
+# But track curated content PDFs explicitly
+!content/*.pdf
+!content/**/*.pdf
 
 # Operating system and editor artifacts
 .DS_Store
