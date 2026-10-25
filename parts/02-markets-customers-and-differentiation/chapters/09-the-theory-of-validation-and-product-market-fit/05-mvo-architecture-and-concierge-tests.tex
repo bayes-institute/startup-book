@@ -1,0 +1,87 @@
+\section*{Part III: Minimum Viable Offers and the Architecture of Experiments}
+
+\subsection*{25. The MVP Is an Instrument for Learning, Not a Small Product for Its Own Sake}
+
+Eric Ries's foundational formulation of the Minimum Viable Product (MVP) established it as \textbf{that version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort} [R5]. It was never intended as an excuse to ship shoddy, incomplete, or broken software.
+
+New founders routinely invert this logic: they strip away precisely the differentiating capability that creates customer value. A technical education institute that advertises rigorous, expert-reviewed projects, yet launches an MVP consisting solely of pre-recorded video lectures and multiple-choice quizzes, has not tested its core hypothesis. It has merely tested whether people want generic video content, which has already been commoditized.
+
+An MVP must preserve the \textbf{causal nucleus of the intended value proposition}, even if the surrounding user interface, billing infrastructure, and administrative plumbing are operated manually behind the scenes.
+
+\subsection*{26. Distinguish Prototype, MVP, Minimum Viable Offer, and Pilot}
+
+Precision of terminology clarifies experimental boundaries:
+
+\begin{itemize}
+    \item \textbf{Prototype:} A technical or design artifact constructed to explore feasibility, interface usability, or user flows (such as a clickable Figma wireframe or a raw API script). It demonstrates feasibility; it does not test commercial demand.
+    \item \textbf{Minimum Viable Product (MVP):} A functional core of the product exposed to real users to observe behavioral engagement, task completion, and retention under actual usage conditions.
+    \item \textbf{Minimum Viable Offer (MVO):} A fully specified commercial proposition (defining target customer, deliverable, scope, schedule, price, prerequisites, and terms) used to test whether a buyer will commit real capital or authority before full-scale delivery infrastructure is constructed.
+    \item \textbf{Pilot:} A bounded, real-world deployment delivered to paying or contractually committed customers across a predefined evaluation window with explicit acceptance criteria.
+\end{itemize}
+
+A single initiative can encompass multiple stages: a 2-week workshop can serve as both a minimum viable offer and a paid operational pilot. But confusing a Figma prototype with a validated commercial offer produces fatal optimism.
+
+\subsection*{27. Minimum Complete Value Beats Minimum Feature Count}
+
+An experiment must deliver a \textbf{complete operational consequence}, not a disconnected fragment of a feature. In enterprise software, this means successfully completing and verifying 1 end-to-end operational workflow. In consumer products, it means experiencing 1 authentic consumption occasion at a realistic retail price. In professional education, it means completing 1 consequential technical task, receiving rigorous critique, revising the work, and defending the architectural decisions under expert examination.
+
+For an applied AI program, an intensive 3-week design sprint focused on diagnosing and hardening 1 production system is vastly more informative than an 8-week passive survey of machine learning theory. The sprint tests whether the engineer will protect time, submit authentic work, absorb demanding critique, and value the institutional pedagogy.
+
+The guiding rule is simple: \textbf{eliminate features until further removal breaks the causal mechanism of value creation. Then stop removing.} Stripping away the core differentiator renders the experiment useless.
+
+\subsection*{28. The Concierge Experiment: Deliver Manually Before Systemizing}
+
+In a concierge test, the founder personally and manually executes the analytical, computational, or instructional tasks that a mature platform would eventually automate or delegate. For an AI evaluation tool, the founder might manually inspect client test datasets, write bespoke scoring scripts, and hand-craft diagnostic reports.
+
+The advantage is immediate: the founder observes customer friction, data anomalies, and edge cases firsthand without writing months of backend code.
+
+The danger lies in distorted unit economics: because the founder contributes 40 hours of unpaid, world-class expertise, the client experiences exceptional service that would become economically ruinous if fulfilled by salaried staff. The founder must rigorously track every hour expended, categorizing each minute into:
+\begin{enumerate}
+    \item Non-recurring exploratory learning costs;
+    \item Routine administrative overhead that software can automate; and
+    \item Irreducible expert delivery hours that must be factored into sustainable pricing.
+\end{enumerate}
+
+A concierge experiment proves \textbf{value feasibility}, not operational scalability. It does not prove operating leverage until the service can be delivered profitably by non-founder personnel.
+
+\subsection*{29. The Wizard-of-Oz Experiment and Its Ethical Limits}
+
+In a Wizard-of-Oz experiment, the front-end interface appears fully automated to the user, while the back-end processing is performed manually by human operators. This approach is highly effective for testing user interface ergonomics, workflow expectations, and value perception before building complex algorithmic pipelines.
+
+However, simulated automation carries severe ethical, contractual, and regulatory boundaries:
+\begin{itemize}
+    \item \textbf{Data confidentiality:} If users submit proprietary or sensitive enterprise code, routing that data to unvetted human reviewers without explicit disclosure and non-disclosure agreements violates commercial trust and data protection laws.
+    \item \textbf{Safety-critical claims:} A founder must never simulate an automated medical diagnostic, legal compliance engine, or safety filter where human delay or error could generate real-world harm.
+    \item \textbf{Truth in advertising:} Explicitly asserting that a proprietary neural model is operating when human contractors are typing responses is fraud, not agile testing.
+\end{itemize}
+
+The ethical standard is straightforward: \emph{If the customer were fully informed of the back-end human operations, would they feel deceived, or would they view the human attention as an added benefit?} If the former, the simulation is impermissible.
+
+\subsection*{30. The Landing-Page Test: Useful but Limited}
+
+A landing page presenting a sharply defined value proposition to targeted traffic can test positioning resonance, message comprehension, and baseline curiosity. It measures how many visitors click an application link, submit an email, or book a discovery call.
+
+Yet a click requires almost zero personal sacrifice. An email waitlist is free. An ``Apply Now'' button frequently attracts aspirational non-buyers who possess neither the technical prerequisites nor the financial capacity to enroll. Paid ad campaigns can easily send low-intent traffic whose behavior reveals nothing about the actual beachhead.
+
+To elevate evidence quality, a landing page must disclose:
+\begin{enumerate}
+    \item The exact tuition fee or a tight price range;
+    \item Explicit weekly time commitments and cohort calendars;
+    \item Strict technical prerequisites and mandatory pre-work; and
+    \item Clear statements regarding what the program does not offer.
+\end{enumerate}
+
+Measuring conversion under transparent disclosures yields an order of magnitude more predictive signal than collecting frictionless email signups.
+
+\subsection*{31. The Smoke Test and the Danger of Deceptive Promises}
+
+A smoke test markets an offer before building the fulfillment capacity, measuring whether customers attempt to purchase. When executed ethically, it protects entrepreneurs from manufacturing products that nobody wants. When executed carelessly, it degenerates into phantom availability, fake storefronts, and deceptive commercial representations.
+
+An ethical smoke test must adhere to 3 rules:
+\begin{enumerate}
+    \item \textbf{Pre-launch clarity:} The page must clearly state that the program is accepting applications or pre-orders for an impending cohort, not that an active class is currently in session.
+    \item \textbf{Zero unauthorized billing:} If credit card details are collected, the interface must explicitly state whether the card is being charged immediately as a reservation deposit or merely authorized pending admission.
+    \item \textbf{Unconditional refund rights:} If a planned pilot cannot be delivered on schedule, all funds must be returned immediately without friction or administrative deductions.
+\end{enumerate}
+
+Preserving institutional reputation must always supersede short-term conversion testing.
