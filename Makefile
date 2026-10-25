@@ -102,11 +102,13 @@ ch34:
 	@$(MAKE) chapter CH=34
 ch35:
 	@$(MAKE) chapter CH=35
+ch36:
+	@$(MAKE) chapter CH=36
 
 # Lock an individual chapter after verification
 # Usage: `make lock CH=5`
 lock:
-	@RAW="$(or $(CH),$(CHAPTER),35)"; \
+	@RAW="$(or $(CH),$(CHAPTER),36)"; \
 	NUM=$$((10#$$RAW)); \
 	PAD=$$(printf "%02d" $$NUM); \
 	mkdir -p $(OUT_DIR)/chapters $(OUT_DIR)/locked; \
@@ -190,11 +192,13 @@ lock34:
 	@$(MAKE) lock CH=34
 lock35:
 	@$(MAKE) lock CH=35
+lock36:
+	@$(MAKE) lock CH=36
 
 # Unlock a chapter for further editing
 # Usage: `make unlock CH=5`
 unlock:
-	@RAW="$(or $(CH),$(CHAPTER),35)"; \
+	@RAW="$(or $(CH),$(CHAPTER),36)"; \
 	NUM=$$((10#$$RAW)); \
 	if [ -f .chapter-locks ]; then \
 		grep -v "^$$NUM:" .chapter-locks > .chapter-locks.tmp 2>/dev/null || true; \
@@ -209,7 +213,7 @@ status:
 	@echo "=========================================================================="; \
 	echo " Bayesforce Publishing Engine :: Chapter Lock Status"; \
 	echo "=========================================================================="; \
-	for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35; do \
+	for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36; do \
 		PAD=$$(printf "%02d" $$i); \
 		if [ -f .chapter-locks ] && grep -q "^$$i:" .chapter-locks; then \
 			LOCK_TIME=$$(grep "^$$i:" .chapter-locks | cut -d: -f2-); \
@@ -222,7 +226,7 @@ status:
 
 # Build all active individual chapters sequentially
 chapters:
-	@for c in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35; do \
+	@for c in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36; do \
 		$(MAKE) chapter CH=$$c || exit 1; \
 	done
 
