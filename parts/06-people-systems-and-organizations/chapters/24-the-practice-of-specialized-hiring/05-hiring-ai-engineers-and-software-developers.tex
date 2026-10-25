@@ -1,0 +1,68 @@
+\section*{Part IV: Hiring AI Engineers, Software Developers, and Researchers}
+
+\subsection*{32. AI Engineering Is Not 1 Occupation}
+
+An ``AI engineer'' may train models, develop predictive analytics, engineer data pipelines, build retrieval-augmented applications, integrate LLM APIs, serve open-weight models, construct agents, evaluate safety and quality, or operate production infrastructure. These roles overlap but differ fundamentally in scarce competence. The founder must specify the \textbf{actual production boundary}.
+
+For a 1st applied LLM engineer, useful competencies might include problem decomposition, software engineering, model evaluation, data handling, security, observability, cost-latency trade-offs, and incident response. For an ML research engineer, experimental design, training infrastructure, mathematical reasoning, and reproducibility may be far more important. A candidate's fluency with current model names and prompt tricks is weak evidence of production competence. In a rapidly changing field, test the durable principles behind the implementation.
+
+\subsection*{33. An AI-Engineer Assessment Should Test a Failing System}
+
+A realistic scenario is a fictional internal knowledge assistant that retrieves documents and gives plausible but occasionally incorrect answers. Give the candidate a small repository or architecture, a set of evaluation examples, latency and budget constraints, and an incident: answers cite the wrong document, or an uploaded file attempts to override instructions. Ask for a diagnosis, test plan, and prioritized repair: not a magical perfect demo.
+
+A strong candidate separates retrieval recall from generation faithfulness, identifies evaluation slices, respects access permissions, proposes an uncertainty and abstention policy, measures regression risk, and explains operational cost. They need not implement a full production platform in the interview. A weak candidate changes the prompt repeatedly until 1 sample succeeds and declares victory. Score \textbf{evaluation discipline} more heavily than confidence in any specific model vendor.
+
+\subsection*{34. A Production-Oriented AI Scorecard}
+
+A practical evaluation rubric for applied AI roles is presented in Table~\ref{tab:ai_engineer_scorecard}.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Production-Oriented Applied AI Engineer Scorecard}
+\label{tab:ai_engineer_scorecard}
+\begin{tabularx}{\columnwidth}{p{3.2cm} c X}
+\toprule
+\textbf{Competency} & \textbf{Weight} & \textbf{Representative Proof} \\
+\midrule
+Systems decomposition and implementation & 20\% & Read/modify small service, explain trade-offs \\
+Evaluation and experimental reasoning & 25\% & Design failure slices, baselines, acceptance tests \\
+Data security and responsible use & 20\% & Threat/permission scenario; must-pass gate \\
+Reliability, observability, cost & 15\% & Incident triage, telemetry, latency-cost budget \\
+Software engineering quality & 15\% & Tests, review, maintainability, versioning \\
+Learning and communication & 5\% & Novel tool exercise with feedback \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A promising candidate with limited experience in the exact retrieval library may still pass if they demonstrate correct reasoning, good tests, and fast adaptation. Someone who exposes confidential customer data to an unapproved external service should not pass because the final demo looks attractive. This table is an illustrative assessment design, not a universally valid occupational test.
+
+\subsection*{35. Test Prompt and Agent Literacy Without Worshiping Prompts}
+
+In AI application roles, the ability to write a clever system prompt is useful but incomplete. Ask the candidate to distinguish prompt defects, data defects, tool defects, permissions failures, evaluation defects, and fundamentally unsuited use cases. Provide a reproducible example where an agent performs an unauthorized action because a retrieved page contains malicious instructions. The candidate should reason about trust boundaries, least privilege, tool confirmation, audit logs, and test coverage: not simply write ``ignore malicious instructions.''
+
+The long-term value is identifying what the system \textbf{should be allowed to do}, when it should defer to a human, what evidence would justify release, and how failures are found after deployment. This applies equally to internal academic tutors and enterprise AI services. Human-AI system judgment is partly technical and partly operational ethics.
+
+\subsection*{36. Software Developers Should Be Hired to Maintain Systems, Not Win Coding Theater}
+
+Algorithms and data structures are relevant when they appear in real work. But a timed whiteboard problem is not a universal surrogate for software engineering. Many roles demand reading unfamiliar code, reproducing defects, writing tests, reviewing pull requests, working with deployment constraints, documenting interfaces, and choosing simple designs that teams can maintain. Assess those activities directly.
+
+A suitable \textbf{90-minute pair exercise}: candidate receives a small working service with an intermittent bug and ambiguous bug report; they state reproduction steps, inspect logs or tests, make a minimal change, add a regression test, and explain what remains uncertain. Evaluate diagnostic sequence, test quality, understanding of consequences, and collaboration. Do not score typing speed as if it were product value; allow approved tools similar to the job's actual environment.
+
+\subsection*{37. The Code-Review Exercise Reveals a Different Competence}
+
+Give a candidate a deliberately flawed pull request: an unchecked authorization path, poorly bounded retries, a performance regression, and untested edge cases. Ask which 3 issues they would block the merge on and why. Strong candidates distinguish correctness, security, maintainability, style, and priority. They do not nitpick formatting while ignoring unauthorized access.
+
+A good response also has a social dimension. A reviewer must express consequential criticism in a way that helps the author fix the problem. For senior engineers, ask them to propose changes to the development system (test environments, code ownership, incident learning) not just fix the single bug. This discriminates between proficient individual contribution and engineering leadership.
+
+\subsection*{38. Senior Software Hiring Requires Architecture and Trade-Off Evidence}
+
+A candidate might design a service for processing assessment submissions, running sandboxed code, storing grades, and generating instructor review queues. Require explicit assumptions about users, latency, data confidentiality, concurrency, failure recovery, operating cost, and operational ownership. Ask them to identify the 1st simple architecture they would ship and the evidence that would warrant more complexity.
+
+Excellent architecture is not the biggest diagram. It is a defensible set of trade-offs whose components can be built and operated by the actual team. Ask for a migration plan if usage grows 10-fold, and for a plan if usage stays 1/10th of forecast. A candidate who designs an expensive distributed system before verifying product demand may be technically sophisticated but economically misaligned with a lean venture.
+
+\subsection*{39. A Developer Scorecard Should Vary by Seniority}
+
+For a junior developer, weight \textbf{correctness, basic tests, learning response, problem decomposition, and collaboration}; explicit mentorship will be necessary. For a senior engineer, add \textbf{architecture, production debugging, review quality, operational responsibility, and knowledge transfer}. For an engineering manager, direct coding remains evidence but is not the whole role; team effectiveness, prioritization, hiring, and coaching become essential.
+
+Avoid the common mistake of using 1 standardized puzzle bank to hire developers, data scientists, and engineering leaders. It creates procedural consistency while missing the different criteria. Standardize \textbf{within each job family and level}. Revise technical problems as the work and tool environment changes, and document whether AI coding assistance is allowed. Ambiguous or secret tool policies measure compliance with interviewer expectations rather than capability.

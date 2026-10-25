@@ -1,0 +1,110 @@
+\section*{Part VII: Combining Evidence and Actually Making the Hiring Decision}
+
+\subsection*{74. A Hiring Score Is a Model; a Hiring Decision Is a Commitment}
+
+A rubric improves consistency, but it does not eliminate uncertainty. Candidate performance is sampled for a few hours, while real employment spans weeks or years. The assessment is an imperfect representation of the job; the job itself changes; teammates and managers affect performance; and candidates have incentives to show their best selves. A weighted score of 4.0 is not a calibrated probability of success. It is a \textbf{structured summary of observed evidence} under a particular design.
+
+The founder's decision should therefore have 2 layers:
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Eligibility}: are legal, ethical, skill, availability, and financial gates met?
+\item \textbf{Relative expected contribution}: among eligible people, what is the expected contribution accounting for uncertainty, support requirements, and the alternative of delaying or redesigning the role?
+\end{enumerate}
+A candidate should not win by a 2-decimal lead when that difference is smaller than the variability between assessors.
+
+\subsection*{75. A Worked Comparison of 3 Technical-Reviewer Finalists}
+
+Consider a hypothetical Bayes reviewer selection. The competencies are correctness (30\%), diagnostic depth (25\%), actionable feedback (20\%), turnaround reliability (15\%), and collaboration (10\%). Scores are on a 1-5 scale, and correctness and diagnostic depth both require at least 3. Table~\ref{tab:reviewer_comparison} summarizes the evaluation.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Worked Evaluation of 3 Technical-Reviewer Finalists}
+\label{tab:reviewer_comparison}
+\begin{tabularx}{\columnwidth}{p{2.8cm} c c c c}
+\toprule
+\textbf{Competency} & \textbf{Weight} & \textbf{Cand A} & \textbf{Cand B} & \textbf{Cand C} \\
+\midrule
+Correctness & 30\% & 4 & 5 & 3 \\
+Diagnostic depth & 25\% & 4 & 2 & 4 \\
+Actionable feedback & 20\% & 3 & 5 & 4 \\
+Reliability & 15\% & 5 & 4 & 3 \\
+Collaboration & 10\% & 4 & 5 & 4 \\
+\midrule
+\textbf{Weighted score} & \textbf{100\%} & \textbf{3.95} & \textbf{4.10} & \textbf{3.55} \\
+\textbf{All gates passed?} & & \textbf{Yes} & \textbf{No} & \textbf{Yes} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Candidate B has the highest correctness and strongest written style, but repeatedly misdiagnoses the learner's conceptual error: the candidate fails an essential gate. A and C are eligible. A's apparent lead of 0.40 should trigger a review of evidence, not a claim of mathematical certainty. If A's reliability score came from self-report but C's came from corroborated project history, the confidence differs. If C has unusually strong learning evidence and the role is a supervised apprenticeship, C may be preferable even with a lower initial score. Document the rationale rather than manipulating weights afterward to reach the preferred answer.
+
+\subsection*{76. An Evidence-Confidence Overlay Prevents False Precision}
+
+For each scored competency, attach \textbf{source}, \textbf{confidence}, and \textbf{unresolved question}. Directly observed performance on 2 representative tasks may justify relatively high confidence in routine capability, though it remains imperfect. A candidate's single anecdote may warrant low confidence. A reference describing consistent behavior over 2 years may provide additional evidence, but potential bias and context still matter.
+
+A simple evidence matrix is often more useful than another numerical factor. Example: ``Correctness 4/5: 2 blinded reviews, independent scorer agreement; medium-high confidence. Reliability 5/5: candidate statement and 1 selected reference; low-medium confidence. Remaining issue: verify actual turnaround under other employment commitments.'' The founder can then choose an additional reference or a short paid trial aimed specifically at the uncertainty with the highest decision impact.
+
+\subsection*{77. Treat Missing Evidence as Missing, Not as a Zero or a Pass}
+
+A candidate who has never managed a team should not automatically receive a 1 in management ability if the role explicitly allows 1st-time managers. But they also should not be assigned a 4 based on confidence or ``leadership aura.'' Mark the competency \textbf{not yet demonstrated}, specify whether current evidence is necessary before commitment, and choose a test that provides it. If the role needs a proven manager of 30 people, absence of managerial experience may matter directly; if it is an apprentice lead role, a simulation and peer project evidence may be more appropriate.
+
+This is especially important for nontraditional candidates with lower access to prestigious proof. The question is whether you can create a fair and relevant opportunity to demonstrate the required work without assuming either excellence or deficiency. Missing data is an information problem; necessary competence that is genuinely absent is a readiness problem.
+
+\subsection*{78. A Current-Skill Versus Potential Matrix}
+
+Table~\ref{tab:skill_potential_matrix} outlines a framework for assessing current performance against learning trajectory.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Current-Skill Versus Demonstrated Potential Matrix}
+\label{tab:skill_potential_matrix}
+\begin{tabularx}{\columnwidth}{p{1.8cm} p{2.2cm} X}
+\toprule
+\textbf{Skill} & \textbf{Potential} & \textbf{Appropriate Judgment} \\
+\midrule
+High & High & Strong candidate if values, role, and economics fit. \\
+High & Low / unproven & May suit stable immediate delivery; check obsolescence risk. \\
+Low & High & Possible apprentice hire when training capacity and time exist. \\
+Low & Low / unproven & Defer or reject unless new evidence changes the view. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+This is a \textbf{decision aid}, not a talent taxonomy. Potential should not be guessed from age, ambition, prestigious education, enthusiasm, or the interviewer's affection. It should be supported by observed improvement under feedback, transfer to adjacent tasks, and prior examples of learning. Also distinguish low current skill from unfamiliarity with the test format: an experienced engineer can be weak in 1 vendor's tool and strong in engineering.
+
+\subsection*{79. The Actual Cost of Training Changes the Optimal Hire}
+
+Suppose 2 hypothetical candidates can fulfill a technical-review role after appropriate onboarding. Candidate A needs 6 mentor hours and earns \text{₹}1,200 per review hour. Candidate B needs 30 mentor hours and earns \text{₹}900 per review hour. A senior mentor's full economic cost is \text{₹}2,000 per hour.
+
+The planned engagement is 160 review hours. Ignoring other differences:
+\begin{itemize}[leftmargin=*]
+\item Candidate A total cost:
+\begin{equation}
+(160 \times \text{₹}1,200) + (6 \times \text{₹}2,000) = \text{₹}1,92,000 + \text{₹}12,000 = \text{₹}2,04,000.
+\end{equation}
+\item Candidate B total cost:
+\begin{equation}
+(160 \times \text{₹}900) + (30 \times \text{₹}2,000) = \text{₹}1,44,000 + \text{₹}60,000 = \text{₹}2,04,000.
+\end{equation}
+\end{itemize}
+The apparent \text{₹}300 per hour wage saving completely disappears at this 160-hour horizon.
+
+At 400 review hours, however:
+\begin{itemize}[leftmargin=*]
+\item Candidate A total cost:
+\begin{equation}
+(400 \times \text{₹}1,200) + \text{₹}12,000 = \text{₹}4,80,000 + \text{₹}12,000 = \text{₹}4,92,000.
+\end{equation}
+\item Candidate B total cost:
+\begin{equation}
+(400 \times \text{₹}900) + \text{₹}60,000 = \text{₹}3,60,000 + \text{₹}60,000 = \text{₹}4,20,000.
+\end{equation}
+\end{itemize}
+If B reaches equal quality and reliability, B may now be better economically. But if the required mentoring delays critical deliverables, or if B never reaches competence, the result changes. The calculation exposes the variables that matter: duration, rate, mentor capacity, quality, and learning probability. Neither candidate is inherently ``better.''
+
+\subsection*{80. Choose Development Capacity Before Choosing an Apprenticeship Strategy}
+
+Hiring for potential is only coherent when someone can actually teach, review, and support the candidate. A founder who can spare 90 minutes weekly may be unable to develop 3 junior contributors across different functions. The expected costs include training materials, mentor time, mistakes under supervision, feedback delay, replacement risk, and the novice's opportunity to build independent competence.
+
+Define a \textbf{development contract}: which skills will be taught by whom, what tasks will be allowed at each stage, when performance will be assessed, and what happens if progress stalls. This is especially important for students or early-career recruits. An organization that hires inexpensive novices and leaves them to fail is not a talent-development institution. It is disguising the absence of managerial capacity as entrepreneurial thrift.
