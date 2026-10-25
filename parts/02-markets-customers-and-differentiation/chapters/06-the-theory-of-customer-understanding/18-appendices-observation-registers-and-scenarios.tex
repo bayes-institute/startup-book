@@ -1,0 +1,82 @@
+\subsection*{Appendix D: The Observation and Artifact Checklist}
+
+When conducting contextual inquiry into live developer or organizational workflows, document:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item \textbf{Initial task context:} Specific sprint goal, codebase branch, and deployment deadline.
+  \item \textbf{Sequence of actions:} Exact command-line tools invoked, browser tabs opened, and documentation consulted.
+  \item \textbf{Tooling frictions:} Latency pauses, API rate-limit errors, unhandled exceptions, and manual copy-pasting.
+  \item \textbf{Human handoffs:} Slack messages sent to coworkers asking for advice or code reviews.
+  \item \textbf{Verification criteria:} How does the practitioner confirm whether an output is correct (manual inspection, unit test, visual check)?
+  \item \textbf{Confidentiality protocols:} Redact all API keys, customer identifiers, and proprietary logic immediately.
+\end{itemize}
+
+\subsection*{Appendix E: The Opportunity/Problem Evidence Register}
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\RaggedRight\bfseries}p{3.2cm} >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}p{3.2cm}}
+\toprule
+Hypothesis & Supporting Field Evidence & Contradicting Evidence & Next Decisive Test \\
+\midrule
+Engineers need evaluation feedback, not content & 4 developers report copying prompt templates that fail in production & 6 developers have senior peers who review all pull requests & Paid 1-on-1 pipeline diagnostic \\
+\addlinespace
+Colleges will fund applied lab modules & 2 department heads express urgent desire for industry curriculum & Academic council approval requires 9 months of advance notice & Pitch a zero-credit winter lab sprint \\
+\addlinespace
+Enterprise leads need team evaluation clinics & VP reports 6-week delay on core search feature due to hallucinations & Legal refuses to clear vendor without 3 years of audited financials & Run pilot on synthetic public dataset \\
+\addlinespace
+Working engineers can sustain 6-month study & 12 interviewees state long courses are valuable & Work calendars show only 4 available weekend hours & Offer 2-week sprint; measure dropouts \\
+\bottomrule
+\end{tabularx}
+\caption{The opportunity/problem evidence register template.}
+\label{tab:ch6_evidence_register}
+\end{table*}
+
+\subsection*{Appendix F: The Acute-Problem Interrogation}
+
+Before committing capital to build an offering, answer these 10 questions in writing:
+\begin{enumerate}[leftmargin=1.2em,itemsep=0.2ex]
+  \item What specific operational incident occurred in the last 30 days to demonstrate this pain?
+  \item What was the measurable economic, operational, or career damage incurred?
+  \item How frequently does this precise failure recur across the target segment?
+  \item What workaround is currently deployed, and what does it cost in monthly labor?
+  \item Who has the authority to approve a commercial replacement check?
+  \item What happens to the customer's organization if nothing changes for 6 months?
+  \item What good-enough alternative exists if your company never launches?
+  \item What observable human behavior proves this is an acute priority?
+  \item Can your team deliver a permanent fix within current operational capacity?
+  \item What specific negative result would make you abandon this market thesis?
+\end{enumerate}
+
+\subsection*{Appendix G: Reconstruct a Purchase as a Timeline}
+
+\begin{verbatim}
+Customer Role / Segment:
+Context / Project Goal:
+
+T-60d: Background dissatisfaction emerges
+T-30d: Acute triggering incident occurs
+T-21d: Active search and colleague outreach
+T-14d: Evaluation of 2 shortlisted options
+T-7d:  Internal debate / Infosec pushback
+T-0d:  Contract signed / Payment transacted
+T+3d:  Onboarding and initial setup
+T+14d: First core value milestone achieved
+T+60d: Outcome audit: renewal or churn
+
+Facts Directly Observed:
+Facts Customer Reported:
+Founder Inferences:
+Strongest Alternative Explanation:
+Next Critical Experiment:
+\end{verbatim}
+
+\subsection*{Appendix H: Empirical Comparison of Two Candidate Segments}
+
+\noindent\textbf{Context:} Bayes Institute conducts preliminary field discovery across 2 distinct hypothetical clusters:
+
+\noindent\textbf{Cluster A (General AI Enthusiasts):} 20 self-identified AI learners recruited from public online forums. 16 express intense enthusiasm for a comprehensive 6-month AI curriculum. However, only 1 has spent more than ₹2,000 on technical books in the past year; 14 report having fewer than 3 hours of free weekend study time; and 12 explicitly state they expect job placement guarantees upon completion.
+
+\noindent\textbf{Cluster B (Production-Assigned Engineers):} 10 practicing backend developers recruited from technical GitHub repositories. 7 recently experienced delayed feature releases due to model hallucination issues; 5 currently spend 6+ hours every weekend building makeshift evaluation scripts; and 4 have corporate access to a ₹50,000 annual individual learning reimbursement budget. When offered a paid, 2-day architectural evaluation diagnostic at ₹15,000, 3 immediately submit code samples for screening.
+
+\noindent\textbf{Strategic Decision:} Disqualify Cluster A immediately: enthusiasm without time, capital, and realistic expectations creates high churn. Focus 100\% of founder discovery on Cluster B: smaller population, but dense with acute pain, budget access, and genuine readiness.

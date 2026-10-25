@@ -1,0 +1,90 @@
+\section{Part V: Discovering Customers in the Field}
+
+\subsection{Interviews as Scientific Instruments}
+
+Steve Blank's customer development methodology emphasizes leaving the building to test hypotheses with live market participants [R9]. An interview is not a sales pitch in disguise, nor a therapy session to validate the founder's ego. It is a \textbf{scientific instrument designed to falsify assumptions}.
+
+Before scheduling a single conversation, formulate explicit prior hypotheses:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item Who experiences the acute struggle, and what triggered it?
+  \item What specific makeshift workaround is currently used?
+  \item What time and money are committed to existing remedies?
+  \item Who holds financial authority, and who possesses veto power?
+  \item What observable customer behavior would disprove our thesis?
+\end{itemize}
+Without prior hypotheses, founders instinctively cherry-pick pleasant compliments and mistake polite enthusiasm for validated demand.
+
+\subsection{4 Fundamentally Different Research Conversations}
+
+Do not use 1 generic script for every conversation. Deploy 4 specialized formats:
+\begin{enumerate}[leftmargin=1.2em,itemsep=0.2ex]
+  \item \textbf{Exploratory context interview:} Uncovers how the customer's daily operational world functions, where recurring bottlenecks arise, and how work is rewarded.
+  \item \textbf{Decision reconstruction interview:} Forensically traces a recent, completed purchase or rejection, including rejected alternatives, internal debates, and budget approvals.
+  \item \textbf{Contextual inquiry / workflow observation:} Directly observes the user performing the actual task in real time, noting unstated habits and manual workarounds [R11].
+  \item \textbf{Offer evaluation interview:} Presents a precisely scoped, priced, bounded solution prototype to test trade-offs, pricing friction, and specific implementation objections.
+\end{enumerate}
+
+Never mix an exploratory interview with an aggressive sales pitch. Presenting a polished prototype prematurely contaminates the subject's memory and biases all subsequent answers.
+
+\subsection{Who to Interview First: The Contrast Matrix}
+
+When starting from zero, do not begin by interviewing personal friends, casual social media followers, or fellow founders. Construct a \textbf{Contrast Matrix}:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item \textbf{Recent buyers:} Individuals or managers who purchased an alternative in the past 6 months (reveals selection criteria and budget mechanisms).
+  \item \textbf{Recent nonbuyers:} Individuals who thoroughly investigated solutions but decided to do nothing (reveals hidden friction and switching thresholds).
+  \item \textbf{Active workaround builders:} Teams that built internal scripts or makeshift spreadsheets (reveals acute, unserved technical requirements).
+  \item \textbf{Budget holders and approvers:} Finance managers, department deans, or engineering directors (reveals procurement hurdles and approval gates).
+\end{itemize}
+
+\subsection{Recruiting When You Begin with Zero Audience}
+
+Cold outreach succeeds when framed as disciplined technical research rather than a disguised commercial pitch. Use legitimate professional networks, technical communities, and direct references.
+
+A high-conversion research request must state:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item The precise technical situation you are studying (e.g., ``evaluating latency and hallucination trade-offs in production retrieval systems'').
+  \item The exact qualifying criterion (e.g., ``engineers who shipped an AI feature in the last 6 months'').
+  \item The explicit duration (``strictly 30 minutes, no sales pitch, no product demo'').
+  \item Data protection and confidentiality commitments.
+\end{itemize}
+Never imply non-existent institutional partnerships, and never scrape private databases without consent.
+
+\subsection{Sampling as a Research Design Problem}
+
+There is no universal magic interview quota. 10 interviews in a tightly defined, homogeneous segment (e.g., backend engineers deploying production retrieval models) can reveal sharp, stable failure patterns. 50 interviews across a scattered, ill-defined group produce confusion.
+
+Do not confuse qualitative mechanism discovery with quantitative market sizing. Jakob Nielsen's famous rule that 5 users discover 85\% of usability defects applies strictly to iterative usability testing of a concrete software interface, not to proving commercial demand or market size [R10]. Qualitative discovery uncovers \textbf{the causal mechanisms of choice}; quantitative surveys with rigorous sampling are required to estimate population prevalence and conversion rates [R12].
+
+\subsection{Reconstruct Past Reality, Never Solicit Predictions}
+
+The most fatal interview question is: ``Would you pay ₹40,000 for a live mentor-led AI course?'' It invites socially desirable flattery and speculative predictions. Human beings are notoriously inaccurate at forecasting their future self-discipline, budget allocation, and emotional stamina [R17].
+
+Replace speculative questions with \textbf{forensic historical reconstruction}:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item Bad: ``Do you think continuous evaluation is important?''
+  \item Good: ``Walk me through the exact steps you took the last time your model produced an embarrassing error in production. What tools did you open first?''
+  \item Bad: ``Would your manager sponsor this training?''
+  \item Good: ``What was the last external training course or tool your manager approved for your team? Who signed the invoice, and what documentation was required?''
+\end{itemize}
+
+\subsection{The 30-to-45-Minute Discovery Protocol}
+
+A disciplined, non-leading discovery protocol follows 5 structured phases:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item \textbf{Phase 1: Context and Framing (3 to 5 mins):} Establish research goals, guarantee confidentiality, request recording permission, and explicitly instruct the subject: ``Please do not try to be polite; blunt criticism is 10 times more valuable to our research.''
+  \item \textbf{Phase 2: The Triggering Incident (10 mins):} Anchor on a recent concrete episode. Establish date, project deadline, business stakes, and initial signs of failure.
+  \item \textbf{Phase 3: The Workaround Journey (10 mins):} Trace every action taken: internal code, documentation consulted, free tools tested, hours invested, and results achieved.
+  \item \textbf{Phase 4: Alternatives and Purchase History (10 mins):} Examine what external solutions were evaluated, who was consulted, what prices were reviewed, and what prevented adoption.
+  \item \textbf{Phase 5: Synthesis and Referrals (5 mins):} Ask: ``What critical question did I fail to ask about this struggle? Who is 1 peer who experienced a completely different outcome in this situation?''
+\end{itemize}
+
+\subsection{Questions That Reveal Real Decisions}
+
+Deploy high-resolution investigative prompts:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item ``What was happening in your company on the morning you decided you could no longer tolerate this problem?''
+  \item ``How much time did you spend on this last week? Show me the calendar blocks or commit logs if accessible.''
+  \item ``When you proposed buying a commercial solution, who pushed back, and what was their exact objection?''
+  \item ``If this project had been canceled entirely, what would have been the financial or career consequence?''
+\end{itemize}
+Capture verbatim phrases. The specific nouns and verbs customers use to describe their agony form the core vocabulary of authentic product positioning.

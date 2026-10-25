@@ -1,0 +1,51 @@
+\subsection{Field Notes: The 4-Layer Epistemic Standard}
+
+Raw notes must strictly separate what was observed from what was inferred. Every interview record must maintain 4 distinct layers:
+\begin{enumerate}[leftmargin=1.2em,itemsep=0.2ex]
+  \item \textbf{Layer 1: Verbatim Speech.} Exact words and technical vocabulary used by the participant, enclosed in quotation marks.
+  \item \textbf{Layer 2: Observable Actions and Artifacts.} Measurable facts: lines of code audited, tools open on screen, dollars spent on invoices, dates of release delays.
+  \item \textbf{Layer 3: Founder Interpretation.} The researcher's provisional hypotheses regarding underlying jobs, anxieties, and unstated motives.
+  \item \textbf{Layer 4: Counter-Hypotheses and Unresolved Questions.} Facts that contradict the founder's thesis and questions requiring follow-up.
+\end{enumerate}
+
+Synthesize notes within 6 hours of the conversation. Delayed synthesis results in human memory flattening uncomfortable contradictions and exaggerating favorable comments.
+
+\subsection{Cross-Case Synthesis vs. Mention Counting}
+
+Novice teams tally keywords: ``8 respondents asked for mentorship, 5 asked for certifications.'' Word counting is intellectually lazy: 8 respondents use the word ``mentorship'' to mean 8 completely different things (from casual career cheerleading to line-by-line algorithmic debugging).
+
+Deploy \textbf{Cross-Case Mechanism Synthesis}:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item Construct an empirical matrix with individual respondents as rows and structural decision variables as columns: Triggering Incident, Baseline Capability, Existing Workaround, Budget Owner, Critical Veto, and Dominant Anxiety.
+  \item Group rows by the \textbf{underlying causal mechanism} that explains their choice.
+  \item Actively highlight contradictions: Why did Respondent 4 switch to an external consultant while Respondent 7, in an identical role, solved the issue with open-source documentation?
+\end{itemize}
+
+\subsection{Theoretical Saturation Is Local and Conditional}
+
+Founders often proclaim: ``We hit saturation after 12 interviews because we stopped hearing new things.'' True saturation is always conditional on the sampling boundary. 12 interviews with backend engineers at venture-funded startups in Bangalore tell you nothing about engineering teams at enterprise banks in Mumbai or academic departments in Chennai.
+
+A disciplined stopping rule for an exploratory cycle:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item Within this tightly defined segment, can we reliably predict the next interviewee's workaround, dominant alternative, and primary switching barrier?
+  \item Have we actively sought out and interviewed negative, disconfirming cases?
+  \item Do we possess sufficient behavioral clarity to design a bounded, paid commercial test?
+\end{itemize}
+When these 3 conditions are met, cease exploratory interviewing and execute a behavioral transaction test.
+
+\subsection{Surveys Answer Different Questions Than Interviews}
+
+Interviews excel at discovering unknown mechanisms, unexpected workarounds, and nuanced emotional trade-offs. They cannot measure population prevalence or statistical distribution. Quantitative surveys, when properly designed, measure frequency, proportions, and demographic correlations across a defined population [R12].
+
+However, a poorly designed survey sent to a self-selected email newsletter or Twitter following is worse than useless: it yields statistically invalid numbers coated in a veneer of pseudo-scientific authority. Stated preferences on surveys suffer from massive hypothetical bias: respondents rate features as ``extremely important'' when they bear zero cost for checking the box [R13].
+
+\subsection{Designing Surveys Around Past Decisions, Not Applause}
+
+If a quantitative survey is deployed, anchor questions strictly on verifiable past behavior:
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2ex]
+  \item Bad: ``On a scale of 1 to 5, how interested are you in mastering production AI systems?''
+  \item Good: ``In the past 12 months, which of the following actions have you personally taken to learn AI systems engineering? (Select all that apply: Purchased a paid book; Completed a paid course; Attended a corporate workshop; Built an open-source project; None of the above).''
+  \item Bad: ``Would you pay ₹50,000 for a course that guaranteed expert feedback?''
+  \item Good: ``What was the total financial expenditure you or your employer approved for technical upskilling in the last fiscal year? (₹0; Under ₹10,000; ₹10,000 to ₹50,000; Above ₹50,000).''
+\end{itemize}
+Pretest surveys with cognitive interviews to ensure respondents interpret questions as intended before launching to large samples.
