@@ -1,0 +1,99 @@
+\section{Value of Information: When to Research and When to Act}
+
+\subsection{The Economic Cost of Delay}
+
+Founders are routinely advised to gather more market research before committing capital. In isolation, this guidance sounds prudent. In competitive markets, however, gathering data consumes cash, burns weeks of founder attention, and risks missing time-sensitive commercial windows.
+
+The correct inquiry is never: \textit{Can we learn more?} The only relevant economic question is: \textbf{What specific empirical signal could we acquire that would cause us to reverse our pending decision, and is that reversal worth the cost and delay of obtaining the signal?}
+
+\subsection{Expected Value of Perfect Information (EVPI)}
+
+Recall our launch decision from Section 7:
+\begin{itemize}[leftmargin=10pt,itemsep=1pt,topsep=1pt]
+  \item Success has probability 30\%, paying +₹8 lakh.
+  \item Failure has probability 70\%, costing $-$₹2 lakh.
+  \item Without additional research, the optimal choice is to launch immediately, with an expected payoff of +₹1.00 lakh.
+\end{itemize}
+
+Now imagine an omniscient oracle that tells you with 100\% certainty whether the venture will succeed before you spend a single rupee. Under this oracle, you launch only when success is guaranteed (+₹8 lakh) and decline whenever failure is forecasted (₹0).
+
+Your expected payoff under perfect information is:
+\begin{equation*}
+\operatorname{EV}_{\text{oracle}} = 0.30 \times (+\text{₹}8\text{ lakh}) + 0.70 \times (\text{₹}0) = +\text{₹}2.40\text{ lakh}
+\end{equation*}
+
+The Expected Value of Perfect Information is the difference:
+\begin{equation}
+\operatorname{EVPI} = \text{₹}2.40\text{ lakh} - \text{₹}1.00\text{ lakh} = \text{₹}1.40\text{ lakh}
+\end{equation}
+
+Under these parameters, \textbf{no preliminary research program can ever be worth more than ₹1.40 lakh}, because perfect foresight itself is worth exactly ₹1.40 lakh. Spending ₹2 lakh on consultants or consumer surveys is mathematically irrational.
+
+\subsection{Expected Value of Sample Information (EVSI)}
+
+In the physical world, all empirical tests are imperfect. Suppose you can execute a low-cost, 2-week pilot clinic with the following performance:
+\begin{itemize}[leftmargin=10pt,itemsep=1pt,topsep=1pt]
+  \item True-positive rate (sensitivity): 80\%
+  \item False-positive rate: 25\% (75\% specificity)
+  \item Financial cost of running the test: ₹30,000 (₹0.30 lakh)
+  \item Action policy: launch full program if signal is positive; abort if negative.
+\end{itemize}
+
+The probability of observing a positive signal is:
+\begin{equation*}
+P(+) = 0.30 \times 0.80 + 0.70 \times 0.25 = 0.24 + 0.175 = 0.415
+\end{equation*}
+
+The expected financial payoff of executing this policy, before subtracting the pilot cost, is:
+\begin{align*}
+\operatorname{EV}_{\text{sample}} &= 0.30 \times 0.80 \times (\text{₹}8\text{ lakh}) \\
+&\quad + 0.70 \times 0.25 \times (-\text{₹}2\text{ lakh}) \\
+&= 1.92 - 0.35 = \text{₹}1.57\text{ lakh}
+\end{align*}
+
+The Expected Value of Sample Information is:
+\begin{equation}
+\operatorname{EVSI} = \text{₹}1.57\text{ lakh} - \text{₹}1.00\text{ lakh} = \text{₹}0.57\text{ lakh}
+\end{equation}
+
+Subtracting the ₹0.30 lakh pilot cost leaves a net expected gain of:
+\begin{equation*}
+\text{Net Benefit} = \text{₹}0.57\text{ lakh} - \text{₹}0.30\text{ lakh} = \text{₹}0.27\text{ lakh}
+\end{equation*}
+
+\begin{tcolorbox}[
+  enhanced,
+  colback=BayesSurface!60,
+  colframe=BayesBorder,
+  boxrule=0.5pt,
+  arc=3pt,
+  left=3pt,right=3pt,top=3pt,bottom=3pt,
+  boxsep=1pt
+]
+\scriptsize
+\begin{tabularx}{\linewidth}{X r}
+\toprule
+\textbf{Decision Policy} & \textbf{Net Expected Payoff} \\
+\midrule
+Abstain completely & ₹0.00 \\
+Launch immediately without research & ₹1.00 lakh \\
+Run pilot test, follow signal (before test cost) & ₹1.57 lakh \\
+\textbf{Run pilot test, follow signal (after ₹0.30 lakh test cost)} & \textbf{₹1.27 lakh} \\
+\bottomrule
+\end{tabularx}
+\end{tcolorbox}
+
+The pilot test is economically justified: it increases net expected value from ₹1.00 lakh to ₹1.27 lakh.
+
+However, if delaying 3 weeks to run this pilot forfeits ₹40,000 of first-mover advantage or client goodwill, the net payoff drops to $1.27 - 0.40 = \text{₹}0.87\text{ lakh}$. Under that time penalty, running the test destroys value compared to launching immediately.
+
+\subsection{The Information Stop Rule}
+
+Prioritize uncertainties along 3 concrete axes developed by Douglas Hubbard [4]:
+\begin{itemize}[leftmargin=10pt,itemsep=1pt,topsep=1pt]
+  \item \textbf{Decision Sensitivity:} Does resolving this unknown change our immediate capital allocation?
+  \item \textbf{Consequence of Error:} What is the financial and reputational downside if we are wrong?
+  \item \textbf{Learnability:} Can a reliable diagnostic signal be captured cheaply and rapidly?
+\end{itemize}
+
+\textbf{Stop researching the moment the marginal value of another observation drops below the combined financial cost and operational delay of collecting it.} Do not disguise fear of execution as a desire for more data.

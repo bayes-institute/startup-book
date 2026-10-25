@@ -1,0 +1,284 @@
+% Main entry point. Compile from this directory with `make pdf`.
+\documentclass[10pt,letterpaper,twoside,openright,twocolumn]{book}
+\usepackage{import}
+\usepackage{subfiles}
+\IfFileExists{theme/bayesstacknotes.sty}{%
+  \usepackage{theme/bayesstacknotes}%
+}{%
+  \usepackage{../learning-content/src/notes/theme/bayesstacknotes}%
+}
+
+% --- High-Density Compact Book Geometry & Typography ---
+\geometry{
+  letterpaper,
+  inner=0.75in,
+  outer=0.70in,
+  top=0.65in,
+  bottom=0.65in,
+  headheight=19pt,
+  headsep=11pt,
+  footskip=22pt,
+  columnsep=20pt,
+  includeheadfoot
+}
+
+\setmainfont{Inter}[
+  Path=fonts/,
+  UprightFont=Inter-Regular.ttf,
+  BoldFont=Inter-SemiBold.ttf,
+  ItalicFont=Inter-Regular.ttf,
+  ItalicFeatures={FakeSlant=0.2},
+  BoldItalicFont=Inter-SemiBold.ttf,
+  BoldItalicFeatures={FakeSlant=0.2},
+  HyphenChar=None
+]
+
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+
+\usepackage{needspace}
+
+\setlength{\parindent}{11pt}
+\setlength{\parskip}{1pt plus 0.5pt}
+\linespread{1.05}
+\emergencystretch=1.8em
+\tolerance=9999
+\hbadness=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=50
+\righthyphenmin=62
+\lefthyphenmin=62
+\widowpenalty=8000
+\clubpenalty=8000
+
+% Sleek Heading Hierarchy for High-Density Layout
+\setcounter{secnumdepth}{1}
+\titleformat{\section}
+  {\Needspace{5\baselineskip}\normalfont\BayesDisplayFont\bfseries\fontsize{12.5}{15.5}\selectfont\color{BayesInk}}
+  {\textcolor{BayesTeal}{\thesection}}{0.6em}{}
+\titlespacing*{\section}{0pt}{10pt plus 1.5pt minus 1pt}{3.5pt}
+
+\titleformat{\subsection}
+  {\Needspace{4\baselineskip}\normalfont\BayesDisplayFont\bfseries\fontsize{11.5}{14}\selectfont\color{BayesDeepTeal}}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8.5pt plus 1.5pt minus 1pt}{3pt}
+
+% Ultra-Sleek, Compact Chapter Opener
+\renewcommand{\BayesChapterOpenerContent}[4]{%
+  \BayesCaptureAssetRoot
+  \thispagestyle{plain}
+  \noindent
+  \begin{minipage}{\linewidth}
+    {\BayesDisplayFont\bfseries\fontsize{8}{10.5}\selectfont\color{BayesTeal}\MakeUppercase{Chapter #1 \ \textbullet\ \ Part I: The Founder and the Game}}\par
+    \vspace{2pt}
+    {\BayesDisplayFont\fontsize{20}{23}\selectfont\bfseries\color{BayesInk}#2\par}
+    \vspace{2pt}
+    {\fontsize{10.2}{13.5}\selectfont\color{BayesSecondary}#3\par}
+    \vspace{4pt}
+    {\color{BayesTeal}\rule{2.2cm}{1.2pt}}\textcolor{BayesBorder}{\rule{\dimexpr\linewidth-2.2cm\relax}{0.4pt}}\par
+    \ifstrempty{#4}{}{%
+      \vspace{3.5pt}
+      \begin{tcolorbox}[
+        enhanced,
+        colback=BayesPale!35!white,
+        colframe=BayesBorder!60!white,
+        boxrule=0.4pt,
+        arc=2pt,
+        borderline west={2.2pt}{0pt}{BayesTeal},
+        left=8pt,
+        right=8pt,
+        top=3.5pt,
+        bottom=3.5pt,
+        before skip=1pt,
+        after skip=2.5pt
+      ]
+        {\small\color{BayesInk!88}\itshape\justifying #4\par}
+      \end{tcolorbox}
+    }
+  \end{minipage}
+  \vspace{2.5pt}
+}
+
+\CourseMetadata{BUILDING WHAT LASTS}{Building What Lasts}{A Theory of Entrepreneurship, Business Strategy, and Institutional Evolution}
+\renewcommand{\BookType}{From the First Customer to an Enduring Institution}
+\renewcommand{\BookAuthor}{Sagar Udasi}
+\renewcommand{\BookAuthors}{Sagar Udasi}
+\renewcommand{\BookISBN}{To be assigned}
+\renewcommand{\BookAudience}{Founders, operators, strategists, and institutional builders}
+\renewcommand{\BayesStackWordmark}{{\BayesDisplayFont\bfseries\textcolor{BayesTeal}{Bayesforce}}}
+
+% --- Publisher: Bayesforce (A Knowledge Firm) ---
+\renewcommand{\BayesBookCover}{%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \color{BayesInk}
+  \vspace*{15mm}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[BayesPale] ([xshift=-40mm,yshift=-24mm]current page.north east)
+      circle[radius=32mm];
+    \draw[BayesBorder,line width=0.55pt]
+      ([xshift=-62mm,yshift=-25mm]current page.north east) --
+      ([xshift=-16mm,yshift=-70mm]current page.north east);
+    \fill[BayesTeal] ([xshift=-31mm,yshift=-36mm]current page.north east)
+      circle[radius=2.0mm];
+  \end{tikzpicture}
+
+  {\BayesDisplayFont\bfseries\footnotesize\color{BayesTeal}\MakeUppercase{\BookType}\par}
+  \vspace{8mm}
+  {\color{BayesTeal}\rule{24mm}{1.4pt}\par}
+
+  \vspace{22mm}
+  \begin{minipage}{0.92\textwidth}
+    \raggedright
+    {\BayesDisplayFont\bfseries\fontsize{36}{42}\selectfont\color{BayesInk}\BookTitle\par}
+    \vspace{8mm}
+    {\BayesDisplayFont\fontsize{14}{20}\selectfont\color{BayesSecondary}\BookSubtitle\par}
+  \end{minipage}
+
+  \vfill
+  \begin{center}
+    {\color{BayesBorder}\rule{0.75\textwidth}{0.6pt}\par}
+    \vspace{7mm}
+    {\BayesDisplayFont\bfseries\fontsize{18}{22}\selectfont\color{BayesInk}\BookAuthors\par}
+    \vspace{3mm}
+    {\scriptsize\color{BayesMuted}Published by Bayesforce \textbullet\ A Knowledge Firm\par}
+  \end{center}
+  \vspace{16mm}
+  \end{titlepage}
+}
+
+\renewcommand{\BayesCopyrightPage}{%
+  \clearpage
+  \thispagestyle{empty}
+  \null
+  \vfill
+  \begin{minipage}{0.80\textwidth}
+    {\BayesDisplayFont\bfseries\color{BayesInk}\BookTitle\par}
+    \vspace{2mm}
+    {\small\color{BayesSecondary}\BookSubtitle\par}
+    \vspace{8mm}
+    {\small
+      Copyright \textcopyright{} 2026 \BookAuthor. All rights reserved.
+      \vspace{3mm}
+
+      No part of this publication may be reproduced, stored in a retrieval system, or
+      transmitted in any form or by any means without prior written permission from the
+      publisher, except for brief quotations in critical reviews or scholarly articles.
+      \vspace{3mm}
+
+      Published by Bayesforce \textbullet\ A Knowledge Firm.
+      \vspace{3mm}
+
+      First Edition, 2026.
+      \vspace{3mm}
+
+      ISBN-13: \BookISBN
+    }
+    \vspace{8mm}
+    {\footnotesize\color{BayesMuted}
+      Interior typography and publication design prepared in \LaTeX{} using the Bayesforce Publishing Infrastructure.
+    }
+  \end{minipage}
+  \vspace*{12mm}
+  \clearpage
+}
+
+\renewcommand{\BayesBackCover}{%
+  \clearpage
+  \thispagestyle{empty}
+  \color{BayesInk}
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[BayesPale] ([xshift=38mm,yshift=24mm]current page.south west)
+      circle[radius=32mm];
+    \draw[BayesBorder,line width=0.55pt]
+      ([xshift=18mm,yshift=64mm]current page.south west) --
+      ([xshift=70mm,yshift=16mm]current page.south west);
+    \fill[BayesTeal] ([xshift=50mm,yshift=36mm]current page.south west)
+      circle[radius=1.8mm];
+  \end{tikzpicture}
+
+  \vspace*{22mm}
+  {\BayesDisplayFont\bfseries\footnotesize\color{BayesTeal}\MakeUppercase{\BookType}\par}
+  \vspace{7mm}
+  {\color{BayesTeal}\rule{24mm}{1.2pt}\par}
+  \vspace{18mm}
+
+  \begin{minipage}{0.84\textwidth}
+    {\BayesDisplayFont\bfseries\fontsize{20}{25}\selectfont\color{BayesInk}\BookTitle\par}
+    \vspace{8mm}
+    {\fontsize{10.5}{15}\selectfont\color{BayesInk}
+      \BookSubtitle
+    \par}
+    \vspace{6mm}
+    {\fontsize{10.5}{15}\selectfont\color{BayesSecondary}
+      Prepared as a rigorous operating manual and strategic reference, this book bridges
+      first-principles economic theory, customer discovery, organizational systems,
+      and long-horizon institutional evolution.
+    \par}
+  \end{minipage}
+
+  \vfill
+  \begin{minipage}{0.70\textwidth}
+    {\BayesDisplayFont\bfseries\fontsize{11}{14}\selectfont\color{BayesTeal}
+      Target Audience: \BookAudience\par}
+  \end{minipage}
+  \vspace{12mm}
+
+  \begin{minipage}[b]{0.60\textwidth}
+    {\BayesDisplayFont\bfseries\fontsize{12}{15}\selectfont\color{BayesInk}\BookAuthors\par}
+    \vspace{3mm}
+    {\footnotesize\color{BayesMuted}ISBN-13: \BookISBN\par}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.35\textwidth}\raggedleft
+    \BayesStackWordmark\\[1mm]
+    {\scriptsize\color{BayesMuted}Bayesforce \textbullet\ A Knowledge Firm}
+  \end{minipage}
+  \vspace*{16mm}
+  \clearpage
+}
+
+\begin{document}
+\frontmatter
+\onecolumn
+\BayesBookCover
+\BayesCopyrightPage
+\BayesOpeningPage
+\cleardoublepage
+
+\chapter*{A note to the reader}
+\addcontentsline{toc}{chapter}{A note to the reader}
+This book is a living operating system, decision-making framework, and repository of everything I have learned, read, and tested about building durable startups and businesses. Written to serve as an enduring guiding light while building an edtech company, it focuses on first principles: finding genuine problems, building high-conviction solutions, mastering distribution and learning outcomes, creating sustainable unit economics, and compounding long-term enterprise value. Adapt every mental model to your operating reality, stay close to your users, and iterate relentlessly.
+
+\clearpage
+\tableofcontents
+\cleardoublepage
+
+% --- Master Curriculum Architecture Roadmap (Executive 36-Chapter Overview) ---
+\input{frontmatter/curriculum-roadmap.tex}
+\cleardoublepage
+
+\twocolumn
+\mainmatter
+\justifying
+\part[The Founder and the Game]{The Founder and the Game\\[0.4ex]\fontsize{13}{17}\selectfont\mdseries\color{BayesSecondary}Understand the starting position}
+\import{parts/01-the-founder-and-the-game/chapters/01-why-play-the-game/}{chapter.tex}
+
+% =========================================================================
+% FUTURE CHAPTER PIPELINE
+% The 35 upcoming chapters are architected in frontmatter/curriculum-roadmap.tex
+% and activated below as written content is developed.
+% =========================================================================
+\import{parts/01-the-founder-and-the-game/chapters/02-the-founder-as-the-starting-asset/}{chapter.tex}
+\import{parts/01-the-founder-and-the-game/chapters/03-ambition-mission-and-strategic-boundaries/}{chapter.tex}
+\import{parts/01-the-founder-and-the-game/chapters/04-thinking-under-uncertainty/}{chapter.tex}
+%
+% \part[Markets, Customers, and Differentiation]{Markets, Customers, and Differentiation}
+% \import{parts/02-markets-customers-and-differentiation/chapters/05-the-theory-of-markets-and-opportunity-selection/}{chapter.tex}
+% ... [Chapters 06-36 are ready in their respective parts/ directories]
+
+\backmatter
+\onecolumn
+\BayesBackCover
+\end{document}

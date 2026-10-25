@@ -1,0 +1,76 @@
+\section{Expected Value: What Is a Bet Worth Before It Resolves?}
+
+\subsection{The Expected Monetary Value Calculation}
+
+Expected value is the foundational arithmetic of decision-making under uncertainty, and one of the most dangerously misapplied concepts in entrepreneurship.
+
+For a set of mutually exclusive outcomes $x_i$ occurring with probabilities $p_i$, the expected monetary value is:
+\begin{equation}
+\operatorname{EV}(X) = \sum_{i=1}^n p_i x_i
+\end{equation}
+
+Consider an educational founder evaluating whether to launch a new advanced cohort. Measured strictly in \textbf{incremental net cash relative to doing nothing}, the assessed outcomes are:
+
+\begin{tcolorbox}[
+  enhanced,
+  colback=BayesSurface!60,
+  colframe=BayesBorder,
+  boxrule=0.5pt,
+  arc=3pt,
+  left=3pt,right=3pt,top=3pt,bottom=3pt,
+  boxsep=1pt
+]
+\scriptsize
+\begin{tabularx}{\linewidth}{X r r}
+\toprule
+\textbf{Scenario} & \textbf{Assessed Probability} & \textbf{Incremental Cash Payoff} \\
+\midrule
+Cohort succeeds & 30\% & +₹8 lakh \\
+Cohort fails & 70\% & $-$₹2 lakh \\
+\midrule
+\multicolumn{2}{l}{\textbf{Expected Monetary Value}} & \textbf{+₹1 lakh} \\
+\bottomrule
+\end{tabularx}
+\end{tcolorbox}
+
+The calculation is straightforward:
+\begin{equation*}
+\operatorname{EV} = 0.30 \times (+\text{₹}8\text{ lakh}) + 0.70 \times (-\text{₹}2\text{ lakh}) = +\text{₹}1\text{ lakh}
+\end{equation*}
+
+Under these stated numbers, proceeding with the launch produces positive expected monetary value compared to doing nothing.
+
+This arithmetic, however, is not an automatic instruction to launch. It is a strictly \textbf{conditional calculation}: \textit{if} the estimated probabilities and financial payoffs accurately model reality, and \textit{if} the founder can absorb the loss without impairing future choices, the mathematical average across thousands of hypothetical repetitions is positive.
+
+In the physical world, the founder does not live across 1,000 parallel universes. If the loss of ₹2 lakh wipes out liquid family savings or exhausts runway before payroll, a positive-EV choice can be commercially suicidal.
+
+\subsection{Expected Value Versus Expected Utility}
+
+The marginal utility of capital is profoundly non-linear. Losing your final ₹2 lakh of cash reserves can cause personal bankruptcy, emotional devastation, and institutional death. Earning an additional ₹2 lakh when possessing ₹50 lakh in reserves creates negligible incremental change in your operational reality.
+
+An economically rational actor maximizes expected utility rather than raw expected rupees:
+\begin{equation}
+a^* = \arg\max_{a \in \mathcal{A}} \mathbb{E}\big[U(W \mid a)\big]
+\end{equation}
+where $W$ is total wealth following action $a$, and $U(\cdot)$ represents the concave utility function of the founder.
+
+Furthermore, authentic founders carry multi-attribute objective functions that include student learning outcomes, intellectual autonomy, reputational integrity, and mission alignment. Attempting to force these non-financial values into a single monetary spreadsheet produces deceptive models.
+
+\textbf{Expected value allows us to rigorously compare potential financial trajectories; it does not define what a human being ought to care about.}
+
+\subsection{Decision Trees and Asymmetric Payoffs}
+
+Before committing non-trivial capital, diagram a complete decision tree:
+\begin{enumerate}[leftmargin=12pt,itemsep=2pt,topsep=1pt,parsep=0pt]
+  \item Which discrete strategic actions are physically available right now?
+  \item Which external events can occur following each respective choice?
+  \item What are the net cash and reputational consequences of each branch?
+  \item What secondary operational decisions unlock once an event resolves?
+  \item Which specific paths lead directly to absorbing barriers and ruin?
+\end{enumerate}
+
+The true value of entrepreneurial strategy lives in nodes 4 and 5. A small, tightly scoped pilot creates the valuable option to expand aggressively upon success. A rigid, 3-year commercial property lease eliminates the option to retreat upon failure.
+
+\subsection{Preventing Double-Counting Fallacies}
+
+When constructing payoff models, maintain strict accounting hygiene. If the ₹2 lakh downside already includes the founder's software development spend, do not subtract that spend a second time. If the upside payoff represents gross top-line revenue rather than net operating cash contribution, your model is deeply corrupted. Explicitly declare whether every node represents revenue, gross profit, net operating cash flow, or long-term equity value.

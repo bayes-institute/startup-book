@@ -1,0 +1,41 @@
+# LaTeX build outputs and caches
+build/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Compiled PDFs (build artifacts)
+*.pdf
+
+# Operating system and editor artifacts
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Scratch & temporary directories
+scratch/
+tmp/
+.tempmediaStorage/
