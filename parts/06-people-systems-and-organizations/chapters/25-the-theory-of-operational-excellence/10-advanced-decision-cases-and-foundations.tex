@@ -1,0 +1,129 @@
+\section*{Advanced Decision Cases: Applying Operations Under Pressure}
+\addcontentsline{toc}{section}{Advanced Decision Cases: Applying Operations Under Pressure}
+
+\subsection*{Case A. The Review Queue: Average Capacity Is Not a Service Guarantee}
+\addcontentsline{toc}{subsection}{Case A. The Review Queue: Average Capacity Is Not a Service Guarantee}
+
+Assume a hypothetical technical program receives submissions over 4 weekly deadlines. 2 qualified reviewers each have 6 protected review hours per week, giving 12 nominal hours. Each submission requires an average of 24 minutes of review. On an average week the team receives 25 submissions, implying:
+\begin{equation}
+25 \times \frac{24}{60} = 10\text{ hours}
+\end{equation}
+of expected 1st-pass work. A naive plan concludes that there is 20\% spare capacity and a 2-day review promise is safe.
+
+But suppose submissions cluster near the deadline: 18 arrive in the final evening, each reviewer has a fixed teaching commitment the next morning, and 5 submissions require an additional 30 minutes of diagnostic effort. The week now requires:
+\begin{equation}
+10 + 5 \times \frac{30}{60} = 12.5\text{ hours}
+\end{equation}
+of direct review even before meetings, re-review, and interruptions. The apparent spare capacity disappears. More importantly, the timing of arrivals makes the customer wait even if weekly total labor were below nominal capacity. The queue is governed by \textit{when work arrives}, not only how much arrives.
+
+The founder has several choices, each with real trade-offs:
+\begin{itemize}
+    \item Increase capacity through a qualified reserve reviewer on call;
+    \item Stagger submission deadlines across time zones or learner tracks to smooth arrivals;
+    \item Narrow the number of human-reviewed intermediate artifacts while retaining a valid final assessment;
+    \item Use automated reproducibility checks to remove mechanical faults before human review;
+    \item Extend the disclosed service window from 2 days to 3 business days.
+\end{itemize}
+
+Which option is best depends on educational effects, learner work schedules, reviewer costs, and the value of rapid feedback. Unilaterally spacing deadlines may inconvenience working learners; shortening human review may reduce quality; hiring a reserve specialist raises cost.
+
+A strong experiment might change only pre-submission environment checks for the next cohort while preserving the rubrics and promised turnaround. Measure 1st-pass environment failures, actual review minutes, time from complete submission to substantive response, corrected technical misconceptions, and independent assessment performance. If review time improves but learner errors go undetected, the intervention has failed its real purpose. If the queue remains long despite fewer setup defects, arrival clustering or limited reviewer hours may still be the dominant cause.
+
+The decision rule should be written before outcomes arrive: for example, do not expand enrollment until the 90th-percentile substantive feedback time and quality-audit results both remain within promised limits during realistic peak weeks. This is not a claim that any particular percentile is universally right. It is an explicit requirement that the delivery promise survive load, not merely a rehearsed demo. A service can appear comfortably staffed on a spreadsheet and still be operationally unreliable.
+
+\subsection*{Case B. The Defect That Improved a Dashboard}
+\addcontentsline{toc}{subsection}{Case B. The Defect That Improved a Dashboard}
+
+Imagine an enterprise AI service with an internal goal to close 90\% of support tickets within 1 business day. Staff discover that resolving complex issues often takes several days, so they begin closing tickets after sending a polite 1st response. The closure percentage improves, the dashboard turns green, and customers continue to reopen cases. Nobody need be consciously dishonest; the operational definition has made \textit{administrative closure} easier to optimize than actual resolution.
+
+The fix begins with a metric audit, not with lecturing agents about integrity. Redefine a resolved ticket as 1 where the stated issue has been addressed or a mutually agreed alternative accepted. Track reopened rate and time to durable resolution alongside 1st substantive response time. Segment cases by difficulty and contract type. An enterprise integration failure should not be compared directly with a routine account-password issue. The organization may also need to separate queues by severity, reserve technical specialist capacity, and give support staff clear authority to escalate unresolved blockers.
+
+Suppose before repair 100 tickets show 92 ``closed'' within a day, but 25 are reopened and only 72 actually resolve within the contractual window. After redefining the metric, apparent 1-day closure falls to 75 while reopenings fall to 8 and 85 resolve within the contractual window. The new dashboard initially looks worse on the old metric, but customers receive better service. A founder who reacts only to declining green numbers risks reversing a real improvement. The unit of performance must remain the \textit{durably addressed customer problem}.
+
+In a technical school, the equivalent error is counting assignment completion when the learner merely uploads files, or reporting ``all feedback delivered'' when students receive automated praise that does not identify mistakes. The organizational remedy is to agree on genuine completion conditions and protect the staff who expose false positives. Quality can be eroded by metrics even when everyone is trying to hit their target.
+
+\subsection*{Case C. The AI Tutor That Reduced Cost and Weakened Learning}
+\addcontentsline{toc}{subsection}{Case C. The AI Tutor That Reduced Cost and Weakened Learning}
+
+A hypothetical program considers using a large-language-model tutor to answer learner questions. Previously, human tutors handled 160 questions a month, averaging 7 minutes each: about 18.7 hours. A proposed system can generate answers cheaply and route only 20\% of questions to humans. At 1st glance, this saves around 15 hours. However, the value being sold is not answers delivered; it is improved learner ability.
+
+Design an evaluation before deployment. Sample questions by difficulty, prerequisite gap, prompt injection risk, and whether a direct answer would undermine the intended learning process. Compare 3 modes:
+\begin{enumerate}
+    \item Human tutor providing personalized guidance;
+    \item AI tutor with hints, scaffolding, and self-explanation prompts;
+    \item AI direct-answer assistance providing immediate solutions.
+\end{enumerate}
+
+Use independent delayed tasks to evaluate learning rather than satisfaction or immediate task completion alone. Have qualified instructors inspect for hallucinations, inappropriate certainty, and inaccurate feedback. Record learner time and the cost of verification or intervention.
+
+Consider a fictitious pilot of 30 learners per mode, too small to support broad causal claims without careful experimental design. The direct-answer group completes homework quickest and reports the highest convenience. On a delayed unaided diagnostic, the hints-1st group performs better in the studied tasks. Even if that result appears, the founder must examine baseline comparability, attrition, difficulty, and whether the assessor was blind to treatment. The correct conclusion may be that this particular tutoring design improves independent performance under this context, not that ``AI teaching works'' as a universal proposition.
+
+The final operational design might use AI for routine environment diagnostics and initial conceptual hints, while escalating persistent misconceptions and consequential assessment judgments to humans. That could improve the cost per \textbf{verified successful learner} even if gross AI usage is lower than a fully autonomous solution. A trustworthy educational operations system optimizes assistance for learning, not for the number of generated responses.
+
+\subsection*{Case D. The College Pilot Whose Last Invoice Could Not Be Collected}
+\addcontentsline{toc}{subsection}{Case D. The College Pilot Whose Last Invoice Could Not Be Collected}
+
+Assume a hypothetical college pilot contract for ₹3,00,000. A deposit of ₹60,000 is collected, with ₹1,20,000 due after halfway delivery and ₹1,20,000 due upon acceptance of the final academic report. The founder budgets ₹1,95,000 of delivery costs. The project seems to provide ₹1,05,000 of contribution before shared overhead and normalized founder labor. Yet the contract never defines who is authorized to accept the report, what evidence constitutes completion, or whether the institution's examination office must sign off. Teaching ends, but final acceptance drifts for 90 days.
+
+The problem is an \textbf{interface failure} between organizations. The quality of instruction may be excellent and the invoice legally enforceable, yet cash collection remains uncertain and time-consuming. The operating charter should have named the academic acceptance authority, linked each milestone to verifiable deliverables, specified feedback deadlines and deemed-acceptance rules where lawfully appropriate, and required confirmation that budget and purchase-order procedures were complete before launch. It should also have assigned a project owner responsible for collection documentation.
+
+A founder should incorporate collection risk into project viability and not recognize the entire contract value as immediately available cash. A small college contract can consume more working capital than a larger prepaid learner cohort. The lesson is not that colleges are bad buyers. It is that partnership operations extend beyond teaching: mutual decision rights, records, and commercial acceptance are part of the deliverable. Chapter 18's cash-flow discipline and Chapter 21's contracting discipline meet operational design here.
+
+\subsection*{Case E. The Boundary Between Repeatability and Exploration}
+\addcontentsline{toc}{subsection}{Case E. The Boundary Between Repeatability and Exploration}
+
+Suppose a research-oriented AI team discovers that a new inference method may reduce model-serving cost, but the evidence consists of a small benchmark with uncertain generalizability. The operations team wants to replace the current pipeline immediately; the research team wants to keep testing; the customer-success team fears violating an uptime commitment. Each group has a legitimate objective, and each can harm the others if allowed unilateral authority.
+
+Design a boundary: research may experiment in an isolated environment with a capped resource budget; engineering defines performance and regression tests for production; customer operations identifies promises and risk; a named release owner approves deployment only after specified evidence and rollback capacity exist. The system should not require scientific certainty, which may be impossible, but it must define acceptable operational uncertainty. A feature flag or canary deployment may offer a reversible path. If client confidentiality or legal restrictions apply, those controls govern 1st.
+
+After the experiment, record not only whether the new method works, but what assumptions were tested, which conditions failed, and what should be learned before the next attempt. A culture of operational excellence should let researchers challenge an established design without placing live customers at unbounded risk. The central capability is \textbf{safe organizational learning}: maintaining a reliable core while preserving legitimate exploration.
+
+\subsection*{A Paired Architecture Test: When Do You Need an Organization Instead of Another Tool?}
+\addcontentsline{toc}{subsection}{A Paired Architecture Test: When Do You Need an Organization Instead of Another Tool?}
+
+A founder observing delivery delays often has 3 apparent remedies: buy software, recruit a specialist, or reorganize the team. These options operate at different causal levels. Software can reduce the effort of a task with known inputs and outputs. A specialist can add judgment or capacity. Organization design can clarify authority, incentives, and the flow of decisions. None automatically substitutes for the other.
+
+Consider a hypothetical backlog of college-partner reporting. Reports take 4 hours of analyst labor and another 10 days for approvals. Buying an AI report generator may reduce drafting from 4 hours to 1, yet cash collection remains delayed because nobody knows who may approve the final report. Hiring an additional analyst increases drafting capacity but can make the approval queue worse. A simple decision-rights agreement with the college (authorized approver, acceptance standard, response interval, and escalation) may reduce most waiting time. Only after that change does better drafting technology create a large additional benefit.
+
+The test is to identify where time, errors, and uncertainty actually accumulate; separate production bottlenecks from governance bottlenecks; then choose the intervention with the best expected reduction in total customer-impacting cost. The founder should not invest in a sophisticated answer to a problem they have not diagnosed. Conversely, if the approval process is clear but too many legitimate reports require hours of expert analysis, capacity or automation might indeed be the right answer.
+
+A disciplined team records a counterfactual: what would happen if we changed only the tool, only the role, or only the authority? It need not claim precise causal certainty. It needs a credible theory that connects the chosen intervention to a measurable customer outcome. That is where operational excellence and organization design converge: \textbf{the quality of the enterprise depends on the quality of its diagnosis before it commits resources}.
+
+\subsection{A Closing Synthesis: Excellence Is Dependable Learning}
+\label{sec:closing_synthesis_excellence}
+
+The institution that lasts is neither the fastest improviser nor the most thoroughly documented bureaucracy. It is the organization that makes consequential promises carefully, creates conditions for competent people to keep them, measures whether they were kept, and changes its working methods when reality demands. Excellence is simultaneously a \textbf{production discipline}, a \textbf{quality ethic}, and a \textbf{learning capability}.
+
+At Bayes Institute, the ideal is not merely to distribute technical knowledge at low cost. It is to produce verifiable capability under conditions of fair assessment, honest representation, reasonable support, and financial sustainability. Every useful process should make that outcome more repeatable; every automation should protect it; every metric should help the institution see it more clearly.
+
+\begin{quote}
+\textit{The true test of an operating system is not whether a skilled founder can make it work on a good day. It is whether competent people can make good work happen repeatedly, recognize when the system is wrong, and improve it without waiting for a hero.}
+\end{quote}
+
+\section*{Research and Intellectual Foundations}
+\addcontentsline{toc}{section}{Research and Intellectual Foundations}
+
+These references identify the substantive foundations used throughout the chapter. Their findings are not claims that the specific Bayes operating proposals have been tested.
+
+\begin{enumerate}
+    \item[\textbf{[O1]}] Toyota Motor Corporation, \textit{Toyota Production System} (official account of jidoka, just-in-time, waste, unevenness, and overburden).
+    \item[\textbf{[O2]}] National Institute of Standards and Technology, \textit{About the Baldrige Excellence Framework} (systems perspective; approach, deployment, learning, integration; results).
+    \item[\textbf{[O3]}] The W. Edwards Deming Institute, \textit{PDSA Cycle} (Plan-Do-Study-Act continuous improvement framework).
+    \item[\textbf{[O4]}] Google, \textit{Site Reliability Engineering: Service Best Practices} (SLIs, SLOs, and error budgets).
+    \item[\textbf{[O5]}] National Institute of Standards and Technology, \textit{AI Risk Management Framework (AI RMF 1.0)}, NIST AI 100-1 (2023).
+    \item[\textbf{[O6]}] Nonaka, I. (1994), ``A Dynamic Theory of Organizational Knowledge Creation,'' \textit{Organization Science}, 5(1), pp. 14-37.
+    \item[\textbf{[O7]}] DORA, \textit{2024 Accelerate State of DevOps Report} (distinguishing software-delivery throughput and stability).
+    \item[\textbf{[O8]}] Edmondson, A. (1999), ``Psychological Safety and Learning Behavior in Work Teams,'' \textit{Administrative Science Quarterly}, 44(2), pp. 350-383.
+    \item[\textbf{[O9]}] March, J. G. (1991), ``Exploration and Exploitation in Organizational Learning,'' \textit{Organization Science}, 2(1), pp. 71-87.
+    \item[\textbf{[O10]}] International Organization for Standardization, \textit{Quality Management Principles} and \textit{The Process Approach in ISO 9001:2015} (process-oriented management and risk-based thinking).
+    \item[\textbf{[O11]}] Shostack, G. L. (1984), ``Designing Services That Deliver,'' \textit{Harvard Business Review}.
+    \item[\textbf{[O12]}] Little, J. D. C. (1961), ``A Proof for the Queuing Formula: $L = \lambda W$,'' \textit{Operations Research}, 9(3), pp. 383-387.
+\end{enumerate}
+
+\subsubsection*{Further Reading}
+
+W. Edwards Deming, \textit{Out of the Crisis}; Jeffrey K. Liker, \textit{The Toyota Way}; Eliyahu M. Goldratt and Jeff Cox, \textit{The Goal}; Gene Kim et al., \textit{The DevOps Handbook}; Donella Meadows, \textit{Thinking in Systems}. These are complementary perspectives, not interchangeable prescriptions.
+
+\subsubsection*{Boundary to Chapter 26}
+
+This chapter designed the work and the feedback loops. Chapter 26 asks who has authority to own that work, how groups coordinate, which incentives shape behavior, how culture actually forms, and how the institution survives the replacement of its founding leadership.

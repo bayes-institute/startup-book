@@ -1,0 +1,123 @@
+\section*{Part II: The Design of Work}
+\addcontentsline{toc}{section}{Part II: The Design of Work}
+
+\subsection{Begin with the Unit of Work}
+\label{sec:unit_of_work}
+
+Before designing a process, define what a work unit is. It might be a learner submission, a technical support incident, a college elective, an enterprise onboarding, a purchase order, a manufactured part, or a research reproducibility review. The unit should have a clear boundary, start condition, completion condition, accountable owner, and useful measure of quality. If a work unit is ambiguous, cycle-time and productivity measures will be ambiguous too.
+
+A learner's project might be ``complete'' when a file is uploaded, when a reviewer writes comments, when the learner addresses them, or when independent evidence satisfies the rubric. Those definitions imply very different workloads. Founders often calculate capacity using the easiest completion event and overlook the labor remaining after it. The correct process model follows the work to the state that actually fulfills the promise.
+
+\subsection{Map the Flow Before Buying Tools}
+\label{sec:map_the_flow}
+
+A basic flow map describes the sequence of activities and decisions:
+\begin{center}
+\small
+Trigger $\longrightarrow$ Triage $\longrightarrow$ Prepare $\longrightarrow$ Execute $\longrightarrow$ Verify $\longrightarrow$ Deliver $\longrightarrow$ Record $\longrightarrow$ Close or Reopen
+\end{center}
+
+Each node should identify its input, output, owner, expected time, and likely failure. Mark queue points where work waits, not merely where people act. Then trace several actual cases, including a late 1 and a defective 1, through the model.
+
+This exercise often uncovers a simpler solution than automation. A task may be delayed because nobody can decide who owns it, not because the database is slow. A recurring correction may arise because intake lacks a required field, not because the quality team needs a larger dashboard. Fixing the causative handoff is often superior to accelerating a downstream symptom.
+
+\subsection{Separate Common-Path Work from Exception Work}
+\label{sec:common_vs_exception}
+
+Standardization works best for recurrent, predictable cases. Exceptions differ: some should be rare but decisive, some signal that a process is badly designed, and some represent genuinely novel customer requirements. Mixing them into 1 workflow causes either overcomplicated standard procedures or constant improvisation.
+
+Define a \textbf{normal path}, named exceptions, escalation triggers, and a route for entirely novel cases. For example:
+\begin{itemize}
+    \item Submissions that pass automatic environment checks proceed to rubric review;
+    \item Submissions failing reproducibility receive a specified repair request;
+    \item Suspected plagiarism or identity issues go to a trained human decision-maker;
+    \item Systemic platform failures are treated as incidents rather than counted as individual learner shortcomings.
+\end{itemize}
+
+A process becomes more flexible, not less, when its boundaries are explicit.
+
+\subsection{Design for the Variability of Demand}
+\label{sec:variability_of_demand}
+
+Services are vulnerable to arrival variability. 10 customers may require help on the same evening even when average workload seems manageable. The firm must distinguish average service time from peak workload, and arrival rates from arrival bursts. If a reviewer can handle 20 submissions weekly and exactly 20 arrive, there is no capacity for rework, sickness, unusually hard tasks, or late arrivals.
+
+Little's Law, under suitable stable-system assumptions, relates average work in process ($L$), throughput ($\lambda$), and average flow time ($W$):
+\begin{equation}
+L = \lambda W.
+\end{equation}
+
+If a stable team completes 15 cases each week ($\lambda = 15$) and has 30 cases in process on average ($L = 30$), average time in the system is about 2 weeks ($W = 2$). That is not a guarantee for individual jobs, and it is not a substitute for understanding arrival distributions; it is a useful consistency check. Work queues are operational liabilities and should be visible to whoever controls capacity.
+
+\subsection{Utilization Is Not the Same as Productive Service}
+\label{sec:utilization_vs_service}
+
+Near-perfect utilization can appear efficient while producing long delays and exhausted staff. Even a simple $M/M/1$ queue, a restrictive idealization with Poisson arrivals and exponential service times, shows the effect. At arrival rate $\lambda = 8$ jobs/day and capacity $\mu = 10$ jobs/day, average time in system is:
+\begin{equation}
+W = \frac{1}{\mu - \lambda} = \frac{1}{10 - 8} = 0.5\text{ day}.
+\end{equation}
+
+At $\lambda = 9.5$, it becomes:
+\begin{equation}
+W = \frac{1}{10 - 9.5} = 2.0\text{ days},
+\end{equation}
+even though utilization only increases from 80\% to 95\%. Actual service systems need not follow those distributions; the illustration demonstrates how a small buffer loss can amplify waits.
+
+Operating leaders should budget some unfilled capacity where promises depend on responsiveness. A modest idle interval may be cheaper than emergency overtime, learner abandonment, or an enterprise escalation. The correct utilization target depends on variability, service levels, staffing options, and consequences of delay, not on a universal percentage.
+
+\subsection{The Bottleneck Governs Throughput}
+\label{sec:bottleneck_governs_throughput}
+
+A process with 5 activities does not gain throughput merely because 4 become faster. If an expensive reviewer can validate 8 projects each week, accelerating video production to create 30 weekly submissions makes the queue larger. Bottleneck analysis asks which resource or constraint limits completion of \textit{acceptable} work. The constraint might be qualified labor, buyer approval, laboratory access, trusted assessment, available cash, or managerial attention.
+
+The practical sequence is:
+\begin{enumerate}
+    \item Identify the true system constraint;
+    \item Protect it from avoidable and distracting work;
+    \item Arrange upstream work so it is ready when needed;
+    \item Improve its productive capacity;
+    \item Re-examine the system because the bottleneck may have moved.
+\end{enumerate}
+
+Automation should 1st be evaluated at the true constraint or at activities that consume its scarce time. Automating a nonbinding step might improve convenience without increasing output at all.
+
+\subsection{Handoffs Are Contracts Between Colleagues}
+\label{sec:handoffs_as_contracts}
+
+An effective handoff names the receiver, required information, acceptance standard, deadline, and escalation route. \textit{``Passed to operations''} is not a handoff; it is a disappearance of responsibility. A course-sales handoff, for example, should transmit what was promised, the learner's prerequisites and accommodations where appropriately consented, the price and refund conditions, and any nonstandard commitment accepted by an authorized person.
+
+Handoff design also reduces interpersonal friction. Instead of blaming an instructor for a missing intake record or the sales team for ambiguous expectations, the firm can observe a failed information contract. It should be possible to reject an incomplete handoff without being accused of unwillingness to help. Exception ownership must remain clear: when the incoming record is inadequate, someone must fix it rather than leaving the customer stranded.
+
+\subsection{Process Ownership Differs from Task Ownership}
+\label{sec:process_vs_task_ownership}
+
+A person can own a task without owning the process that produces it. The reviewer is accountable for a particular submission; a process owner is accountable for the design, monitoring, quality standards, and improvement of review work across submissions. Confusing these roles allows systemic defects to recur as a series of apparently unrelated individual mistakes.
+
+In a tiny venture, the same person may hold both roles. The distinction is still valuable. Whenever the founder repairs an error, ask whether this was an individual's lapse, a predictable design weakness, an unclear standard, inadequate capacity, or a mismatch between the promise and available resources. The answer determines whether coaching, redesign, staffing, or a commercial change is required.
+
+\subsection{Standard Work Is a Baseline for Learning}
+\label{sec:standard_work}
+
+A standard describes the best currently known reliable way to perform a recurring task under stated conditions. It is not a declaration of final truth. Without a common baseline, teams cannot tell whether differing outcomes arise from different customers, worker skill, tool changes, or process variation. With a standard, a proposed improvement can be tested against a known starting point.
+
+A useful standard has a purpose, trigger, preparation checklist, ordered critical steps, quality checkpoints, exception paths, owner, revision date, and links to examples. It should be short enough for the actual operator to use while performing work. Where expert judgment is required, write down the questions, evidence, and escalation principles rather than pretending to replace judgment with rigid scripts.
+
+\subsection{The Control Point Belongs at the Risk Point}
+\label{sec:control_at_risk_point}
+
+Not every step needs approval. Controls should be placed where failure is likely, difficult to detect later, or costly. A low-risk correction to tutorial phrasing may be made by a qualified instructor and logged in the next version. Changing an assessment pass threshold mid-cohort has fairness implications and should require review. Issuing an unauthorized credential claim should be prohibited by a publication control. Deploying a model to client data may require explicit security authorization.
+
+This is \textbf{risk-based process design}: match the intensity of checking to consequence, reversibility, detectability, and historical failure. Heavy controls on trivial work create workarounds and delay. No controls on high-consequence work create hidden liabilities. The founder should be able to explain not only what a control is, but what specific failure it prevents.
+
+\subsection{Avoid Mixing Process Standardization with Customer Sameness}
+\label{sec:process_vs_customer_sameness}
+
+Customers may differ in prerequisite knowledge, accessibility needs, technical environment, and valid goals. The institution can standardize \textit{how it learns about those differences} without forcing identical service. A hospital has protocols and individualized treatment; a strong technical institute can have common admission evidence, teaching quality standards, and assessment integrity while adapting support to a learner's needs.
+
+The useful unit of standardization is often the \textbf{decision rule} or \textbf{interface}, not the whole human experience. A diagnostic may route learners to different practice; a consulting intake may classify client risks before selecting a delivery pattern. Good standardization makes the right customization less expensive and more reliable. Bad standardization erases material differences and calls the resulting failures customer noncompliance.
+
+\subsection{Build Operations Around Customer-Important Boundaries}
+\label{sec:customer_important_boundaries}
+
+Not every internal delay matters equally to customer value. Map \textit{moments of consequence}: 1st use, 1st failure, promise of a date, exchange of money, delivery of feedback, certification, renewal, or incident resolution. Invest controls where broken expectations would materially damage outcomes or trust. A customer rarely cares how many internal approvals a request traverses, but cares deeply whether an urgent defect is diagnosed before a deadline.
+
+For each moment, specify a service objective and an observable failure mode. Example: \textit{``For ordinary technical support requests received during published service hours, send a substantive 1st response within 1 business day.''} Substantive means a diagnosis, concrete next step, or clearly scoped request for more information; an automatic receipt alone does not satisfy it. This precision prevents operational metrics from being satisfied without creating customer value.

@@ -1,0 +1,109 @@
+\section*{Part VI: Automation and AI-Enabled Productivity}
+\addcontentsline{toc}{section}{Part VI: Automation and AI-Enabled Productivity}
+
+\subsection{Automate a Stable Task, Not a Vague Aspiration}
+\label{sec:automate_stable_tasks}
+
+Automation is valuable when it removes repetitive work, improves accuracy, reduces waiting, or makes expert attention available for harder decisions. It performs poorly when the intended output is ambiguous, input quality is unreliable, exceptions are common, or human judgment is still necessary but silently removed. Begin with an inventory: task frequency, current labor, error rate, variability, reversibility, data sensitivity, and the cost of a wrong answer.
+
+A useful automation candidate is a pre-submission environment check: the expected output is specific, tests can be repeated, and failures can be routed to a human if needed. An early poor candidate is an entirely automated decision about whether a learner has acquired sophisticated independent judgment, especially if the assessment can be gamed or if model feedback is not independently verified. The distinction is between \textbf{automating detection of observable facts} and \textbf{claiming authority over contested evaluations}.
+
+\subsection{Measure Net Rather Than Gross Time Saved}
+\label{sec:net_time_saved}
+
+An AI tool that completes a 20-minute draft in 2 minutes appears to save 18 minutes. But if verification takes 12 minutes, corrections take 4, and periodic prompt and system maintenance averages 3 minutes per item, net time saving is negative. The proper accounting equation evaluates net system impact:
+\begin{equation}
+\text{Net Time Saved} = T_{\text{manual}} - (T_{\text{exec}} + T_{\text{review}} + T_{\text{rework}} + T_{\text{maint}} + T_{\text{incident}}).
+\end{equation}
+
+Compare the quality of outputs as well; time saved at lower quality may impose later customer costs. Consider 100 weekly support requests. The previous workflow required 8 minutes each: 800 minutes. A proposed AI triage uses 1 minute automated processing, 3 minutes human verification, 1 minute correction, and 100 minutes of weekly maintenance across the batch. Total effort is:
+\begin{equation}
+100 \times (1 + 3 + 1) + 100 = 600\text{ minutes},
+\end{equation}
+saving 200 minutes net. If harmful routing doubles rework downstream, the improvement may disappear. Pilot with human review and capture downstream cost before expanding autonomy.
+
+\subsection{Identify the 4 Degrees of Automation}
+\label{sec:four_degrees_automation}
+
+There is a fundamental difference between 4 operational postures:
+\begin{enumerate}
+    \item \textbf{Assistance:} the model drafts text or flags syntax while the human executes and owns the decision;
+    \item \textbf{Recommendation:} the model ranks a queue or suggests a diagnostic category for human selection;
+    \item \textbf{Execution with approval:} the system prepares an action (such as a tuition refund draft) that triggers only upon explicit human sign-off;
+    \item \textbf{Autonomous execution within bounded rules:} the system performs routine tasks (such as receipt generation or test runner execution) independently under strict telemetry.
+\end{enumerate}
+
+Do not grant more autonomy merely because demonstrations look impressive. Move a task upward only after evaluating error modes, exception detection, data exposure, recovery paths, and the consequences of silent mistakes. For high-stakes educational judgments, keep identified human responsibility even where models perform useful preliminary analysis. Autonomy should be earned through documented evidence in the operating context rather than vendor claims about generic benchmarks.
+
+\subsection{The Bottleneck May Move from Production to Verification}
+\label{sec:verification_bottleneck}
+
+Generative AI can make drafts, code, rubrics, and summaries abundant. This changes the scarce activity: a reviewer must decide whether the output is correct, appropriate, safe, and supported. If producing 40 reports takes a model 10 minutes but validating each takes 15 human minutes, the service's effective capacity remains constrained by 10 hours of expert checking. More generation may simply create a larger queue of unaudited artifacts.
+
+Operational design must therefore measure \textbf{verified useful output per scarce reviewer hour}, not generated items per minute. Better source systems, structured outputs, test suites, representative spot checks, and calibrated risk-tiering can reduce verification burden. But sampling is not automatically adequate when a single unobserved error can create serious harm. The right approach depends on how reliably the organization detects failures and whether individual decisions are reversible.
+
+\subsection{AI Quality Assurance Requires Its Own Test Harness}
+\label{sec:ai_test_harness}
+
+Language-model behavior is probabilistic, context-sensitive, and capable of confident error. Effective controls may include versioned prompts, evaluation datasets, adversarial examples, source-grounding, tool-permission restrictions, human review, logging, and periodic re-evaluation after model or workflow changes. NIST's AI Risk Management Framework organizes risk-management activity around governing, mapping, measuring, and managing AI risks [O5]. It is a voluntary framework, not a substitute for applicable law or domain standards.
+
+A useful AI evaluator should be assessed on:
+\begin{itemize}
+    \item False approvals and false rejections against calibrated human benchmarks;
+    \item Consistency across diverse learner backgrounds and coding styles;
+    \item Susceptibility to prompt injection or instructions embedded in user submissions;
+    \item Agreement with qualified human reviewers on representative edge cases.
+\end{itemize}
+
+Report the evaluation sample and uncertainty honestly. When a new model version ships, re-run the test set rather than assuming that newer means better for the institution's particular process.
+
+\subsection{Human-in-the-Loop Is Not a Magic Safety Label}
+\label{sec:human_in_the_loop_reality}
+
+A human who clicks approve on 300 outputs without adequate time, information, or authority is not exercising meaningful oversight. Define what the reviewer is expected to detect, the context available, sampling or full-review requirements, decision time, and how the system supports dissent. Create an unambiguous route to reject or stop automated output.
+
+The actual control question is: \textit{Would the human realistically catch the consequential errors, and can they act before harm occurs?} For automated applicant screening, human review should examine job relevance and fairness as well as surface correctness. For educational feedback, reviewers may need to inspect the original student reasoning, not just a synthesized AI summary. Oversight must be designed into the workflow and resourced, not added to a slide deck.
+
+\subsection{Data Minimization Is an Operating Capability}
+\label{sec:data_minimization}
+
+AI systems tempt firms to move many documents into a convenient tool. Student work, interview records, organizational financials, unpublished research, and enterprise datasets may be confidential or restricted. Before automation, identify data ownership, purpose, consent or legal basis, retention periods, access controls, vendor processing arrangements, and obligations to customers or employers. Never assume that a general-purpose AI account is an approved destination for 3rd-party data.
+
+A lean organization can begin with a simple classification:
+\begin{enumerate}
+    \item \textbf{Public:} published syllabi, open documentation, public announcements;
+    \item \textbf{Internal:} internal operational procedures, scheduling, anonymized templates;
+    \item \textbf{Confidential:} learner assessments, financial accounts, partner negotiations;
+    \item \textbf{Restricted:} private learner identifiers, trade secrets, sensitive enterprise datasets.
+\end{enumerate}
+
+Link each category to approved processing tools and escalation requirements. For Bayes, separating institutional data from the founder's employer's data and intellectual property is particularly important. An otherwise efficient workflow that creates an employment or confidentiality conflict is not operational progress.
+
+\subsection{Build Reversibility into Automations}
+\label{sec:reversibility_in_automation}
+
+Automated workflows should be observable and stoppable. Maintain logs, model and prompt versions, rollback routes, manual fallbacks, error alerts, and a person who can disable a faulty system. If billing reminders are incorrectly sent, the team must know who received them and how to correct the communication. If a model produces flawed technical feedback, instructors need to identify affected learners and issue a revised explanation before the false guidance becomes embedded.
+
+The minimum control architecture depends on risk and scale. A small automation processing non-sensitive calendar reminders may need little infrastructure. A system issuing assessment decisions or acting on client data needs stronger safeguards. In all cases, the failure of the automation should not be indistinguishable from the success of the process.
+
+\subsection{The Automation Portfolio Should Be Sequenced Economically}
+\label{sec:sequencing_automation}
+
+Prioritize improvements using expected hours saved, quality impact, frequency, implementation cost, failure severity, and maintenance burden. High-volume, low-variance, testable tasks are usually stronger initial candidates than occasional high-ambiguity judgments. Do not automate merely because the technology is exciting or because a competitor advertises \textit{``AI-powered operations.''}
+
+A practical portfolio follows 4 sequential stages:
+\begin{enumerate}
+    \item \textbf{Eliminate} unnecessary or low-value activities;
+    \item \textbf{Simplify and standardize} necessary manual workflows;
+    \item \textbf{Automate} the verified, repeatable components under active telemetry;
+    \item \textbf{Preserve expert human judgment} where it remains economically, instructionally, and ethically indispensable.
+\end{enumerate}
+
+This sequence matters. Automating a broken approval process makes it faster at producing the wrong outcome. Removing the approval entirely without examining the risk may be worse. A founder's job is to redesign the work, not merely introduce machines into it.
+
+\subsection{AI Can Improve Discovery and Monitoring as Well as Execution}
+\label{sec:ai_for_discovery_and_monitoring}
+
+Productivity gains are not confined to replacing manual tasks. AI can help summarize recurring support themes, flag unusual queue patterns, compare document versions, detect contradictory instructions, classify incident narratives, and propose test cases. These uses can increase organizational awareness if the outputs remain evidence-linked and audited. Their benefit is often improved \textit{diagnostic capacity}, not an immediate reduction in headcount.
+
+A sensible pattern is analyst assistance: an AI system identifies 5 common causes of repeated student setup errors with links to actual tickets; a human verifies the cases; the course team tests a revised environment setup; metrics show whether the error rate falls. This closes the improvement loop. By contrast, an automated dashboard that produces attractive summaries without changing decisions is additional organizational theater.
