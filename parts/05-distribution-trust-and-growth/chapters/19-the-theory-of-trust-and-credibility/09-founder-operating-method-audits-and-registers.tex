@@ -1,0 +1,102 @@
+\section*{Part VII: A Founder's Operating Method}
+
+\subsection*{59. Build a Claim-Evidence Register}
+
+To enforce truthfulness systematically across all public touchpoints, a venture must maintain an authoritative \textbf{Claim-Evidence Register}. This register functions as a legal and operational filter: no sentence describing capability, outcomes, faculty, or institutional status may appear on marketing websites, pitch decks, or proposals without an approved register entry.
+
+For each material assertion, the register documents 6 precise fields:
+\begin{enumerate}
+\item \textbf{Exact Marketing Statement:} The approved wording permitted in public copy.
+\item \textbf{Inference Drawn:} What a reasonable, skeptical buyer will infer from the statement.
+\item \textbf{Verifiable Evidence Object:} The specific, inspectable data file, audit report, or repository validating the claim.
+\item \textbf{Operational Owner:} The individual responsible for verifying that the underlying capability is maintained.
+\item \textbf{Expiration Date:} The mandatory review timestamp after which the claim must be empirically re-verified.
+\item \textbf{Prohibited Phrasing:} Banned exaggerations that the current evidence base cannot substantiate.
+\end{enumerate}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Illustrative Claim-Evidence Register Entries for a Technical Education Studio}
+\label{tab:claim_register}
+\begin{tabular}{p{3.8cm}p{3.8cm}p{3.8cm}p{3.8cm}}
+\toprule
+\textbf{Approved Statement} & \textbf{Reasonable Buyer Inference} & \textbf{Underlying Evidence Object} & \textbf{Prohibited Phrasing} \\
+\midrule
+``Cohorts are limited to 16 learners to guarantee weekly individualized review.'' & Review capacity is strictly budgeted; the student will receive personal feedback. & Reviewer staffing schedule: 2 named reviewers allocated 10 hours/week each. & ``Unlimited 1-on-1 mentorship from industry leaders.'' \\
+\addlinespace
+``Students construct an end-to-end evaluation suite for retrieval pipelines.'' & The curriculum focuses on testing and verification rather than naive prompting. & Published Module 4 syllabus, assignment repository, and grading rubric. & ``Graduates master full-stack autonomous AI engineering.'' \\
+\addlinespace
+``Our 1st pilot cohort achieved an 80\% rubric pass rate (8 of 10 completed).'' & The outcome is empirical, small-scale, and reported with an honest denominator. & Signed external auditor memorandum and anonymized student grading sheets. & ``100\% placement success and guaranteed career promotion.'' \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Maintaining this register prevents promotional drift, protecting the organization from reputational liabilities before they reach the market.
+
+\subsection*{60. Audit the Evidence That a Skeptic Can Independently Inspect}
+
+Founders must periodically conduct a \textbf{Skeptic's Audit} of their public presence. Open an incognito browser window and inspect the public website entirely through the eyes of an adversarial, experienced engineering manager who has zero prior relationship with the company:
+\begin{itemize}
+\item \textbf{Named Accountability:} Are instructors clearly identified with verifiable professional backgrounds, or are they hidden behind anonymous corporate titles?
+\item \textbf{Substantive Workload:} Does the website explicitly state the prerequisite math and coding baseline and total weekly time requirement, or does it promise effortless mastery in 15 minutes a day?
+\item \textbf{Inspectable Work:} Can the visitor view a full technical lecture, inspect an assignment, read an evaluation rubric, and examine a sample graded code review without being forced to enter a marketing lead funnel?
+\item \textbf{Commercial Transparency:} Are tuition fees, refund terms, installment options, and dispute protocols stated openly in plain language, or are they concealed behind a mandatory sales phone call?
+\item \textbf{Legal Standing:} Does the website explicitly state that the program is non-degree professional training, or does it employ ambiguous phrasing that mimics university accreditation?
+\end{itemize}
+
+If an educated visitor cannot answer these questions within 5 minutes of browsing, the website is an obstruction to trust. Radical transparency is the fastest path to credibility.
+
+\subsection*{61. Test a Trust Mechanism Rather Than Asking Whether People Trust You}
+
+Asking prospective customers ``Do you trust our company?'' yields useless, polite sentiment. Trust is an operational state, not an abstract opinion. Founders must evaluate trust by measuring \textbf{friction points during actual decision moments}:
+\begin{enumerate}
+\item \textbf{Drop-off Analysis:} At which exact step in the onboarding sequence do qualified applicants abandon the process? Is it when they encounter prerequisite disclosures, when they review weekly workload commitments, or when they inspect payment terms?
+\item \textbf{Uncertainty Interviews:} Contact qualified applicants who completed the technical diagnostic but did not enroll. Ask: \emph{``What specific evidence was missing from our documentation that made committing your evenings feel too risky?''}
+\item \textbf{Controlled Mechanism Experiments:} Run an A/B informational test on the curriculum page: compare standard feature descriptions against an in-depth, inspectable video code review walkthrough, and measure the impact on \emph{qualified paid applications}.
+\end{enumerate}
+
+Measuring behavioral commitment under varying information conditions reveals exactly which proof objects eliminate purchase hesitation.
+
+\subsection*{62. Design Commitments Proportional to Evidence}
+
+A core principle of credibility architecture is \textbf{proportionality}: the magnitude of the commitment requested from a customer must never exceed the strength of the evidence provided.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.95\columnwidth}{!}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[thick,->] (0,0) to (6.8,0) node[right] {\footnotesize Evidence Strength};
+  \draw[thick,->] (0,0) to (0,4.2) node[above] {\footnotesize Buyer Commitment};
+  
+  \draw[BayesTeal,thick] (0.2,0.2) to (6.2,3.8);
+  
+  \fill[BayesTeal] (0.8,0.56) circle (2.2pt) node[below right] {\scriptsize Free Technical Teardown};
+  \fill[BayesTeal] (2.2,1.44) circle (2.2pt) node[below right] {\scriptsize Paid Diagnostic (₹2,500)};
+  \fill[BayesTeal] (4.0,2.52) circle (2.2pt) node[below right] {\scriptsize 4-Week Modular Studio (₹25,000)};
+  \fill[BayesTeal] (5.8,3.60) circle (2.2pt) node[below right] {\scriptsize Multi-Month Program (₹60,000)};
+  
+  \node[red,font=\scriptsize] at (1.8,3.2) {Unearned Exposure (Trap)};
+  \node[BayesSecondary,font=\scriptsize] at (4.8,0.8) {Safe Zone (Proportional)};
+\end{tikzpicture}%
+}
+\caption{The Proportionality Frontier: Aligning Buyer Commitment with Verifiable Evidence.}
+\label{fig:proportionality}
+\end{figure}
+
+Requesting a ₹60,000 non-refundable tuition commitment on the basis of a slick 1-page marketing brochure is an act of unearned exposure. Conversely, providing 40 pages of audited technical evidence to invite someone to attend a free 30-minute webinar is an operational waste. Build a stepwise ladder where every incremental increase in financial and temporal commitment is justified by inspectable proof.
+
+\subsection*{63. Establish a Reference and Testimonial Policy Before Asking for Praise}
+
+Early-stage ventures frequently harvest testimonials informally, editing student quotes to maximize marketing impact. This practice generates reputational fragility. If an quoted alumnus later reveals that their review was solicited in exchange for discounts or edited to omit critical feedback, the institution's integrity is shattered.
+
+A defensible \textbf{Testimonial and Reference Policy} enforces 5 mandatory standards:
+\begin{enumerate}
+\item \textbf{Written, Informed Consent:} Signed authorization permitting the use of the student's name, photograph, and professional title in marketing materials.
+\item \textbf{Contextual Precision:} Every quote must explicitly specify the exact cohort completed, the date of completion, and the student's baseline role at enrollment.
+\item \textbf{Ban on Incentivized Praise:} No discounts, fee waivers, affiliate commissions, or gifts may be offered in exchange for public endorsements.
+\item \textbf{Balanced Representation:} Include student comments noting real difficulties encountered during the course alongside positive feedback.
+\item \textbf{Right of Revocation:} Any alumnus may request the immediate removal of their testimonial at any time without administrative friction.
+\end{enumerate}
+
+Testimonials governed by this protocol carry genuine weight with discerning buyers.
