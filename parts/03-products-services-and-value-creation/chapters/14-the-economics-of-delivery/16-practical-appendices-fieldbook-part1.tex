@@ -1,0 +1,151 @@
+\section*{Appendix A: The Full-Service Cost Ledger}
+
+Use 1 row per meaningful activity. Estimate with observed time logs and receipts where possible; write \emph{assumed} when data are missing. Do not confuse the bookkeeping cost of a task with its total social or customer cost.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{The Full-Service Activity-Based Cost and Operations Ledger}
+\begin{tabularx}{\textwidth}{p{0.36\textwidth}X}
+\toprule
+\textbf{Field Name} & \textbf{Founder Operational Entry} \\
+\midrule
+Offer, buyer, and promised result & Stated learning or advisory outcome and target customer segment \\
+Transaction unit and actual quantity & Billable unit (enrollment, cohort, contract) and active volume \\
+Customer prerequisites and required actions & Specific student effort, baseline skills, and inputs required \\
+Activity from the service blueprint & Granular operational step in the end-to-end fulfillment process \\
+Trigger mechanism & Per lead, applicant, student, cohort, contract, period, or incident \\
+Average human minutes and peak variance & Standard processing time, deadline clustering, and standard deviation \\
+Required skill / reviewer level & Routine assistant, calibrated mentor, senior faculty, or outside legal \\
+Direct software, compute, and materials & Hosting, API inference tokens, physical supplies, or travel outlays \\
+Cost classification for this decision & Fixed within range, strictly variable, step-fixed block, or sunk \\
+Rework probability and failure consequence & Frequency of defects, severity of remediation, and student burden \\
+Customer time and friction imposed & Setup hours, troubleshooting delay, and unassisted search costs \\
+Cash outlays versus normalized costs & Actual cash expenditure versus opportunity/replacement value \\
+Hard quality floors & Non-negotiable turnaround times, rubric validity, and privacy standards \\
+Owner, measurement source, and confidence & Accountable staff role, telemetry source, and epistemic uncertainty \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+For a founder starting without customers, a useful method is to perform 1 complete simulated transaction on real representative material, measure every task, then replace the 1st estimates with results from a genuine pilot. A simulation may underestimate support, acquisition, variation, and exception handling; do not claim that it proves mature economics.
+
+\section*{Appendix B: A Cohort-Economics Worksheet}
+
+The simple cohort model helps identify assumptions but should never be mistaken for an integrated accounting system.
+
+\begin{quote}
+\small
+\textbf{OFFER / PERIOD:}\\
+\textbf{WHO IS THE BUYER / USER:}\\
+\textbf{QUALITY PROMISE AND CAPACITY LIMITS:}\\[1ex]
+$P$ = net realized fee per paid participant, excluding taxes held for authorities\\
+$N$ = paid participant count\\
+$v$ = incremental acquisition + delivery + payment + expected refund cost per participant\\
+$F$ = avoidable cohort-specific fixed costs, including normalized labor if appropriate\\
+$K(N)$ = extra staffing, room, platform, or other step costs at cohort size $N$\\[1ex]
+\textbf{Modeled surplus after cohort-specific costs} = $N(P-v) - F - K(N)$\\[1ex]
+\textbf{CAPACITY:}\\
+Fixed skilled hours per cohort =\\
+Human minutes per participant =\\
+Expected peak submission volume =\\
+Current reviewer/teacher hours available =\\
+Minimum acceptable turnaround and quality standard =\\[1ex]
+\textbf{CASH:}\\
+Deposits and payment dates =\\
+Expected refund / collection exposure =\\
+Remaining delivery obligations =\\
+Expenses due before final cash collection =\\[1ex]
+\textbf{OUTCOMES:}\\
+Learners enrolled =\\
+Learners who began =\\
+Learners independently assessed =\\
+Learners meeting the stated competence standard =\\
+Entry-condition distribution =\\
+Cost per verified outcome, with limits =\\[1ex]
+\textbf{DECISION:}\\
+What changes at the next capacity step?\\
+What would invalidate the pricing or cost assumptions?\\
+What would cause us to stop, redesign, or repeat?
+\end{quote}
+
+\subsection*{B1. Break-Even and the Step-Cost Trap}
+
+When $P>v$ and there are no capacity steps, a simple break-even threshold is:
+
+\begin{equation}
+N_{\text{BE}} = \left\lceil \frac{F}{P-v} \right\rceil.
+\end{equation}
+With an additional step cost $K(N)$, the threshold must be solved \textbf{within the relevant capacity range}, not by applying the old threshold as though the next staffing block were free.
+
+For the illustrative fee of ₹30,000, variable cost ₹9,000, and fixed cost ₹2,20,000, the simple no-step break-even count is:
+
+\begin{equation}
+N_{\text{BE}} = \left\lceil \frac{₹2{,}20{,}000}{₹30{,}000 - ₹9{,}000} \right\rceil = \left\lceil \frac{220000}{21000} \right\rceil = 11.
+\end{equation}
+This is \textbf{an accounting threshold under invented demand and cost assumptions}, not a safe minimum class size. Requiring a whole additional reviewer block may change the appropriate minimum profitable volume above its threshold.
+
+\subsection*{B2. A Sensitivity Analysis That Changes One Assumption at a Time}
+
+For an 18-person cohort with the same baseline assumptions, the modeled surplus is ₹1,58,000.
+\begin{enumerate}
+\item Reduce the realized fee by ₹5,000: surplus falls by ₹90,000 to ₹68,000.
+\item Raise variable cost by ₹3,000 per learner: surplus falls by ₹54,000 to ₹1,04,000.
+\item Add ₹60,000 of overlooked fixed founder or staff expense: surplus falls to ₹98,000.
+\end{enumerate}
+These are \textbf{separate} changes, not a combined downside case.
+
+Also test combinations, because shocks are correlated: a weaker buyer group may have lower conversion, higher CAC, greater remediation cost, and more refunds simultaneously. A single optimistic scenario does not establish economic survival.
+
+\section*{Appendix C: A Human-Attention and Queue-Capacity Planner}
+
+\begin{quote}
+\small
+\textbf{ACTIVITY / QUEUE NAME:}\\
+\textbf{CUSTOMER-FACING SERVICE STANDARD:}\\[1ex]
+\textbf{ARRIVALS:}\\
+Average jobs per day/week =\\
+Peak jobs per day/week =\\
+Batching pattern and deadlines =\\
+Expected variation in job complexity =\\[1ex]
+\textbf{SERVICE:}\\
+Average minutes per job by skill level =\\
+Cases requiring senior escalation =\\
+Review and rework time =\\
+Setup time per batch or case =\\[1ex]
+\textbf{CAPACITY:}\\
+Staff hours actually available after meetings and leave =\\
+Backup / reserve capacity =\\
+Utilization at normal volume =\\
+Utilization at peak volume =\\
+Quality floor and acceptable waiting interval =\\[1ex]
+\textbf{CONTINGENCY:}\\
+Response if demand is 25\% above plan =\\
+Response if senior reviewer is unavailable =\\
+Maximum queue length before escalation =\\
+Customer communication and extension policy =
+\end{quote}
+
+Do not use Little's law to estimate service capacity directly or assume the M/M/1 queue formula forecasts a real assessment system. The 1st is a relationship among average throughput, work in progress, and time under stable-system conditions; the 2nd requires very specific arrival and service assumptions. Actual capacity planning requires empirical arrivals, service times, batching, skill constraints, and the service promise.
+
+\section*{Appendix D: The Reusable-Asset Investment Memo}
+
+For each proposed reusable artifact, answer the following:
+
+\paragraph*{Object:} Is it a curriculum, rubric, testing harness, knowledge base, faculty-training module, AI workflow, CRM integration, or physical asset?
+
+\paragraph*{Recurring job:} Which demonstrated, repeated task does it improve? How often does that task actually arise?
+
+\paragraph*{Existing cost:} What human, customer, or system resources are consumed now? What is the quality problem?
+
+\paragraph*{Investment:} Creation hours, licenses, implementation, security, accessibility, and deployment work.
+
+\paragraph*{Operating life:} How quickly will the asset become obsolete? What will updates cost? Who is responsible?
+
+\paragraph*{Expected return:} Labor released, errors avoided, service quality improved, new capacity made possible, and evidence needed to confirm each.
+
+\paragraph*{Failure:} What happens if the artifact is wrong or not adopted? Can the old process be restored?
+
+\paragraph*{Decision:} Make a small version, purchase an external tool, continue manual work, or decline the project. Specify the 1st measurement date.
+
+A founder should resist treating hypothetical future use as guaranteed. The discounted value of a reusable asset is limited by the probability that the future program actually exists and has customers.

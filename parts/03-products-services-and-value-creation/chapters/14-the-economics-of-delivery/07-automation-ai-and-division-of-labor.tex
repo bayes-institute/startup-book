@@ -1,0 +1,58 @@
+\section*{Part V: Automation, AI, and the Division of Labor}
+
+\subsection*{40. Automation Changes Tasks, Not Necessarily Jobs or Outcomes}
+
+A job is a bundle of tasks, and a service is a chain of decisions, actions, communications, and commitments. An AI system may write a draft assessment comment quickly but still require an expert to check its correctness, appropriateness, tone, and relevance to the rubric. It may generate a quiz while a teacher must ensure the quiz measures the intended construct. It may write code while the institution must test whether the code is secure and reliable.
+
+Automation value is therefore \textbf{task-specific and end-to-end}. Time saved on 1 step is not a realized productivity gain if a later step absorbs the same time in verification, correction, or customer confusion.
+
+\subsection*{41. A Hierarchy of Tasks, from Repeatable to Consequential}
+
+For an emerging learning institution, consider 4 distinct task families:
+
+\paragraph*{Mechanical work:} file formatting, basic tests, enrollment acknowledgments, reminders, simple permission checks, rubric arithmetic, and routine scheduling. These are often good automation candidates when requirements are stable.
+
+\paragraph*{Patterned cognitive work:} retrieval of approved explanations, identification of common programming errors, classification of support questions, draft feedback, and 1st-pass review of structured evidence. Automation may help substantially but requires evaluation and escalation.
+
+\paragraph*{Contextual judgment:} deciding whether a novel project is valid, whether a learner has independently mastered an essential competence, how to address an unusual misconception, or whether a client deliverable meets a contentious contract. AI may assist, but accountable human judgment often remains central.
+
+\paragraph*{Relational and institutional responsibility:} encouraging an anxious learner, negotiating an appropriate support plan, handling ethical concerns or appeals, protecting privacy, and deciding what claims an institution may honestly make. Many component tasks can be supported by technology; responsibility cannot be delegated to a stochastic text generator merely by writing that it has been.
+
+\subsection*{42. Research on AI Productivity Is Encouraging and Bounded}
+
+In a field study of customer-support agents, Brynjolfsson, Li, and Raymond report an average increase of roughly 15\% in issues resolved per hour after access to a generative-AI assistant, with substantial heterogeneity: less experienced agents gained more, while the most experienced sometimes saw small declines in output quality [E8]. Noy and Zhang's randomized professional-writing experiment found shorter completion times and higher rated quality on the studied writing tasks [E9].
+
+These are meaningful findings about \textbf{particular work settings and tasks}. They do not show that an AI tutor can replace a senior mathematics instructor, that automated grading of authentic projects is valid, or that an entire educational institution can cut its delivery cost by the same percentages. Applying a research effect size to Bayes without testing the actual workflow would be false precision.
+
+The useful prior is that \textbf{some types of cognitive work become cheaper when the tool is properly integrated}. The experimentally open question is which Bayes activities improve in speed, accuracy, learning effect, and total cost under specified safeguards.
+
+\subsection*{43. The End-to-End Automation Equation}
+
+For a task previously performed manually, estimate:
+
+\begin{equation}
+S_{\text{net}} = L_{\text{manual}} - L_{\text{review}} - C_{\text{tool}} - C_{\text{maint}} - C_{\text{error}},
+\end{equation}
+where $L_{\text{manual}}$ is manual labor avoided, $L_{\text{review}}$ is new verification and correction labor, $C_{\text{tool}}$ is software and inference expense, $C_{\text{maint}}$ is implementation and maintenance amortization, and $C_{\text{error}}$ is expected incremental failure and rework cost.
+
+Count the value of freed labor only when it actually increases useful capacity, avoids a necessary expense, or creates another measurable benefit. A salaried reviewer who saves an hour may not produce 1 hour's immediate cash saving; they may instead have time for better work. Both are valuable, but they are different economic effects.
+
+Add a 2nd scorecard for \textbf{the quality of the customer's outcome}. A solution that saves cost by grading quickly but incorrectly has not achieved sustainable leverage.
+
+\subsection*{44. Worked Example: Why an AI Grading Assistant May Barely Break Even}
+
+Assume 20 learners each submit 2 assignments in a month: 40 reviews. Manual review takes 24 minutes per assignment. A candidate AI-assisted workflow reduces human involvement to 17 minutes \emph{including} verification and correction. That saves 7 minutes per review, totaling \textbf{280 minutes (4 hours 40 minutes)} across the month.
+
+At an illustrative effective skilled-labor rate of ₹1,500 per hour, the capacity released is valued at ₹7,000. Suppose the assistant incurs ₹1,600 in inference and software costs, ₹4,000 as the month's fair share of setup and maintenance, and ₹1,300 in extra audit, privacy, or quality-control activity not already included in the 17 minutes. Net modeled savings:
+
+\begin{equation}
+S_{\text{net}} = ₹7{,}000 - ₹1{,}600 - ₹4{,}000 - ₹1{,}300 = \text{₹}100.
+\end{equation}
+
+The conclusion is not that AI grading is worthless. It is that its economics depend on volume, setup amortization, error rates, and the extent to which the freed expert capacity can be redeployed. The same validated tool might pay off across many cohorts; it might also fail if technical assignments change constantly. In this example, even a small quality degradation could wipe out the apparent financial benefit. Test before scaling.
+
+\subsection*{45. AI Can Improve Quality and Raise Cost at the Same Time}
+
+An AI-based practice tutor might provide many extra low-stakes attempts that students otherwise would never make. That could improve learning, even if inference cost per learner increases. If the added practice reduces expensive mentor interventions, total service cost may fall; if it creates false confidence or many incorrect explanations requiring repair, it may rise.
+
+The correct optimization target is not ``compute tokens per student'' but something like \textbf{verified capability per total student-and-institution resource}, interpreted with strong measurement caution. Extra tutoring may be worthwhile even when it raises provider cost, especially if the improved outcome supports a fair price or the institution's mission. Conversely, a tool that generates much more educational ``activity'' without improvements has created consumption, not transformation.

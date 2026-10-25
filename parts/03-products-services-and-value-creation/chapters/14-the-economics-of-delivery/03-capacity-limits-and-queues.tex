@@ -1,0 +1,59 @@
+\section*{Part III: Capacity Is an Economic System}
+
+\subsection*{15. The True Scarce Resource Is Often Not Money}
+
+What resource limits growth at this moment? It may be qualified demand, the founder's selling hours, live teaching slots, reviewer competence, lab equipment, customer approvals, instructor recruitment, cash for working capital, or the number of simultaneous projects an engineering team can supervise.
+
+Call the limiting resource the \textbf{constraint}. In many services, the constraint migrates as the firm grows. In a 1-person institute it may be the founder's evenings. After hiring, it may become assessment calibration. After institutional partnerships, the bottleneck may be customer procurement or on-site coordination.
+
+An apparently scalable business can be constrained by 1 small stage. Increasing content production or ad spend does nothing if the bottleneck is already overloaded. Worse, it raises arrivals into the queue.
+
+\subsection*{16. Capacity Must Be Calculated from the Service Standard}
+
+Suppose a founder can sustainably allocate 16 Bayes hours per week during an 8-week pilot. Fixed weekly commitments: live sessions, preparation, enrollment work, coordination, and contingency: consume 9 hours. Each enrolled learner adds an estimated 0.4 hours weekly in review and support, \textbf{averaged across the pilot}.
+
+The simple time-capacity condition is:
+
+\begin{equation}
+9 + 0.4N \le 16,
+\end{equation}
+so the largest integer $N$ under those assumptions is \textbf{17 learners}. This is a mathematical illustration, not a recommendation to enroll 17 learners. The 0.4-hour assumption might be badly wrong; deadlines create peaks; learners differ in support needs; some weeks may require extra preparation.
+
+A robust founder tests the rule against a \emph{bad week}, not only the average 1. If exams, illness, family commitments, or urgent work duties reduce available hours, what still works? Quality should not depend on heroic uninterrupted productivity.
+
+\subsection*{17. Utilization Is Not the Same as Sustainable Capacity}
+
+A teacher booked for every available minute has no room to diagnose an unexpected misconception, handle an appeal, or help a learner whose project breaks before the deadline. A reviewer with every slot assigned may technically satisfy a capacity spreadsheet while missing the promised response time.
+
+Utilization is work performed divided by usable capacity over the stated period. High utilization can improve apparent labor efficiency, but in variable-arrival services it can produce large delays. The economically useful question is not simply ``How do we fill every hour?'' It is ``What amount of protected capacity minimizes total cost \textbf{including delay and failure}?''
+
+\subsection*{18. Little's Law: Why Backlogs Are Not Invisible}
+
+In a reasonably stable system under the relevant assumptions, Little's law states:
+
+\begin{equation}
+L = \lambda W,
+\end{equation}
+where $L$ is average work items in the system, $\lambda$ the average throughput rate, and $W$ average time an item spends in the system [E3]. If a mentor team completes 28 substantive reviews per week, and each submission remains in the review process 3 days on average, average work in progress is approximately 12 submissions: $28 \times 3/7 = 12$.
+
+The law does not prescribe a good turnaround time. It makes the relationship among throughput, work in progress, and delay unavoidable. If the backlog doubles while processing capacity stays constant, something about waiting or completion time must change. An overwhelmed support queue is not merely an administrative inconvenience; it is a measurable feature of the service experienced by customers.
+
+\subsection*{19. The Nonlinear Danger Near Full Utilization}
+
+Consider an illustrative \textbf{M/M/1} queue: arrivals follow a Poisson process, service times are exponentially distributed, 1 server handles 1 job at a time, and the average processing rate $\mu$ exceeds arrival rate $\lambda$. Under those special assumptions, mean time in the system is:
+
+\begin{equation}
+W = \frac{1}{\mu - \lambda}.
+\end{equation}
+
+If a reviewer can process 10 standardized tasks per day, an arrival rate of 5 tasks per day gives an expected time in system of \textbf{0.2 day}. At 9 arrivals per day, it becomes \textbf{1 day}. At 9.5 arrivals per day, \textbf{2 days}. Processing time itself has not become 10 times slower; waiting grows because almost no slack remains.
+
+Real assessment queues rarely satisfy these textbook assumptions. Submissions arrive in batches; task lengths are heterogeneous; some work can be parallelized; urgent issues are prioritized. The example illustrates the direction and potential magnitude of the utilization effect, not a prediction of Bayes turnaround time. Scheduling, controlled deadlines, separate queues, reserve capacity, and another calibrated reviewer can be more valuable than squeezing 5 more minutes from every review.
+
+\subsection*{20. Variability Is a Cost Driver You Cannot Ignore}
+
+Suppose a class submits assignments on Sunday evening. Average weekly demand might be manageable, but demand concentrates on 2 days. Suppose another program uses open-ended projects with review times varying from 10 minutes to 3 hours. Even at the same average labor hours, queues can be much worse.
+
+Capacity planning should therefore record at least: arrival pattern, service-time distribution, peak-to-average load, exception frequency, reviewer availability, and maximum acceptable delay. The most dangerous planning assumption is that ``each learner needs 30 minutes per week'' when a few learners may need 2 hours and half the cohort submits simultaneously.
+
+Standardized submission windows and quality rubrics can reduce variability. But rigid deadlines can also disadvantage working adults whose professional obligations fluctuate. Design workload smoothing with legitimate flexibility: multiple review windows, early drafts, separate routine and urgent queues, or reserved escalation slots.
