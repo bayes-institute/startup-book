@@ -1,24 +1,25 @@
 % Main entry point. Compile from this directory with `make pdf`.
-\documentclass[10pt,letterpaper,twoside,openright,twocolumn]{book}
+\documentclass[10pt,twoside,openright]{book}
 \usepackage{import}
 \usepackage{subfiles}
+\PassOptionsToPackage{protrusion=true,final}{microtype}
 \IfFileExists{theme/bayesstacknotes.sty}{%
   \usepackage{theme/bayesstacknotes}%
 }{%
   \usepackage{../learning-content/src/notes/theme/bayesstacknotes}%
 }
 
-% --- High-Density Compact Book Geometry & Typography ---
+% --- Premium Single-Column 7×10 Geometry ---
 \geometry{
-  letterpaper,
-  inner=0.75in,
-  outer=0.70in,
-  top=0.65in,
-  bottom=0.65in,
-  headheight=19pt,
-  headsep=11pt,
+  paperwidth=7in,
+  paperheight=10in,
+  inner=0.875in,
+  outer=0.75in,
+  top=0.75in,
+  bottom=0.75in,
+  headheight=22pt,
+  headsep=8pt,
   footskip=22pt,
-  columnsep=20pt,
   includeheadfoot
 }
 
@@ -29,19 +30,17 @@
   ItalicFont=Inter-Regular.ttf,
   ItalicFeatures={FakeSlant=0.2},
   BoldItalicFont=Inter-SemiBold.ttf,
-  BoldItalicFeatures={FakeSlant=0.2},
-  HyphenChar=None
+  BoldItalicFeatures={FakeSlant=0.2}
 ]
 
 \usepackage{ragged2e}
-\usepackage{indentfirst}
 
 \usepackage{needspace}
 
 \setlength{\parindent}{11pt}
 \setlength{\parskip}{1pt plus 0.5pt}
 \linespread{1.05}
-\emergencystretch=1.8em
+\emergencystretch=0pt
 \tolerance=9999
 \hbadness=9999
 \hyphenpenalty=10000
@@ -50,53 +49,163 @@
 \lefthyphenmin=62
 \widowpenalty=8000
 \clubpenalty=8000
+% Right margin may vary by up to 1.5em so word spacing stays natural.
+% Words that do not fit move intact to the next line; the previous line
+% simply ends short rather than stretching its inter-word gaps.
+\setlength{\RaggedRightRightskip}{0pt plus 1.5em}
 
-% Sleek Heading Hierarchy for High-Density Layout
+% ── PREMIUM SINGLE-COLUMN DESIGN SYSTEM ─────────────────────────────────────
 \setcounter{secnumdepth}{1}
+
+% Section: number in teal, title in ink; two-tone anchor rule below
+% (left 2 cm in BayesTeal, remainder in BayesBorder — matches the head rule)
+\newcommand{\BookSectionRule}{%
+  \par\nobreak\vspace{3pt}\nointerlineskip
+  \hbox to\linewidth{%
+    {\color{BayesTeal}\vrule width 2cm height 0.9pt depth 0pt}%
+    {\color{BayesBorder}\leaders\hrule height 0.4pt depth 0pt\hfill}%
+  }%
+}
 \titleformat{\section}
-  {\Needspace{5\baselineskip}\normalfont\BayesDisplayFont\bfseries\fontsize{12.5}{15.5}\selectfont\color{BayesInk}}
-  {\textcolor{BayesTeal}{\thesection}}{0.6em}{}
-\titlespacing*{\section}{0pt}{10pt plus 1.5pt minus 1pt}{3.5pt}
+  {\normalfont\BayesDisplayFont\bfseries
+   \fontsize{13}{16.5}\selectfont\color{BayesInk}}
+  {\textcolor{BayesTeal}{\thesection}}{0.75em}{}
+  [\BookSectionRule]
+\titlespacing*{\section}{0pt}{16pt plus 2pt minus 2pt}{5pt}
 
+% Subsection: inline left-dash accent in teal before the title
 \titleformat{\subsection}
-  {\Needspace{4\baselineskip}\normalfont\BayesDisplayFont\bfseries\fontsize{11.5}{14}\selectfont\color{BayesDeepTeal}}
-  {}{0pt}{}
-\titlespacing*{\subsection}{0pt}{8.5pt plus 1.5pt minus 1pt}{3pt}
+  {\normalfont\BayesDisplayFont\bfseries
+   \fontsize{11}{14}\selectfont\color{BayesDeepTeal}}
+  {}{0pt}%
+  {\leavevmode\textcolor{BayesTeal}{\rule[0.32ex]{10pt}{1.2pt}}\hspace{7pt}}
+\titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 1pt}{4pt}
 
-% Ultra-Sleek, Compact Chapter Opener
+% Reserve room before titlesec adds heading spacing, including room for the
+% first lines of the following paragraph. This also protects short subheadings.
+\makeatletter
+\newcommand{\BookHeadingSpace}[1]{%
+  \if@nobreak\else\Needspace{#1}\fi
+}
+\makeatother
+\pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\subsection}{\BookHeadingSpace{5\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\BookHeadingSpace{4\baselineskip}}{}{}
+
+% ── HEADERS & FOOTERS ────────────────────────────────────────────────────────
+% Page number in bold teal at the outer edge; running mark inward; separator ·
+% Head rule mirrors the section rule: 2.5 cm teal then BayesBorder to the end.
+% fancyhdr was loaded before the 7 x 10 geometry override; reset its cached
+% Letter-page width and keep both the rule and running titles inside the text.
+\fancyhfoffset{0pt}
+\setlength{\headwidth}{\textwidth}
+\newsavebox{\BookRunningHeadBox}
+\newcommand{\BookRunningHead}[1]{%
+  \sbox{\BookRunningHeadBox}{%
+    \normalfont\BayesDisplayFont\fontsize{8}{10}\selectfont
+    \color{BayesMuted}\nouppercase{#1}%
+  }%
+  \ifdim\wd\BookRunningHeadBox>\dimexpr\headwidth-4em\relax
+    \resizebox{\dimexpr\headwidth-4em\relax}{!}{\usebox{\BookRunningHeadBox}}%
+  \else
+    \usebox{\BookRunningHeadBox}%
+  \fi
+}
+\fancyhf{}
+\fancyhead[LE]{%
+  \BayesDisplayFont\fontsize{8}{10}\selectfont
+  \textbf{\textcolor{BayesTeal}{\thepage}}%
+  \enspace\textcolor{BayesBorder!90}{\textbar}\enspace
+  \BookRunningHead{\leftmark}%
+}
+\fancyhead[RO]{%
+  \BayesDisplayFont\fontsize{8}{10}\selectfont
+  \BookRunningHead{\rightmark}%
+  \enspace\textcolor{BayesBorder!90}{\textbar}\enspace
+  \textbf{\textcolor{BayesTeal}{\thepage}}%
+}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{%
+  \hbox to\headwidth{%
+    {\color{BayesTeal}\rule{2.5cm}{\headrulewidth}}%
+    {\color{BayesBorder}\leaders\hrule height\headrulewidth\hfill}%
+  }%
+}
+% Chapter-opening pages: no header, page number at outer foot edge
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[LE,RO]{%
+    \footnotesize\BayesDisplayFont\bfseries\color{BayesTeal}\thepage%
+  }%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ── PREMIUM CHAPTER OPENER ───────────────────────────────────────────────────
+% Finish the preceding chapter before changing its running marks. Respect the
+% book's openright setting, with an unprinted verso when a blank is needed.
+\makeatletter
+\renewcommand{\ChapterOpener}[4]{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \refstepcounter{chapter}%
+  \chaptermark{#2}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#2}%
+  \BayesChapterOpenerContent{#1}{#2}{#3}{#4}%
+  \vspace{0.5em}%
+  \markboth{\thechapter\quad #2}{\thechapter\quad #2}%
+}
+\makeatother
+\let\BookClearDoublePage\cleardoublepage
+\renewcommand{\cleardoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\BookClearDoublePage}%
+}
+
+% Faint large chapter-number watermark in top-right corner (5 % opacity).
+% Title at 26 pt; two-tone rule mirrors section headings for visual consistency.
 \renewcommand{\BayesChapterOpenerContent}[4]{%
   \BayesCaptureAssetRoot
   \thispagestyle{plain}
+  % Watermark: huge chapter number, cropped at the top-right page edge
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north east, inner sep=0pt, opacity=0.05]
+      at ([xshift=8mm, yshift=-6mm]current page.north east)
+      {\BayesDisplayFont\bfseries\fontsize{150}{150}\selectfont\color{BayesTeal}#1};
+  \end{tikzpicture}%
   \noindent
   \begin{minipage}{\linewidth}
-    {\BayesDisplayFont\bfseries\fontsize{8}{10.5}\selectfont\color{BayesTeal}\MakeUppercase{Chapter #1 \ \textbullet\ \ Part I: The Founder and the Game}}\par
-    \vspace{2pt}
-    {\BayesDisplayFont\fontsize{20}{23}\selectfont\bfseries\color{BayesInk}#2\par}
-    \vspace{2pt}
-    {\fontsize{10.2}{13.5}\selectfont\color{BayesSecondary}#3\par}
+    % Part / chapter label
+    {\BayesDisplayFont\bfseries\fontsize{7.5}{10}\selectfont\color{BayesTeal}%
+     \MakeUppercase{Chapter #1\enspace\textbullet\enspace Part I: The Founder and the Game}}\par
+    \vspace{5pt}
+    % Chapter title — 26 pt for impact
+    {\BayesDisplayFont\fontsize{26}{30}\selectfont\bfseries\color{BayesInk}#2\par}
     \vspace{4pt}
-    {\color{BayesTeal}\rule{2.2cm}{1.2pt}}\textcolor{BayesBorder}{\rule{\dimexpr\linewidth-2.2cm\relax}{0.4pt}}\par
+    % Subtitle
+    {\fontsize{10.5}{14}\selectfont\color{BayesSecondary}#3\par}
+    \vspace{7pt}
+    % Two-tone rule matching section headings
+    {\color{BayesTeal}\rule{2.8cm}{1.3pt}}%
+    \textcolor{BayesBorder}{\rule{\dimexpr\linewidth-2.8cm\relax}{0.45pt}}\par
     \ifstrempty{#4}{}{%
-      \vspace{3.5pt}
+      \vspace{5pt}
       \begin{tcolorbox}[
         enhanced,
-        colback=BayesPale!35!white,
-        colframe=BayesBorder!60!white,
+        colback=BayesPale!40!white,
+        colframe=BayesBorder!55!white,
         boxrule=0.4pt,
-        arc=2pt,
-        borderline west={2.2pt}{0pt}{BayesTeal},
-        left=8pt,
-        right=8pt,
-        top=3.5pt,
-        bottom=3.5pt,
-        before skip=1pt,
-        after skip=2.5pt
+        arc=2.5pt,
+        borderline west={2.8pt}{0pt}{BayesTeal},
+        left=10pt,right=10pt,top=5pt,bottom=5pt,
+        before skip=1pt,after skip=3pt
       ]
-        {\small\color{BayesInk!88}\itshape\justifying #4\par}
-      \end{tcolorbox}
+        {\small\color{BayesInk!85}\itshape\justifying #4\par}
+      \end{tcolorbox}%
     }
   \end{minipage}
-  \vspace{2.5pt}
+  \vspace{4pt}
 }
 
 \CourseMetadata{BUILDING WHAT LASTS}{Building What Lasts}{A Theory of Entrepreneurship, Business Strategy, and Institutional Evolution}
@@ -247,8 +356,7 @@
   % Fast iterative compilation for individual chapters: `make chapter CH=<number>`
   % =========================================================================
   \mainmatter
-  \twocolumn
-  \justifying
+  \RaggedRight
 
   \ifnum\SingleChapter=1
     \setcounter{chapter}{0}%
@@ -399,7 +507,6 @@
   % FULL BOOK MASTER COMPILATION
   % =========================================================================
   \frontmatter
-  \onecolumn
   \BayesBookCover
   \BayesCopyrightPage
   \BayesOpeningPage
@@ -417,9 +524,8 @@
   \input{frontmatter/curriculum-roadmap.tex}
   \cleardoublepage
 
-  \twocolumn
   \mainmatter
-  \justifying
+  \RaggedRight
   \part[The Founder and the Game]{The Founder and the Game\\[0.4ex]\fontsize{13}{17}\selectfont\mdseries\color{BayesSecondary}Understand the starting position}
   \import{parts/01-the-founder-and-the-game/chapters/01-why-play-the-game/}{chapter.tex}
   \import{parts/01-the-founder-and-the-game/chapters/02-the-founder-as-the-starting-asset/}{chapter.tex}
@@ -473,7 +579,6 @@
   \import{parts/08-capital-research-and-institutional-evolution/chapters/36-the-theory-of-institutional-evolution/}{chapter.tex}
 
   \backmatter
-  \onecolumn
   \BayesBackCover
 \fi
 
