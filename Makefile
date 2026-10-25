@@ -3,18 +3,135 @@ SHELL := /bin/bash
 BOOK := startups-and-business-handbook
 OUT_DIR := build
 LATEXMK := latexmk
-LATEX_FLAGS := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=$(OUT_DIR)
+LATEX_FLAGS := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 
-.PHONY: pdf watch clean
+.PHONY: pdf book chapter ch ch1 ch2 ch3 ch4 chapters lock lock1 lock2 lock3 lock4 unlock status watch clean clean-chapters help
 
+# Default target: compile the full book
 pdf:
 	@mkdir -p $(OUT_DIR)
-	$(LATEXMK) $(LATEX_FLAGS) $(BOOK).tex
+	@echo "==> Building complete master book (all chapters)..."
+	$(LATEXMK) $(LATEX_FLAGS) -outdir=$(OUT_DIR) $(BOOK).tex
+	@echo "==> [SUCCESS] Full book compiled: $(OUT_DIR)/$(BOOK).pdf"
 
+book: pdf
+
+# Build an individual chapter standalone
+# Usage: `make chapter CH=4` or `make chapter CHAPTER=04`
+chapter:
+	@RAW="$(or $(CH),$(CHAPTER),4)"; \
+	NUM=$$((10#$$RAW)); \
+	PAD=$$(printf "%02d" $$NUM); \
+	mkdir -p $(OUT_DIR)/chapters; \
+	echo "==> Compiling Chapter $$NUM standalone into $(OUT_DIR)/chapters/chapter-$$PAD.pdf..."; \
+	$(LATEXMK) $(LATEX_FLAGS) -outdir=$(OUT_DIR)/chapters -jobname=chapter-$$PAD -usepretex="\def\SingleChapter{$$NUM}" $(BOOK).tex && \
+	echo "==> [SUCCESS] Chapter $$NUM standalone compiled: $(OUT_DIR)/chapters/chapter-$$PAD.pdf"
+
+# Short alias for chapter
+ch:
+	@$(MAKE) chapter CH=$(or $(CH),$(CHAPTER),4)
+
+# Dedicated chapter shortcuts
+ch1:
+	@$(MAKE) chapter CH=1
+ch2:
+	@$(MAKE) chapter CH=2
+ch3:
+	@$(MAKE) chapter CH=3
+ch4:
+	@$(MAKE) chapter CH=4
+
+# Lock an individual chapter after verification
+# Usage: `make lock CH=4`
+lock:
+	@RAW="$(or $(CH),$(CHAPTER),4)"; \
+	NUM=$$((10#$$RAW)); \
+	PAD=$$(printf "%02d" $$NUM); \
+	mkdir -p $(OUT_DIR)/chapters $(OUT_DIR)/locked; \
+	echo "==> Compiling and verifying Chapter $$NUM before locking..."; \
+	$(LATEXMK) $(LATEX_FLAGS) -outdir=$(OUT_DIR)/chapters -jobname=chapter-$$PAD -usepretex="\def\SingleChapter{$$NUM}" $(BOOK).tex || { echo "==> [ERROR] Chapter $$NUM compilation failed. Cannot lock."; exit 1; }; \
+	cp $(OUT_DIR)/chapters/chapter-$$PAD.pdf $(OUT_DIR)/locked/chapter-$$PAD.pdf; \
+	touch .chapter-locks; \
+	grep -v "^$$NUM:" .chapter-locks > .chapter-locks.tmp 2>/dev/null || true; \
+	echo "$$NUM:$$(date '+%Y-%m-%d %H:%M:%S')" >> .chapter-locks.tmp; \
+	sort -n -t: -k1,1 .chapter-locks.tmp > .chapter-locks && rm -f .chapter-locks.tmp; \
+	echo "==> [LOCKED] Chapter $$NUM verified and locked at $$(date '+%Y-%m-%d %H:%M:%S')."; \
+	echo "==> Saved locked release: $(OUT_DIR)/locked/chapter-$$PAD.pdf"
+
+lock1:
+	@$(MAKE) lock CH=1
+lock2:
+	@$(MAKE) lock CH=2
+lock3:
+	@$(MAKE) lock CH=3
+lock4:
+	@$(MAKE) lock CH=4
+
+# Unlock a chapter for further editing
+# Usage: `make unlock CH=4`
+unlock:
+	@RAW="$(or $(CH),$(CHAPTER),4)"; \
+	NUM=$$((10#$$RAW)); \
+	if [ -f .chapter-locks ]; then \
+		grep -v "^$$NUM:" .chapter-locks > .chapter-locks.tmp 2>/dev/null || true; \
+		mv .chapter-locks.tmp .chapter-locks; \
+		echo "==> [UNLOCKED] Chapter $$NUM is now unlocked."; \
+	else \
+		echo "==> No locked chapters found."; \
+	fi
+
+# Display current lock and draft status of all active chapters
+status:
+	@echo "=========================================================================="; \
+	echo " Bayesforce Publishing Engine :: Chapter Lock Status"; \
+	echo "=========================================================================="; \
+	for i in 1 2 3 4; do \
+		PAD=$$(printf "%02d" $$i); \
+		if [ -f .chapter-locks ] && grep -q "^$$i:" .chapter-locks; then \
+			LOCK_TIME=$$(grep "^$$i:" .chapter-locks | cut -d: -f2-); \
+			printf "  Chapter %2d [%s] : [LOCKED] at %s\n" $$i "$$PAD" "$$LOCK_TIME"; \
+		else \
+			printf "  Chapter %2d [%s] : [DRAFT / UNLOCKED]\n" $$i "$$PAD"; \
+		fi \
+	done; \
+	echo "=========================================================================="
+
+# Build all active individual chapters sequentially
+chapters:
+	@for c in 1 2 3 4; do \
+		$(MAKE) chapter CH=$$c || exit 1; \
+	done
+
+# Continuous watch mode (works for full book or individual chapter)
+# Usage: `make watch` or `make watch CH=4`
 watch:
 	@mkdir -p $(OUT_DIR)
-	$(LATEXMK) $(LATEX_FLAGS) -pvc $(BOOK).tex
+	@if [ -n "$(CH)" ] || [ -n "$(CHAPTER)" ]; then \
+		RAW="$(or $(CH),$(CHAPTER))"; \
+		NUM=$$((10#$$RAW)); \
+		PAD=$$(printf "%02d" $$NUM); \
+		mkdir -p $(OUT_DIR)/chapters; \
+		$(LATEXMK) $(LATEX_FLAGS) -pvc -outdir=$(OUT_DIR)/chapters -jobname=chapter-$$PAD -usepretex="\def\SingleChapter{$$NUM}" $(BOOK).tex; \
+	else \
+		$(LATEXMK) $(LATEX_FLAGS) -pvc -outdir=$(OUT_DIR) $(BOOK).tex; \
+	fi
 
+# Clean build artifacts
 clean:
-	$(LATEXMK) -C -outdir=$(OUT_DIR) $(BOOK).tex
-	@rmdir $(OUT_DIR) 2>/dev/null || true
+	$(LATEXMK) -C -outdir=$(OUT_DIR) $(BOOK).tex 2>/dev/null || true
+	rm -rf $(OUT_DIR)
+
+clean-chapters:
+	rm -rf $(OUT_DIR)/chapters
+
+help:
+	@echo "Bayesforce Book Publishing Engine - Available Commands:"
+	@echo "  make pdf / make book        Compile the entire master book (all chapters)"
+	@echo "  make chapter CH=<n>         Compile Chapter <n> standalone (e.g. make chapter CH=4)"
+	@echo "  make ch1 / ch2 / ch3 / ch4  Quick shortcuts to compile individual chapters"
+	@echo "  make chapters               Compile all active chapters standalone into build/chapters/"
+	@echo "  make lock CH=<n>            Compile, verify, and lock Chapter <n>"
+	@echo "  make unlock CH=<n>          Unlock Chapter <n> for further editing"
+	@echo "  make status                 Display lock and draft status of all chapters"
+	@echo "  make watch [CH=<n>]         Live recompile on change (chapter or full book)"
+	@echo "  make clean                  Remove all build artifacts and caches"

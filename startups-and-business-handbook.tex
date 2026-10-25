@@ -240,45 +240,195 @@
 }
 
 \begin{document}
-\frontmatter
-\onecolumn
-\BayesBookCover
-\BayesCopyrightPage
-\BayesOpeningPage
-\cleardoublepage
 
-\chapter*{A note to the reader}
-\addcontentsline{toc}{chapter}{A note to the reader}
-This book is a living operating system, decision-making framework, and repository of everything I have learned, read, and tested about building durable startups and businesses. Written to serve as an enduring guiding light while building an edtech company, it focuses on first principles: finding genuine problems, building high-conviction solutions, mastering distribution and learning outcomes, creating sustainable unit economics, and compounding long-term enterprise value. Adapt every mental model to your operating reality, stay close to your users, and iterate relentlessly.
+\ifdefined\SingleChapter
+  % =========================================================================
+  % SINGLE CHAPTER STANDALONE COMPILATION
+  % Fast iterative compilation for individual chapters: `make chapter CH=<number>`
+  % =========================================================================
+  \mainmatter
+  \twocolumn
+  \justifying
 
-\clearpage
-\tableofcontents
-\cleardoublepage
+  \ifnum\SingleChapter=1
+    \setcounter{chapter}{0}%
+    \import{parts/01-the-founder-and-the-game/chapters/01-why-play-the-game/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=2
+    \setcounter{chapter}{1}%
+    \import{parts/01-the-founder-and-the-game/chapters/02-the-founder-as-the-starting-asset/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=3
+    \setcounter{chapter}{2}%
+    \import{parts/01-the-founder-and-the-game/chapters/03-ambition-mission-and-strategic-boundaries/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=4
+    \setcounter{chapter}{3}%
+    \import{parts/01-the-founder-and-the-game/chapters/04-thinking-under-uncertainty/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=5
+    \setcounter{chapter}{4}%
+    \import{parts/02-markets-customers-and-differentiation/chapters/05-the-theory-of-markets-and-opportunity-selection/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=6
+    \setcounter{chapter}{5}%
+    \import{parts/02-markets-customers-and-differentiation/chapters/06-the-theory-of-customer-understanding/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=7
+    \setcounter{chapter}{6}%
+    \import{parts/02-markets-customers-and-differentiation/chapters/07-the-theory-of-the-beachhead/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=8
+    \setcounter{chapter}{7}%
+    \import{parts/02-markets-customers-and-differentiation/chapters/08-the-theory-of-differentiation-and-positioning/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=9
+    \setcounter{chapter}{8}%
+    \import{parts/02-markets-customers-and-differentiation/chapters/09-the-theory-of-validation-and-product-market-fit/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=10
+    \setcounter{chapter}{9}%
+    \import{parts/03-products-services-and-value-creation/chapters/10-the-theory-of-product-and-service-design/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=11
+    \setcounter{chapter}{10}%
+    \import{parts/03-products-services-and-value-creation/chapters/11-the-theory-of-learning-and-human-transformation/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=12
+    \setcounter{chapter}{11}%
+    \import{parts/03-products-services-and-value-creation/chapters/12-the-architecture-of-effective-instruction/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=13
+    \setcounter{chapter}{12}%
+    \import{parts/03-products-services-and-value-creation/chapters/13-the-theory-of-outcomes-and-measurement/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=14
+    \setcounter{chapter}{13}%
+    \import{parts/03-products-services-and-value-creation/chapters/14-the-economics-of-delivery/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=15
+    \setcounter{chapter}{14}%
+    \import{parts/04-pricing-economics-and-survival/chapters/15-the-theory-of-willingness-to-pay/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=16
+    \setcounter{chapter}{15}%
+    \import{parts/04-pricing-economics-and-survival/chapters/16-the-theory-of-pricing-and-value-capture/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=17
+    \setcounter{chapter}{16}%
+    \import{parts/04-pricing-economics-and-survival/chapters/17-the-theory-of-business-models-and-unit-economics/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=18
+    \setcounter{chapter}{17}%
+    \import{parts/04-pricing-economics-and-survival/chapters/18-the-theory-of-financial-survival/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=19
+    \setcounter{chapter}{18}%
+    \import{parts/05-distribution-trust-and-growth/chapters/19-the-theory-of-trust-and-credibility/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=20
+    \setcounter{chapter}{19}%
+    \import{parts/05-distribution-trust-and-growth/chapters/20-the-theory-of-distribution/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=21
+    \setcounter{chapter}{20}%
+    \import{parts/05-distribution-trust-and-growth/chapters/21-the-theory-of-sales-and-conversion/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=22
+    \setcounter{chapter}{21}%
+    \import{parts/05-distribution-trust-and-growth/chapters/22-the-theory-of-retention-and-organic-growth/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=23
+    \setcounter{chapter}{22}%
+    \import{parts/06-people-systems-and-organizations/chapters/23-the-science-of-hiring-and-talent-selection/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=24
+    \setcounter{chapter}{23}%
+    \import{parts/06-people-systems-and-organizations/chapters/24-the-practice-of-specialized-hiring/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=25
+    \setcounter{chapter}{24}%
+    \import{parts/06-people-systems-and-organizations/chapters/25-the-theory-of-operational-excellence/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=26
+    \setcounter{chapter}{25}%
+    \import{parts/06-people-systems-and-organizations/chapters/26-the-theory-of-organizational-design-and-culture/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=27
+    \setcounter{chapter}{26}%
+    \import{parts/07-scaling-strategy-and-competitive-advantage/chapters/27-the-theory-of-scaling/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=28
+    \setcounter{chapter}{27}%
+    \import{parts/07-scaling-strategy-and-competitive-advantage/chapters/28-the-theory-of-competitive-advantage-and-moats/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=29
+    \setcounter{chapter}{28}%
+    \import{parts/07-scaling-strategy-and-competitive-advantage/chapters/29-the-theory-of-strategic-adjacencies/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=30
+    \setcounter{chapter}{29}%
+    \import{parts/07-scaling-strategy-and-competitive-advantage/chapters/30-the-theory-of-ecosystems-and-strategic-partnerships/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=31
+    \setcounter{chapter}{30}%
+    \import{parts/07-scaling-strategy-and-competitive-advantage/chapters/31-the-theory-of-international-expansion/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=32
+    \setcounter{chapter}{31}%
+    \import{parts/08-capital-research-and-institutional-evolution/chapters/32-the-theory-of-capital-allocation-and-financing/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=33
+    \setcounter{chapter}{32}%
+    \import{parts/08-capital-research-and-institutional-evolution/chapters/33-the-theory-of-research-and-innovation-enterprises/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=34
+    \setcounter{chapter}{33}%
+    \import{parts/08-capital-research-and-institutional-evolution/chapters/34-the-theory-of-physical-expansion/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=35
+    \setcounter{chapter}{34}%
+    \import{parts/08-capital-research-and-institutional-evolution/chapters/35-the-theory-of-institutional-governance/}{chapter.tex}%
+  \fi
+  \ifnum\SingleChapter=36
+    \setcounter{chapter}{35}%
+    \import{parts/08-capital-research-and-institutional-evolution/chapters/36-the-theory-of-institutional-evolution/}{chapter.tex}%
+  \fi
+\else
+  % =========================================================================
+  % FULL BOOK MASTER COMPILATION
+  % =========================================================================
+  \frontmatter
+  \onecolumn
+  \BayesBookCover
+  \BayesCopyrightPage
+  \BayesOpeningPage
+  \cleardoublepage
 
-% --- Master Curriculum Architecture Roadmap (Executive 36-Chapter Overview) ---
-\input{frontmatter/curriculum-roadmap.tex}
-\cleardoublepage
+  \chapter*{A note to the reader}
+  \addcontentsline{toc}{chapter}{A note to the reader}
+  This book is a living operating system, decision-making framework, and repository of everything I have learned, read, and tested about building durable startups and businesses. Written to serve as an enduring guiding light while building an edtech company, it focuses on first principles: finding genuine problems, building high-conviction solutions, mastering distribution and learning outcomes, creating sustainable unit economics, and compounding long-term enterprise value. Adapt every mental model to your operating reality, stay close to your users, and iterate relentlessly.
 
-\twocolumn
-\mainmatter
-\justifying
-\part[The Founder and the Game]{The Founder and the Game\\[0.4ex]\fontsize{13}{17}\selectfont\mdseries\color{BayesSecondary}Understand the starting position}
-\import{parts/01-the-founder-and-the-game/chapters/01-why-play-the-game/}{chapter.tex}
+  \clearpage
+  \tableofcontents
+  \cleardoublepage
 
-% =========================================================================
-% FUTURE CHAPTER PIPELINE
-% The 35 upcoming chapters are architected in frontmatter/curriculum-roadmap.tex
-% and activated below as written content is developed.
-% =========================================================================
-\import{parts/01-the-founder-and-the-game/chapters/02-the-founder-as-the-starting-asset/}{chapter.tex}
-\import{parts/01-the-founder-and-the-game/chapters/03-ambition-mission-and-strategic-boundaries/}{chapter.tex}
-\import{parts/01-the-founder-and-the-game/chapters/04-thinking-under-uncertainty/}{chapter.tex}
-%
-% \part[Markets, Customers, and Differentiation]{Markets, Customers, and Differentiation}
-% \import{parts/02-markets-customers-and-differentiation/chapters/05-the-theory-of-markets-and-opportunity-selection/}{chapter.tex}
-% ... [Chapters 06-36 are ready in their respective parts/ directories]
+  % --- Master Curriculum Architecture Roadmap (Executive 36-Chapter Overview) ---
+  \input{frontmatter/curriculum-roadmap.tex}
+  \cleardoublepage
 
-\backmatter
-\onecolumn
-\BayesBackCover
+  \twocolumn
+  \mainmatter
+  \justifying
+  \part[The Founder and the Game]{The Founder and the Game\\[0.4ex]\fontsize{13}{17}\selectfont\mdseries\color{BayesSecondary}Understand the starting position}
+  \import{parts/01-the-founder-and-the-game/chapters/01-why-play-the-game/}{chapter.tex}
+  \import{parts/01-the-founder-and-the-game/chapters/02-the-founder-as-the-starting-asset/}{chapter.tex}
+  \import{parts/01-the-founder-and-the-game/chapters/03-ambition-mission-and-strategic-boundaries/}{chapter.tex}
+  \import{parts/01-the-founder-and-the-game/chapters/04-thinking-under-uncertainty/}{chapter.tex}
+
+  \backmatter
+  \onecolumn
+  \BayesBackCover
+\fi
+
 \end{document}

@@ -155,15 +155,44 @@ To ensure consistency, pedagogical rigor, and quick reference utility, every cha
 
 ---
 
-## Build System
+## Build System & Modular Workflow
 
-The handbook uses the shared **BayesStack** publication theme (`../learning-content/src/notes/theme/bayesstacknotes.sty`), compiling via XeLaTeX:
+The handbook compiles via XeLaTeX using the self-contained `theme/bayesstacknotes.sty` and local font assets.
 
+### 1. Rapid Single-Chapter Compilation
+To iterate rapidly without compiling the entire book:
 ```bash
-# Compile to PDF (output: build/startups-and-business-handbook.pdf)
-make pdf
+# Compile a specific chapter standalone (e.g. Chapter 4 -> build/chapters/chapter-04.pdf)
+make chapter CH=4
+# Or use shortcuts:
+make ch4
+make ch CH=1
+```
 
-# Continuous watch-mode compiler
+### 2. Chapter Locking & Status
+Once a chapter is reviewed and verified, lock it into the release catalog:
+```bash
+# Verify, compile, and lock Chapter 4 (saves release copy to build/locked/chapter-04.pdf)
+make lock CH=4
+
+# Check lock and draft status of all active chapters
+make status
+
+# Unlock a chapter if further edits are required
+make unlock CH=4
+```
+
+### 3. Master Book & Batch Targets
+```bash
+# Compile all active chapters standalone into build/chapters/
+make chapters
+
+# Compile the entire master book (all chapters unified -> build/startups-and-business-handbook.pdf)
+make pdf
+# (or make book)
+
+# Continuous watch-mode compiler (works for chapter or full book)
+make watch CH=4
 make watch
 
 # Clean generated build artifacts
