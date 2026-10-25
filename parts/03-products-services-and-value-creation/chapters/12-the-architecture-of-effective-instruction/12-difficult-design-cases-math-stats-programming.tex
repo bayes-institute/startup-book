@@ -1,0 +1,41 @@
+\section*{Part IX: Difficult Design Cases: Where the Architecture Must Change}
+
+\subsection*{72. Teaching Mathematics: The Path from Intuition to Proof}
+
+Teaching a mathematical subject is a different problem from teaching users where to click in an interface. Mathematics involves definitions with precise boundaries, objects that may not have direct sensory counterparts, symbolic fluency, proof, model selection, and habits of checking whether a conclusion follows. An intuition-first lecture that never reaches formal precision can leave students confident and wrong. A theorem-first lecture delivered to learners without the required schemas can leave them copying symbols they cannot interpret.
+
+Consider Bayes' theorem. A novice might begin with a population of 1,000 cases, a base rate, and an imperfect detector. Instead of presenting notation immediately, ask how many cases would trigger the detector and how many of those alerts would be genuine. Use a count table to make the reference class visible, then convert counts to conditional probabilities. Only when the operation has meaning introduce the formal equation. Then reverse the direction: give a new scenario and require the learner to construct the count table independently. Later, introduce a deceptive presentation in which an intuitively plausible conclusion ignores the base rate.
+
+An advanced student may benefit from beginning with the formal conditional-probability definition and deriving the result, provided those prerequisites are established. Both paths should eventually lead to a common standard. A strong mathematical lesson checks conceptual meaning, correct symbolic manipulation, assumptions, and the ability to recognize when the method is appropriate. Mere formula recall is insufficient; so is a vague visual metaphor without proof or calculation.
+
+\subsection*{73. Teaching Statistics: The Task Is Inference, Not Computation}
+
+A weak statistics course organizes itself around tests: t-test this week, chi-square next, regression afterward. Students become good at identifying methods from chapter labels but may fail when actual data-generating processes violate assumptions. A stronger architecture begins with questions about evidence: What population is represented? What produced these observations? Which comparisons are possible? What uncertainty matters to the decision?
+
+1 instructional sequence for causal inference could begin with a fictional employee-training evaluation. Students compare the mean productivity of people who chose to participate with those who did not. They initially identify a large difference. Then the instructor reveals that volunteers were already more motivated, exposing selection. Learners draw competing causal diagrams, examine what randomization changes, and later critique a new observational example. The formal model arrives in service of the inferential problem, not as an isolated formula.
+
+A statistically capable graduate should know when \textbf{not} to infer causality from a data table. Teach invalid claims and uncertainty communication alongside calculations. In disciplines where uncertainty is the core professional material, instruction should make the limits of knowledge intellectually productive rather than cosmetically inconvenient.
+
+\subsection*{74. Teaching Programming: Reading and Debugging Matter as Much as Writing}
+
+Programming courses often place too much emphasis on constructing a greenfield application while the instructor narrates. Professional engineering also requires reading code written by others, understanding unexpected behavior, creating tests, managing dependencies, and deciding how to repair a failure safely. A strong curriculum deliberately alternates construction, reading, diagnosis, design, and communication.
+
+A novice assignment might ask learners to trace a small function and predict its state after each iteration. A developing assignment might present an unfamiliar repository with 1 failing test. An advanced assignment might include 2 possible architectural fixes, a latency constraint, and a requirement to defend the chosen compromise. Later tasks can require a safe rollback or an explanation of why a system should not be shipped.
+
+If students have routine access to AI code generation, teaching must include how to inspect code for correctness, provenance, security, edge cases, and maintainability. The measurable capability is not the number of lines produced. It is the ability to explain, validate, and responsibly own what the software does.
+
+\subsection*{75. Teaching Scientific Research: Method and Intellectual Honesty Are Inseparable}
+
+A research course must teach how to frame questions, develop falsifiable expectations, choose methods, collect evidence, distinguish discovery from confirmation, examine alternative explanations, and revise beliefs. The most damaging curricular shortcut is to make the final paper's novelty the primary success criterion. This can reward overclaiming, selective reporting, and avoidance of negative findings.
+
+A useful progressive architecture begins with reproducing a published result or a supplied experiment, moves to examining assumptions and sensitivity, then asks students to propose a modification and preregister what would count as supporting or disconfirming evidence. Later work may permit genuine open-ended research. The instructor should model how respected researchers handle ambiguity, failed hypotheses, and uncertain external validity.
+
+Originality becomes meaningful only when grounded in reliable method. A learner who identifies that a proposed experiment cannot distinguish 2 theories may have demonstrated stronger scientific judgment than 1 who produces a flashy but uninterpretable result.
+
+\subsection*{76. Teaching Sales and Negotiation: Simulated Fluency Can Conceal Bad Judgment}
+
+Even outside STEM education, the general architecture matters. A sales trainee can memorize an objection-handling script and still behave poorly in a real conversation because the buyer's constraints differ from the role-play. Begin with a clear model of discovery, qualification, risk, and mutual value. Use structured demonstrations that reveal why a seller asks a question, then progressively introduce uncooperative or ambiguous cases.
+
+Assessment should not reward theatrical confidence alone. Observe whether the trainee identifies actual buyer needs, refrains from misleading promises, recognizes when a deal is a bad fit, and negotiates terms that both parties can honor. Use recordings only with appropriate consent. Include reflection on moments where a more persuasive statement would have been less truthful.
+
+The transferable lesson is that complex interpersonal skill requires actual enactment and feedback on contingent choices. Reading an excellent script is not enough.

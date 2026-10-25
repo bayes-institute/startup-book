@@ -1,0 +1,33 @@
+\section*{Part II: The Cognitive Engineering of a Lesson}
+
+\subsection*{10. Cognitive Load Is an Allocation Problem}
+
+Working memory is limited, particularly for novel interacting information. Instruction should reduce avoidable burden while preserving the intellectual work that builds capacity. The educator's objective is neither maximum ease nor maximum struggle. It is to allocate effort toward \textbf{productive processing of the target structure}.
+
+Imagine teaching statistical model evaluation. A slide simultaneously introduces notation for conditional probability, a 6-color data-flow diagram, 6 new metrics, an animated code demonstration, and a joke unrelated to the topic. Even an attentive learner may fail because too many unfamiliar elements compete for active processing. Compare this with a simple confusion matrix, a concrete decision problem, 1 relevant metric, and an immediate prediction task. The 2nd may be less entertaining but easier to use for thinking.
+
+A founder should identify what is \textbf{intrinsic to the new skill} and what is \textbf{accidental burden introduced by the instructional interface}. Remove hunting for files, broken notebooks, unreadable labels, unnecessary jargon, and poor navigation. Preserve reasoning through ambiguous evidence, choosing among valid methods, and independently checking a solution. The former wastes attention; the latter may build expertise.
+
+\subsection*{11. An Accurate Explanation Is Not Automatically an Effective Explanation}
+
+Experts tend to compress. The instructor says, ``We time-split to avoid leakage,'' because the causal model is obvious to them. But a novice may not recognize that a feature was computed after the prediction date, that observations share entities, or that a deployment workflow changes what is available. The sentence is technically plausible and pedagogically incomplete.
+
+An effective explanation reveals what is otherwise invisible: the decision point, the mechanism, the boundary, and the plausible wrong turn. The teacher should show \textbf{why the natural incorrect approach seems reasonable}. It is often easier for students to learn a distinction from 2 cases that differ on 1 consequential feature than from a page of definitions. After the explanation, require a prediction or decision before showing the answer. A beautiful explanation without subsequent independent work can create familiarity rather than usable understanding.
+
+\subsection*{12. Worked Examples Must Expose the Decisions}
+
+Live coding is not effective merely because an expert types while students watch. The expert must reveal the conditional reasoning they are doing: ``I will test this boundary 1st because it is where the data-generating assumption is most likely to fail.'' In mathematics: ``This substitution is useful because it transforms a difficult integral into a form whose assumptions we can verify.'' In operations: ``We are batching these requests because the bottleneck is scheduling overhead, not compute.''
+
+A strong worked example contains a goal, known prerequisites, a transparent sequence of decisions, a checkable result, an anticipated mistake, and a nearby variant. Early examples can be simplified. Later examples should expose the mess. At every stage, ask whether the student could reproduce the logic without a teacher narrating it.
+
+\subsection*{13. Fade Scaffolding with Intent}
+
+Students often perform well when a worksheet supplies the exact formula, a notebook supplies the skeleton, and an instructor supplies hints. The challenge is to \textbf{remove support gradually enough to preserve learning and quickly enough to develop independence}. A useful sequence is: complete model; partially completed example; prompted independent attempt; unprompted attempt; unfamiliar task requiring choice of method; authentic task containing misleading information.
+
+The pacing is not identical for everyone. Some students can begin at the 3rd stage. Others need a prerequisite bridge before stage 1 makes sense. The expertise-reversal literature cautions that guidance helpful to novices can become redundant for advanced learners. Yet expertise is component-specific: an excellent programmer may be a novice in causal inference and benefit from worked examples in that subskill [S4].
+
+\subsection*{14. Retrieval and Explanation Play Different Jobs}
+
+Retrieval practice strengthens access to knowledge; explanation builds and reorganizes relationships. Both can fail when mismatched to the target. Asking for a definition tests access to words. Asking for a prediction about an unfamiliar case tests whether the concept can guide a decision. Neither alone demonstrates all forms of competence.
+
+A useful class opens with short recall of essential prior material, then moves to application. A useful assignment mixes ``state the principle'' with ``use it here,'' ``explain why this tempting answer fails,'' and ``under what changed assumption would you reverse your answer?'' This sequence reveals the difference between memorized rules and adaptable understanding. Evidence syntheses support practice testing and distributed practice as broadly useful learning techniques, but they do not imply that a flashcard can replace an engineering project [S2, S3].

@@ -1,0 +1,54 @@
+\section*{Part VII: The Continuing Case: Designing Bayes Institute's 1st Learning System}
+
+\subsection*{53. The Institutional Ambition Is Not the Initial Course Specification}
+
+Bayes Institute's established purpose is to create the conditions in which human possibility becomes human capability. That mission is broad and enduring. It does \textbf{not} establish the existence of a validated 6-month product, employer-recognized credential, successful alumni track record, or a specific willingness to pay. Instruction must begin from a smaller, testable promise.
+
+A plausible 1st experiment is an assessed, production-minded AI engineering experience for technically prepared working adults. This is an \textbf{illustrative design option}, not a decided launch. Alternative initial routes include curricular delivery for a college and workplace capability development for a company. These share technical knowledge but have different learner selection, operational constraints, payer expectations, and success definitions.
+
+\subsection*{54. A Hypothetical Terminal Performance}
+
+Suppose the 1st experimental learning objective is: ``A working software engineer who has not previously evaluated a retrieval-based application can independently design and carry out a defensible small evaluation, diagnose an observed failure, and defend a release recommendation under stated constraints.''
+
+The learner may use documentation and programming tools during authentic work, but a short unassisted defense tests their own understanding. The outcome is intentionally smaller than ``become an AI engineer'' or ``get promoted.'' It could be demonstrated and evaluated within a bounded pilot. Whether buyers value this enough to pay must be established separately through Chapter 9's commercial-validation methods.
+
+\subsection*{55. Build the Capability Graph Backward}
+
+The terminal task depends on understanding the problem and users; selecting a baseline; representing test cases; distinguishing retrieval from generation errors; recognizing access-control and staleness risks; implementing basic tests and tracing; comparing results; and reasoning about residual uncertainty. Some participants may need Python refreshers; others may need statistics or systems-design bridges.
+
+Create a small diagnostic with an unfamiliar code snippet, a flawed evaluation plan, and a short decision memo. Based on observed errors, do not assume everyone needs the same prerequisite lecture. 1 learner may benefit from a debugging bridge; another needs concrete explanations of evaluation leakage; a 3rd is ready for an advanced adversarial case. The purpose is to preserve high-value live time for work that genuinely benefits from expert intervention.
+
+\subsection*{56. 1 Plausible 4-Week Experimental Architecture}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Plausible 4-Week Experimental Architecture for Applied AI Engineering}
+\begin{tabularx}{\textwidth}{p{0.14\textwidth}p{0.26\textwidth}p{0.30\textwidth}X}
+\toprule
+\textbf{Week} & \textbf{Consequential Capability} & \textbf{Independent Work} & \textbf{Instructor's Scarce Contribution} \\
+\midrule
+0: entry & Identify prerequisites and baseline & Unseen diagnostic, time-availability declaration & Interpret errors and confirm fit \\
+1 & Specify valid evaluation and baseline & Design an evaluation plan for an unfamiliar scenario & Critique causal assumptions and leakage \\
+2 & Trace retrieval and generation failure & Reproduce and classify faults in a prepared service & Diagnose reasoning and calibrate error categories \\
+3 & Improve reliability under trade-offs & Implement tests and compare design options & Review evidence, challenge overclaims \\
+4 & Defend a release judgment & Independent changed-context task and technical defense & Evaluate transfer and explain remaining gaps \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+This timetable is an invented testing configuration. Some learners may need more weeks; some outcomes may be too ambitious; the workload may not fit a full-time employee's schedule. These are things to measure, not details to conceal in marketing.
+
+\subsection*{57. A Sample Live Session: Finding Evaluation Leakage}
+
+\textbf{Before:} Learners inspect a 1-page deployment scenario and answer 2 questions individually. They receive a short written explanation of the prediction-time boundary and a worked example of a valid split.
+
+\textbf{Opening:} Display an apparently exceptional model score. Ask each learner to vote privately on whether the evaluation is fit for release, with a 1-sentence reason. This creates visible prior beliefs.
+
+\textbf{Model:} Trace data availability through time and entities. Explain why a random split can be wrong in some repeated-entity or temporal settings. Do not teach a universal rule that all data must always be chronologically split: the deployment process determines the method.
+
+\textbf{Guided contrast:} Show 2 nearly identical datasets, 1 with genuinely independent observations and another with leakage across related observations. Students identify the decisive difference and defend it.
+
+\textbf{Independent attempt:} Give a new scenario, withheld from the examples. Learners write an evaluation decision and 1 falsification test. The teacher selects representative mistakes and explains the mechanism without humiliating their authors.
+
+\textbf{After:} Learners revise the plan. A week later, a project task requires the same reasoning without announcing that ``today's topic is leakage.'' This is a stronger test of practical selection than a quiz displaying the definition.

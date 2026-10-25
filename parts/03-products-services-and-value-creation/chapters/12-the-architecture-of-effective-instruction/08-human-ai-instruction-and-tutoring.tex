@@ -1,0 +1,49 @@
+\section*{Part VI: Human-AI Instruction: A New Division of Cognitive Labor}
+
+\subsection*{45. AI Changes the Cost of Assistance, Not the Definition of Learning}
+
+Generative AI can deliver a clear explanation in seconds, produce a hint, inspect a trace, supply examples, translate technical language, and converse about a misconception. These affordances can make assistance more available and permit learning experiences that would have been uneconomical at scale. They can also cause a new form of educational failure: \textbf{the system performs the task while the learner acquires the feeling of having performed it}.
+
+The relevant distinction is between \emph{task performance with the tool} and \emph{learning attributable to the person}. Both matter in modern work. A capable engineer should use available tools responsibly. But if a course sells increased independent judgment, it cannot demonstrate that claim only by showcasing AI-generated artifacts. Instruction must explicitly design for both capabilities: thinking with AI and knowing when AI is wrong or inappropriate.
+
+\subsection*{46. Treat the AI Tutor as a Pedagogical Agent with a Bounded Role}
+
+A generic chatbot is not automatically a tutor. Its incentives may favor fluent answers, conversational satisfaction, and completion of the user's immediate request. A pedagogically designed agent instead asks what cognitive work the learner needs to perform next. It can elicit a prediction, diagnose a misconception, provide a graded hint, propose a contrasting case, or ask for justification before revealing a solution.
+
+A useful default pattern is \textbf{attempt $\to$ diagnosis $\to$ smallest helpful hint $\to$ renewed attempt $\to$ explanation $\to$ later independent check}. The system should log what assistance was given because assisted success cannot simply be counted as independent mastery. It needs content boundaries, credible source material, error monitoring, privacy safeguards, escalation when uncertain, and a way to correct itself. Do not let a confident model silently change an assessment's accepted answer or certify competence without suitable checks.
+
+\subsection*{47. Evidence Suggests Possibilities, Not an Automatic Verdict}
+
+A 2025 randomized college-physics study found that a specially designed AI tutor outperformed the specific in-class active-learning comparison on immediate measured learning in that setting, with less median time on task [S9]. Another study in school mathematics found that unrestricted access to generative AI assistance could improve performance while the tool was available but harm later unaided performance; guarded tutoring behaved differently [S10]. These studies answer different questions in different contexts. They do not jointly establish that AI should replace teachers or that AI is harmful.
+
+The founder should take both as reasons to \textbf{test the tutoring mechanism}, not the product label. An AI system that encourages explanation and delayed independent work is a different educational intervention from 1 that generates final answers. The decisive evidence for a new program is how its intended learners perform under conditions relevant to its promise.
+
+\subsection*{48. A Hierarchy of Educational Assistance}
+
+A practical assistance ladder begins with a general prompt (``What assumption should you inspect 1st?''), then a targeted clue, then a partial worked step, then a detailed worked example, then a complete solution. The appropriate rung depends on the learner's current state and the task's purpose. If every learner receives full solutions, the system has converted practice into answer consumption. If every confused novice receives only cryptic questions, the tutor has created needless frustration.
+
+An adaptive tutor should choose the \textbf{least invasive support that keeps the learner productively engaged} and lower that support as competence grows. This is a design heuristic, not a validated numerical rule. For high-stakes technical tasks, the system also needs a mechanism to say, ``I cannot verify this,'' and route the learner to authoritative references or human review.
+
+\subsection*{49. Teachers Should Own the Judgments That Require Accountability}
+
+AI may help generate practice variants, classify common errors, draft feedback, summarize participation patterns, and provide immediate explanations. Humans remain valuable for interpreting ambiguous reasoning, handling conflict, calibrating professional standards, diagnosing persistent misconceptions, supporting motivation, and making accountable decisions about assessment and safety.
+
+Do not turn human teachers into ceremonial faces attached to an automated platform. Equally, do not make experts answer routine syntax questions that a well-tested system could resolve reliably. The optimal boundary is discovered through observed errors, quality requirements, cost, and learner outcomes. Start with \textbf{human oversight of consequential decisions} and expand automation only where the evidence supports doing so.
+
+\subsection*{50. Design an AI Assistance Policy Before the 1st Assignment}
+
+A serious course should specify when learners may use AI to understand, brainstorm, generate code, critique, or draft; when they must disclose tool use; when assistance is restricted; and how their independent reasoning will be assessed. The policy should connect to the target skill, not to a moral panic about new tools.
+
+For an authentic development project, allowing AI-generated boilerplate may be reasonable if the learner can explain and test it. For a diagnostic designed to measure 1st-principles reasoning, full solution generation may invalidate the inference. Unclear policies create inconsistent grading and reward hidden use. The goal is an environment in which honesty is feasible and competence remains visible.
+
+\subsection*{51. The Institution's AI System Needs Its Own Quality Assurance}
+
+Before deployment, test generated hints on representative errors, adversarial prompts, misleading student explanations, and ambiguous tasks. Measure whether answers are correct and whether the system encourages independent thinking. A tutor that is technically correct but gives away every answer may be pedagogically weak. A tutor that asks good questions but supplies false mathematics is also weak.
+
+Track hallucinations, inappropriate confidence, privacy exposure, learner overdependence, escalation frequency, assistance depth, and independent post-assistance performance. Restrict confidential student data and client artifacts; seek explicit permission and legitimate rights before using sensitive work in external systems. Maintain a human recovery path. Reliability is part of the instructional promise.
+
+\subsection*{52. The Cost Structure of AI Tutoring Is Not Automatically Negligible}
+
+API use, evaluation, orchestration, content maintenance, logging, security, quality review, support, and redesign can dominate a small program's AI budget. Heavy use can increase variable inference costs. More importantly, an automated helper can create \emph{downstream} labor if its errors produce confused students, appeals, or incorrect projects.
+
+A founder should measure \textbf{cost per successful learning interaction}, not just cost per token or chatbot conversation. If an AI tutor costs ₹12 per interaction but creates enough confusion to require 15 minutes of skilled human repair, its apparent efficiency is illusory. Conversely, an effective hint system that resolves routine misconceptions and frees human mentors for advanced review can be economically valuable.
