@@ -39,3 +39,6 @@ Thumbs.db
 scratch/
 tmp/
 .tempmediaStorage/
+
+.creds
+claude_code.ps1

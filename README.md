@@ -159,6 +159,48 @@ To ensure consistency, pedagogical rigor, and quick reference utility, every cha
 
 The handbook compiles via XeLaTeX using the self-contained `theme/bayesstacknotes.sty` and local font assets.
 
+### Windows: Build with Tectonic in PowerShell
+
+Run the following commands from the repository root in PowerShell. This route
+does not require Make, Bash, Perl, or a separate MiKTeX/TeX Live installation.
+The bundled `fonts/` directory supplies the book's Inter and Outfit typefaces.
+
+Download and extract the Windows x64 release of
+[Tectonic](https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0)
+(version 0.17.0 was used to verify this build):
+
+```powershell
+$ErrorActionPreference = 'Stop'
+$version = '0.17.0'
+New-Item -ItemType Directory -Path build/tools -Force | Out-Null
+$downloadUrl = "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40$version/tectonic-$version-x86_64-pc-windows-msvc.zip"
+Invoke-WebRequest -UseBasicParsing -Uri $downloadUrl -OutFile build/tools/tectonic.zip
+Expand-Archive -LiteralPath build/tools/tectonic.zip -DestinationPath build/tools/tectonic -Force
+```
+
+Compile the full book:
+
+```powershell
+& './build/tools/tectonic/tectonic.exe' --keep-logs --keep-intermediates --outdir build startups-and-business-handbook.tex
+if ($LASTEXITCODE -ne 0) { throw 'The book build failed; inspect the compiler output and build log.' }
+
+# Open the compiled PDF.
+Invoke-Item './build/startups-and-business-handbook.pdf'
+```
+
+Tectonic downloads LaTeX packages on the first run, so initial compilation
+requires internet access and can take several minutes. It caches the packages
+for subsequent builds and automatically reruns LaTeX to resolve the table of
+contents and cross-references. The PDF is written to
+`build/startups-and-business-handbook.pdf`, and the detailed log is at
+`build/startups-and-business-handbook.log`. The `build/` directory, including
+the portable compiler, is ignored by Git.
+
+If Tectonic is already on your `PATH`, use `tectonic` in place of
+`& './build/tools/tectonic/tectonic.exe'`. After setup, rerun only the compilation
+command when editing the book. The Makefile commands below use Bash, `latexmk`,
+and XeLaTeX; run them in an environment with those tools installed.
+
 ### 1. Rapid Single-Chapter Compilation
 To iterate rapidly without compiling the entire book:
 ```bash
