@@ -1,0 +1,61 @@
+\section{Part III: Research Talent, Laboratories, and Reproducibility}
+
+\subsection{17. The principal investigator is more than a credential}
+
+A principal investigator must choose tractable important questions, design robust methods, develop junior talent, handle conflicting results, allocate resources, maintain safety, and communicate limits. A famous publication record is useful evidence but insufficient for the specific institutional setting. Hire for the research program and mentoring needed, not only journal prestige or broad social visibility.
+
+The founder should test scientific judgment through a proposal defense, critique of a deliberately flawed study, review of existing papers, and a discussion of what a negative result would change. Ask independent specialists to evaluate the work; founder admiration is not peer review.
+
+\subsection{18. The minimum viable research team}
+
+A software-and-methods lab may begin with a scientifically accountable lead, 1 research engineer, and an external collaborator, sharing existing compute and administrative support. A wet lab may require technicians, safety officers, facilities, consumables, waste systems, and regulatory capacity from the 1st experiment. There is no universal ``2 researchers equals a lab'' rule.
+
+Before hiring, identify the \textbf{minimum repeatable scientific process} the people can sustain: protocol, versioned code and data, audit trail, weekly critique, artifact review, and dissemination policy. If that cannot be sustained, the team is a collection of technically talented individuals rather than a research organization.
+
+\subsection{19. Hiring researchers versus engineers versus technicians}
+
+Researchers formulate and evaluate new claims; research engineers create robust experimental systems; technicians maintain precision and safety; product engineers convert useful findings into supported products. The same person may do several jobs in a small team, but evaluation should be role-specific. A brilliant theoretician need not be the best laboratory manager. A careful technician may be indispensable to scientific validity despite few publications.
+
+Make roles legible, attribute contributions accurately, and create senior technical paths that do not require everyone to become a people manager.
+
+\subsection{20. Research mentorship is infrastructure}
+
+Junior researchers need critique, reproducible examples, standards for evidence, and meaningful authorship credit. A senior scientist who produces papers but leaves trainees confused may be a weak institutional investment. Mentoring should include research design reviews, code/data audits, writing workshops, ethics orientation, career support, and feedback on unsuccessful experiments.
+
+Document who owns supervision when a visiting scholar, industrial sponsor, and full-time investigator jointly oversee a student. Ambiguous supervision creates misconduct, safety, and labor risks.
+
+\subsection{21. Laboratory utilization is not the goal}
+
+A laboratory can be 95\% utilized and still scientifically unproductive if equipment blocks the wrong experiments. Conversely, specialized instruments may be quiet much of the year yet essential for occasional high-value studies. Financial management should distinguish \textbf{capacity reserved for research}, \textbf{usable instrument hours}, \textbf{actual use}, \textbf{downtime}, \textbf{maintenance}, \textbf{calibration}, and \textbf{scientific output}. Optimize the research program subject to affordability, not utilization alone.
+
+When hardware is common, rent access or partner. Own when access, data security, scheduling, specialized configuration, and economic utilization justify it. Contracts must specify uptime, repair, safety responsibility, and data retention.
+
+\subsection{22. The build-buy-borrow decision for compute}
+
+Consider 3 compute modes: cloud or API services, leased dedicated infrastructure, and owned accelerators. A meaningful comparison includes purchase or rental prices; electrical and cooling capacity; staff; storage; networking; redundancy; software licensing; utilization; hardware obsolescence; security; and exit value. A GPU that is cheaper per occupied hour may be much more expensive per \textbf{useful research result} when idle time and specialist administration are counted.
+
+[Model] An owned cluster costing ₹24 lakh plus ₹6 lakh annual operating/support expenses, used over 3 years with no assumed resale, has nominal total cost ₹42 lakh. At 3,000 productive compute hours per year, cost is $\approx$\textnormal{₹}467/hour across 9,000 hours. At 600 productive hours/year, it is $\approx$\textnormal{₹}2,333/hour. Cloud pricing and performance vary, so compare equivalent workloads; this calculation excludes the opportunity cost of capital and failure risk.
+
+\subsection{23. Reproducibility by design}
+
+Before data collection specify version control, environment lockfiles, experiment tracking, dataset provenance, evaluation splits, privacy rights, permitted external models, model and parameter versions, and methods for reproducing central figures. Record which decisions were pre-specified and which emerged during exploratory analysis. A ``reproduced'' ML result that depends on hidden training data or an unknown model API version is incomplete evidence.
+
+Pre-registration is valuable for many confirmatory experiments, but not mandatory for every exploratory scientific activity. The key principle is to avoid presenting exploratory choices as if they were selected before observing outcomes.
+
+\subsection{24. Statistical power, uncertainty, and false discoveries}
+
+Small samples, multiple comparisons, noisy labels, selective reporting, and data leakage can generate impressive but fragile results. A competent research organization asks what effect size matters, which noise sources dominate, how uncertainty will be estimated, and whether the data support the claim. In AI benchmarking, repeated model selection on the same test set can overfit the evaluation even if the model training process never directly sees test labels.
+
+An honest report includes failed baselines and sensitivity analyses, not only the most attractive metric. When confidence is weak, describe it as weak rather than using precise decimals to suggest certainty.
+
+\subsection{25. Data rights and research ethics}
+
+A company client may permit the institute to analyze a dataset for contracted work without permitting publication, model training, derivative products, transfer abroad, or reuse in teaching. ``We possess the files'' does not establish rights. Use a data-rights matrix for every project: source, legal basis, purpose, users, storage, geography, retention, publication, onward transfer, security, and deletion.
+
+Human-subject research may need ethics review, informed consent, risk minimization, and special handling of vulnerable participants. The appropriate reviewing body and statutory requirements depend on country, institution, funder, and study. Where neither is legally compulsory, proportional independent ethics review can still be prudent.
+
+\subsection{26. Laboratory safety, cyber safety, and dual use}
+
+Mechanical, electrical, chemical, biological, radiation, and AI-security risks differ. A wet lab requires appropriate biosafety, waste handling, permits, trained personnel, and incident response. A model evaluation lab needs access controls, licensing review, secure datasets, and protocols for unsafe outputs or sensitive capabilities. A robotics lab needs machine guarding and physical emergency procedures.
+
+Write a hazard assessment before purchase and before each new line of work. Expensive equipment is not evidence that a lab is ready for safe operation. Research involving dangerous or controlled domains requires specialist authorization and additional restrictions beyond ordinary academic protocols.
