@@ -1,0 +1,130 @@
+\section*{Part II: Designing Backward From the Outcome}
+
+\subsection*{10. Convert a Broad Desire into a Designable Outcome}
+
+Aspirations such as ``streamline small business operations,'' ``upskill software engineers in modern AI,'' or ``modernize enterprise healthcare'' provide emotional direction, not architectural specifications.
+
+A designable outcome specifies 6 concrete parameters:
+\begin{enumerate}
+    \item \textbf{Target actor:} The specific role executing the task;
+    \item \textbf{Operational trigger:} The acute event prompting action;
+    \item \textbf{Starting baseline:} The initial state and existing workarounds;
+    \item \textbf{Terminal state:} The observable capability or verified artifact created;
+    \item \textbf{Allowable latency:} The maximum acceptable duration to achieve the state; and
+    \item \textbf{Verification standard:} The objective criteria determining success.
+\end{enumerate}
+
+Consider the transformation from vague desire to engineering specification:
+\begin{itemize}
+    \item \emph{Vague statement:} ``Help engineering teams evaluate language models.''
+    \item \emph{Designable outcome:} ``Within 14 days, a senior backend engineer responsible for an internal search feature can construct a reproducible evaluation harness on 500 gold-standard queries, identify systematic retrieval failures, and justify precision-recall trade-offs to the VP of Engineering against a published rubric.''
+    \item \emph{Vague statement:} ``Improve accounting workflows.''
+    \item \emph{Designable outcome:} ``During the monthly book close, a financial controller can identify, audit, and approve the top 10\% of invoice variance exceptions within 4 hours, utilizing provenance-linked source documents without manual database querying.''
+\end{itemize}
+
+Every engineering requirement is derived backward from this terminal state. The search evaluation outcome requires novel test sets, scoring rubrics, and oral defense protocols. The accounting outcome requires automated data-integrity connectors, exception-sorting algorithms, and immutable audit logs. \textbf{Design is the disciplined construction of the minimal conditions required to make the terminal state reliably true.}
+
+\subsection*{11. The Outcome Contract: Make the Promise Operational}
+
+Before writing software code or designing curriculum, author a formal \textbf{outcome contract}. This document is an operational specification aligning customer expectations with delivery capacity:
+
+\begin{itemize}
+    \item \textbf{Target customer and user role:} Exactly who benefits and who operates the system;
+    \item \textbf{Operational trigger:} The acute event causing the customer to engage;
+    \item \textbf{Baseline alternative:} What the customer currently does without this offering;
+    \item \textbf{Observable terminal milestone:} The verified deliverable or capability demonstrated;
+    \item \textbf{Time to value:} The exact calendar duration required to reach the milestone;
+    \item \textbf{Customer input obligations:} What data, prerequisite knowledge, time, or approvals the user must supply;
+    \item \textbf{Delivery obligations:} What software, live instruction, feedback, and support the enterprise must provide;
+    \item \textbf{Explicit negative scope:} What the offering explicitly refuses to do (for example, no custom ERP integrations or no employment placement guarantees);
+    \item \textbf{Verification mechanism:} How an independent observer verifies that the promise was fulfilled; and
+    \item \textbf{Failure recovery policy:} What remediation, rework, or refund applies if the terminal milestone is not achieved.
+\end{itemize}
+
+The outcome contract establishes internal discipline. It prevents sales representatives from selling custom consulting when engineering built a self-serve tool. It prevents marketing from advertising ``guaranteed career mobility'' when the pedagogy is scoped for diagnostic technical evaluation. Most importantly, it gives prospective buyers complete clarity, allowing poor-fit candidates to opt out before financial commitment.
+
+\subsection*{12. Decompose Outcomes into Necessary Capabilities}
+
+Once the terminal outcome is established, work backward through the functional capabilities required to generate it.
+
+For an AI evaluation studio, the necessary capabilities include:
+\begin{enumerate}
+    \item Diagnostic admissions testing to ensure baseline Python and systems competence;
+    \item Automated provisioning of reproducible cloud development sandboxes;
+    \item Instruction covering failure taxonomy, benchmark construction, and statistical significance;
+    \item Scaffolded laboratory exercises with intentional system defects;
+    \item Calibrated expert code review returned within 48 hours;
+    \item Independent project defense before an experienced practitioner; and
+    \item Remediation workflows for learners exhibiting conceptual gaps.
+\end{enumerate}
+
+Execute a \textbf{counterfactual deletion test} on every proposed capability:
+\begin{equation}
+\begin{aligned}
+&\text{Remove } C_k \implies \text{Can the customer} \\
+&\quad\text{reliably reach } S_{\text{target}}\text{?}
+\end{aligned}
+\end{equation}
+
+If the answer is yes, capability $C_k$ is an optional luxury that should be deferred to preserve startup focus. If the answer is no, $C_k$ represents an indispensable link in the causal chain.
+
+This counterfactual test routinely exposes fatal assumptions. Founders frequently invest 80\% of their capital in visible front-end polish while omitting backstage review loops. When the review loop is omitted, students consume content without acquiring competence, and the core outcome contract is violated.
+
+\subsection*{13. Map the Causal Dependencies, Not Just the Features}
+
+A flat list of features resembles an unorganized parts catalogue; an \textbf{architecture} specifies the directional causal relationships among components.
+
+Consider an applied engineering studio:
+\begin{equation}
+\begin{aligned}
+&\text{Diagnostic Admissions} \\
+&\quad \implies \text{Pre-Course Environment Setup} \\
+&\quad \implies \text{Foundational Lab Execution} \\
+&\quad \implies \text{Formative Expert Review} \\
+&\quad \implies \text{Independent Capstone Defense} \\
+&\quad \implies \text{Verified Capability Certificate}.
+\end{aligned}
+\end{equation}
+
+If the pre-course environment setup breaks during Week 1, the foundational lab fails. If the foundational lab fails, the student arrives at formative review unprepared, generating frustration for both learner and reviewer. The breakdown in capstone defense is caused not by poor teaching during Week 4, but by an unmanaged dependency in Week 1.
+
+Construct a dependency map identifying:
+\begin{itemize}
+    \item Upstream inputs and prerequisites;
+    \item Intermediate operational transformations;
+    \item Explicit handoff points between software systems and human actors;
+    \item Potential failure propagation vectors; and
+    \item Single points of operational failure.
+\end{itemize}
+
+The strength of a product system is governed by its weakest unmanaged dependency.
+
+\subsection*{14. Product Architecture: Modules and Interfaces}
+
+A modular architecture groups cohesive capabilities into discrete functional units connected by standardized interfaces. Modularity enables parallel engineering, localized debugging, and independent scaling.
+
+However, every modular boundary introduces interface friction:
+\begin{itemize}
+    \item Data translation errors across microservices;
+    \item Information loss during handoffs between sales and customer onboarding; or
+    \item Disconnects between curriculum designers and frontline project evaluators.
+\end{itemize}
+
+Define strict \textbf{interface contracts} across modular boundaries:
+\begin{equation}
+\begin{aligned}
+\text{Interface Contract} = \{ &\text{Inputs},\, \text{Outputs}, \\
+&\text{Invariants},\, \text{SLA},\, \text{Owner} \}.
+\end{aligned}
+\end{equation}
+
+For example, the interface contract between student admissions and instructional operations specifies:
+\begin{itemize}
+    \item \textbf{Input:} Evaluated diagnostic code repository;
+    \item \textbf{Output:} Binary admission decision plus categorized prerequisite gaps;
+    \item \textbf{Invariant:} Zero applicants admitted with failing baseline ratings on recursion or unit testing;
+    \item \textbf{Service-Level Agreement (SLA):} Decision returned within 72 hours of submission; and
+    \item \textbf{Accountable owner:} Lead Admissions Evaluator.
+\end{itemize}
+
+Early ventures must resist over-architecting. A seed-stage startup constructing 15 microservices or 8 distinct modular course tracks creates coordination overhead that drains founder energy. Standardize interface contracts, but keep the initial module count small.

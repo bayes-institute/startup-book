@@ -1,0 +1,101 @@
+\section*{Part VI: MVPs, Prototypes, Iteration, and the Search for a Working Design}
+
+\subsection*{65. An MVP Is a Learning Instrument, Not Permission to Be Bad}
+
+Eric Ries defined a Minimum Viable Product as that version of a new offering which allows a team to collect the maximum amount of validated learning about customers with the least effort [R15].
+
+In startup practice, this concept is frequently misinterpreted as an excuse to ship careless, broken, or unethical products. A founder launches an uncurated curriculum with broken code environments, delivers zero grading feedback, and justifies the failure by declaring: ``It was just an MVP.''
+
+An MVP is minimal in its \textbf{capital and organizational commitment}, not in its operational integrity:
+\begin{itemize}
+    \item A crude prototype that crashes during basic onboarding teaches nothing about market demand; it only proves that broken software is frustrating.
+    \item A learning program that eliminates project feedback teaches nothing about student capability transfer; it only proves that passive video watching is ineffective.
+\end{itemize}
+
+An MVP must be \textbf{viable}: it must preserve the precise causal mechanism responsible for generating the promised outcome. If the business hypothesis claims that expert feedback creates engineering capability, the MVP must deliver expert feedback, even if that feedback is delivered manually via email by the founder rather than through automated platform software.
+
+\subsection*{66. Prototype, Proof of Concept, MVP, Pilot, and Product Are Not Synonyms}
+
+Entrepreneurs and investors routinely conflate 5 distinct developmental artifacts:
+\begin{enumerate}
+    \item \textbf{Prototype:} An exploratory model designed to evaluate user experience, interface layout, or ergonomic form factors (for example: a clickable Figma mockup). A prototype tests discoverability and usability; it proves zero willingness to pay.
+    \item \textbf{Proof of Concept (PoC):} A technical test verifying that a specific engineering mechanism is technically feasible under laboratory conditions (for example: executing vector retrieval over 1,000,000 documents within 50\,ms). A PoC tests engineering feasibility; it proves zero customer adoption.
+    \item \textbf{Minimum Viable Product (MVP):} The smallest operational system that tests a commercial or behavioral hypothesis in an authentic exchange with real customers.
+    \item \textbf{Pilot:} A bounded, time-limited deployment inside a client's operational environment with agreed acceptance criteria and commercial terms. A pilot tests integration friction and organizational adoption.
+    \item \textbf{Product:} A fully supported, hardened, and repeatable offering operating with documented procedures, unit economics, and ongoing support.
+\end{enumerate}
+
+Maintain strict epistemic boundaries. Claiming that an enterprise product is ``validated'' because a clickable Figma prototype was praised in an interview is a dangerous delusion.
+
+\subsection*{67. Seven Ways to Reduce Commitment While Preserving Learning}
+
+An entrepreneur can dramatically reduce capital risk and development latency by constraining scope along 7 strategic axes without compromising the causal value mechanism:
+\begin{enumerate}
+    \item \textbf{Narrow customer persona:} Serve only senior backend engineers working in fintech, rather than all software developers.
+    \item \textbf{Constrain problem scope:} Address only failure evaluation in retrieval pipelines, rather than full-stack AI application development.
+    \item \textbf{Limit cohort capacity:} Cap admissions at 8 learners to keep feedback queues manageable.
+    \item \textbf{Shorten temporal duration:} Deliver an intensive 2-week studio rather than an unmanageable 6-month flagship.
+    \item \textbf{Manual backstage operations:} Perform student onboarding, grading dispatch, and environment setup manually using spreadsheets and shell scripts.
+    \item \textbf{Single-platform compatibility:} Support only modern Linux/macOS environments, explicitly excluding legacy operating systems.
+    \item \textbf{Pre-existing tooling:} Deliver instruction over standard tools (Git, Python, and terminal environments) rather than building a proprietary learning management system.
+\end{enumerate}
+
+Every reduction preserves the essential core: authentic engineering problems, rigorous review rubrics, and independent project defenses.
+
+\subsection*{68. Concierge and Wizard-of-Oz Designs}
+
+Two classical operational techniques allow founders to test service value before engineering expensive automation:
+\begin{itemize}
+    \item \textbf{Concierge testing:} The founder explicitly and transparently performs the entire operational service manually for the customer. (Example: the founder personally reads student code line-by-line, authors 3 pages of custom architectural critique, and schedules a 1-on-1 video call to review findings).
+    \item \textbf{Wizard-of-Oz testing:} The customer interacts with an interface that appears automated, while human operators manually execute backend processing behind the line of visibility.
+\end{itemize}
+
+Manual testing yields profound architectural insights:
+\begin{itemize}
+    \item It reveals unexpected edge cases that software developers would have failed to anticipate;
+    \item It clarifies which specific feedback comments produce the greatest cognitive breakthroughs; and
+    \item It maps the precise time required to evaluate real student submissions.
+\end{itemize}
+
+Beware the \textbf{concierge scalability trap}: a service that delights 5 customers when the founder donates 40 hours of unpaid personal labor will collapse into insolvency if priced at a self-serve mass-market rate. Log every minute of founder labor and model replacement economics before scaling.
+
+\subsection*{69. A Design Experiment Must Isolate a Specific Question}
+
+When a product launch fails, founders frequently alter 6 variables simultaneously: changing the price, rewriting the landing page, rebuilding the onboarding interface, adopting a new curriculum, and targeting a different industry.
+
+If the subsequent cohort succeeds, the founder has learned nothing: which specific variable caused the improvement?
+
+Structure design experiments with clean causal isolation:
+\begin{equation}
+\begin{aligned}
+\text{Hypothesis: } &\text{Changing } X \text{ shifts } Y \\
+&\text{by } \Delta Y \text{ under conditions } Z.
+\end{aligned}
+\end{equation}
+
+For example:
+\begin{itemize}
+    \item \emph{Hypothesis:} ``Replacing the open-ended Day 3 assignment with a structured, rubric-scaffolded exercise will reduce Day 3 drop-off from 25\% to under 5\% among enrolled backend engineers, without degrading final capstone defense scores.''
+\end{itemize}
+
+Measure the primary metric (Day 3 submission rate) and monitor guardrail metrics (capstone defense ratings and total instructor grading time). If the hypothesis is refuted, the failure points to a specific pedagogical mechanism, not an uninterpretable market mystery.
+
+\subsection*{70. Build-Measure-Learn Is Incomplete Without Design Judgment}
+
+The classic Build-Measure-Learn feedback loop is a powerful operating engine, but running it without an overarching theory of value generates dangerous optimization traps:
+\begin{itemize}
+    \item A team that blindly optimizes engagement metrics deploys clickbait notifications that distract users from productive work.
+    \item An education startup that optimizes for 100\% cohort completion systematically lowers assignment difficulty until grading becomes a meaningless formality.
+    \item An enterprise tool that optimizes for self-serve conversion suppresses critical security configuration warnings to eliminate signup friction.
+\end{itemize}
+
+Data cannot replace architectural judgment. Telemetry reveals \emph{what} users did; it cannot explain \emph{why} they did it or whether the long-term customer promise was honored.
+
+Establish immutable architectural guardrails:
+\begin{itemize}
+    \item Never sacrifice academic rigor to boost short-term completion statistics.
+    \item Never compromise user privacy or security to eliminate interface friction.
+    \item Never use dark patterns to inflate renewal conversions.
+\end{itemize}
+
+True product design aligns empirical experimentation with uncompromising institutional integrity.

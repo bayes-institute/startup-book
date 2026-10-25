@@ -1,0 +1,169 @@
+\subsection*{15. The Architecture of a Complete Customer Job}
+
+A company can execute every local feature competently and still fail to complete the customer's macro job.
+
+Consider an enterprise consulting engagement:
+\begin{enumerate}
+    \item The firm conducts 20 discovery interviews;
+    \item It authors a 100-page analytical report diagnosing system bottlenecks;
+    \item It presents a slide deck to the executive committee; and
+    \item It departs, leaving the client's engineering team with zero actionable implementation pathways.
+\end{enumerate}
+
+Every local output satisfied professional standards, yet the client's problem remained unaddressed.
+
+System boundaries must be chosen deliberately:
+\begin{itemize}
+    \item Does the product deliver diagnostic advice, executable implementation, or managed operations?
+    \item Where does the provider's responsibility terminate, and where does customer ownership resume?
+    \item How does the interface confirm that the handoff succeeded?
+\end{itemize}
+
+A firm selling diagnostic reports operates a legitimate business, provided its pricing and marketing explicitly reflect that scope. The failure occurs when marketing promises end-to-end transformation while engineering prices and delivers a high-level assessment. \textbf{The commercial promise, the operating architecture, and the user's mental model must describe the exact same system boundary.}
+
+\subsection*{16. Use Constraints as Design Inputs, Not Apologies}
+
+Early-stage ventures operate under severe, unavoidable constraints: constrained founder hours, limited balance-sheet liquidity, missing domain expertise, and zero brand legacy. Rather than apologizing for these limitations, treat them as \textbf{generative architectural inputs}.
+
+A founder possessing 20 available weekly hours cannot credibly operate round-the-clock live chat support. Acknowledging this reality dictates architectural choices:
+\begin{itemize}
+    \item Offer strictly asynchronous project reviews returned within a guaranteed 48-hour window;
+    \item Publish exhaustive, searchable documentation and self-serve debugging guides; and
+    \item Restrict cohort capacity to 12 qualified learners to ensure review depth.
+\end{itemize}
+
+Constraint-driven architecture generates competitive distinctiveness:
+\begin{itemize}
+    \item A database startup without enterprise sales personnel focuses entirely on developer-led open-source adoption;
+    \item A consumer brand without venture capital formulates a single shelf-stable item and masters local grocery replenishment before attempting national retail; and
+    \item An educational studio with limited teaching hours eliminates introductory lectures, requiring students to complete pre-recorded fundamentals and using live sessions exclusively for interactive code teardowns.
+\end{itemize}
+
+Ethical integrity demands transparency: limitations must be disclosed to prospective buyers before purchase. A constraint transformed into a clear operational boundary builds trust; a constraint concealed behind marketing hyperbole destroys it.
+
+\subsection*{17. Design the Minimum Complete Value Chain}
+
+The concept of a minimum viable product is routinely corrupted into delivering a fragmented, broken tool. A payroll application that calculates gross earnings but cannot compute tax deductions is not an MVP; it is an unusable software fragment. An educational course that delivers lectures but provides zero grading or feedback fails to complete the learning loop.
+
+The correct design unit is the \textbf{minimum complete value chain}: the narrowest functional system that allows a real customer to complete a valuable job from trigger to verified resolution.
+
+Scope can be constrained across multiple dimensions without compromising completeness:
+\begin{itemize}
+    \item \textbf{Narrow user segment:} Serve only senior Python backend engineers building search features;
+    \item \textbf{Narrow technical domain:} Evaluate only vector database indexing failures;
+    \item \textbf{Limited customer volume:} Admit exactly 8 enterprise teams into a pilot cohort; or
+    \item \textbf{Manual operations:} Execute project grading manually using expert founder labor.
+\end{itemize}
+
+Within that bounded perimeter, the value chain must be complete: diagnostic admissions, task delivery, environment setup, expert review, revisions, and final evaluation. Never eliminate the specific causal mechanism that generates the promised outcome.
+
+\subsection*{18. Make Design Trade-Offs Explicit}
+
+Every product architecture represents an allocation of scarce resources among competing objectives:
+\begin{itemize}
+    \item In technical education: highly personalized human mentorship, mass enrollment scale, and low tuition exist in permanent structural tension. Maximizing all 3 simultaneously without substantial subsidy is impossible.
+    \item In enterprise software: real-time computational latency, exhaustive algorithmic accuracy, and minimal infrastructure cost compete directly.
+    \item In physical manufacturing: structural durability, lightweight portability, and low unit production cost require deliberate material trade-offs.
+\end{itemize}
+
+Document architectural trade-offs in formal decision memos:
+\begin{equation}
+\begin{aligned}
+&\text{We choose } [A] \text{ over } [B] \text{ because for } [C], \\
+&\quad [A] \text{ is decisive for outcome } [D].
+\end{aligned}
+\end{equation}
+
+For example: \emph{``We choose intensive, rubric-based human code review over automated multi-choice testing, because for practicing engineers, independent design defense is the decisive mechanism for acquiring architectural judgment. We accept that this choice caps cohort size at 16 learners and requires ₹45,000 tuition.''}
+
+Explicit trade-offs protect teams from strategic drift. When an organization clarifies what it deliberately sacrifices, it ceases attempting to be all things to all customers.
+
+\subsection*{19. Requirements Should Express Outcomes and Constraints Separately}
+
+A robust engineering specification separates 4 distinct categories:
+\begin{enumerate}
+    \item \textbf{Functional requirements:} What functional transformations the system executes;
+    \item \textbf{Quality requirements:} How reliably, quickly, securely, and accurately it executes them;
+    \item \textbf{Operational constraints:} The financial, human, and regulatory limits bounding delivery; and
+    \item \textbf{Verification requirements:} The objective evidence proving compliance.
+\end{enumerate}
+
+Consider an applied evaluation module:
+\begin{itemize}
+    \item \emph{Functional:} The system accepts Python test scripts and evaluates them against benchmark datasets.
+    \item \emph{Quality:} 99\% of benchmark test runs complete within 180 seconds with zero data corruption.
+    \item \emph{Operational constraint:} Monthly compute cost must not exceed ₹1,500 per enrolled learner.
+    \item \emph{Verification:} An automated regression suite executes 50 synthetic test submissions prior to every cohort launch.
+\end{itemize}
+
+Vague mandates like ``deliver world-class instruction'' or ``build a seamless user experience'' provide zero engineering guidance. Decompose aspirations into concrete, testable thresholds.
+
+\subsection*{20. The Value Traceability Matrix}
+
+Connect customer outcomes directly to operational delivery via a structured traceability matrix:
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Customer Job} & \textbf{Desired Outcome} & \textbf{Architectural Requirement} & \textbf{Objective Acceptance Test} \\
+\midrule
+Close monthly accounts & Identify invoice errors before bank reconciliation & Freshness monitor and automated ledger variance flag & Controller identifies all simulated discrepancies within 30 minutes \\
+Master AI system evaluation & Defend retrieval architectures against production defects & Staged laboratory exercises, rubric reviews, and oral defenses & Independent practitioner validates capstone defense against published criteria \\
+Procure precision hardware & Zero assembly downtime caused by dimensional defects & Computer numerical control machining held to $\pm 0.05$\,mm tolerance & Coordinate-measuring machine inspection report accompanies every batch \\
+Deploy enterprise assistant & Prevent unauthorized data exposure to public models & Tenant-isolated vector storage and local inference pipelines & Third-party penetration audit confirms zero data exfiltration \\
+\bottomrule
+\end{tabularx}
+\caption{The Value Traceability Matrix: mapping customer jobs to testable architectural requirements.}
+\label{tab:ch10-traceability-matrix}
+\end{table*}
+
+A row lacking an objective acceptance test indicates an unverified promise. A feature lacking a direct link to a customer job is a prime candidate for immediate elimination.
+
+\subsection*{21. Which Attributes Are Basic, Differentiating, or Unnecessary?}
+
+The Kano model categorizes product attributes into 3 distinct operational classes [R5]:
+\begin{enumerate}
+    \item \textbf{Threshold attributes (Must-be):} Basic expectations taken for granted. Their presence generates zero delight, but their absence produces immediate customer rejection (for example: bank-grade data encryption in financial software, or clean restrooms in a restaurant).
+    \item \textbf{Performance attributes (One-dimensional):} Direct linear drivers of satisfaction. More is consistently better (for example: battery life, query latency, or grading turnaround speed).
+    \item \textbf{Delight attributes (Attractive):} Unexpected innovations that generate outsized customer advocacy, yet cause zero dissatisfaction when omitted (for example: a personalized code teardown video from a renowned systems architect).
+\end{enumerate}
+
+Attributes shift categories dynamically over time. What constitutes a delightful innovation in 2024 becomes an expected threshold requirement by 2026. A startup must allocate its scarce engineering capital primarily to satisfying threshold requirements completely, while investing disproportionately in 1 or 2 high-impact performance attributes that win the competitive choice. Avoid wasting capital on decorative features that fail to move customer decisions.
+
+\subsection*{22. The Dangerous Gap Between Specification and Lived Product}
+
+Two competing organizations can publish identical product brochures while delivering radically different realities:
+\begin{itemize}
+    \item Firm A promises ``expert mentorship'' and delivers a 10-minute check-in with an unsupervised intern reading a checklist.
+    \item Firm B promises ``expert mentorship'' and delivers a 45-minute architectural code review conducted by a senior staff engineer with 10 years of distributed systems experience.
+\end{itemize}
+
+The marketing copy is identical; the lived product exists in different universes.
+
+A rigorous product architecture specifies the \textbf{operational delivery mechanism}:
+\begin{itemize}
+    \item What professional qualifications must the reviewer possess?
+    \item What standardized evaluation rubrics govern their critique?
+    \item How are evaluators calibrated to ensure inter-rater reliability?
+    \item What maximum queue latency is enforced before escalation?
+\end{itemize}
+
+In educational and professional services, where buyers cannot easily inspect quality prior to purchase, closing the gap between specification and delivery is the foundation of institutional reputation.
+
+\subsection*{23. Design for an Experience, Not an Inventory of Touchpoints}
+
+Customers do not experience an enterprise as a set of isolated organizational departments. They experience an unbroken chronological narrative: discovering the offer, evaluating claims, paying tuition, completing onboarding, doing the work, receiving critique, encountering bugs, and achieving a terminal outcome.
+
+A brilliant instructional lecture cannot rescue an onboarding sequence that fails to provision access tokens 10 minutes before class. A polished software interface cannot compensate for an accounting error on the renewal invoice.
+
+Map the end-to-end emotional and functional journey:
+\begin{itemize}
+    \item Where is the customer's anxiety highest?
+    \item Where is cognitive fatigue most pronounced?
+    \item What clear feedback signals indicate progress?
+    \item How does the organization acknowledge and repair its inevitable mistakes?
+\end{itemize}
+
+The objective is not to manufacture superficial corporate warmth. It is to construct a \textbf{coherent, trustworthy operating trajectory} that supports the customer's effort while respecting their time and dignity.

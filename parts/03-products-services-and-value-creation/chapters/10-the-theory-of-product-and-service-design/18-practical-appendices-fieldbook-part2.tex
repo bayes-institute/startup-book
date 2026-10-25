@@ -1,0 +1,143 @@
+% 18-practical-appendices-fieldbook-part2.tex
+% Chapter 10: The Theory of Product and Service Design
+% Practical Fieldbook: Appendices E-J
+
+\section*{Appendix E: A Usability Test for Early-Stage Ventures}
+\addcontentsline{toc}{section}{Appendix E: A Usability Test for Early-Stage Ventures}
+
+A lean usability study evaluates whether authentic target users can autonomously accomplish a consequential value event without relying on founder coaching.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Core research question:} Can an intended customer in starting state A complete the primary value event without external assistance, and where does current interface or instructional design induce failure?
+\item \textbf{Target recruitment:} Enlist 3 to 5 individuals who match the exact customer persona (e.g., employed backend engineers with Python experience). Exclude personal friends, internal colleagues, and individuals already familiar with the software or curriculum.
+\item \textbf{Realistic test environment:} Provide authentic equipment, realistic dirty datasets, and uncoached environmental constraints. Present the task as an authentic operational goal: ``Identify the 3 invoice exceptions that threaten monthly cashflow,'' rather than explaining which buttons to press.
+\item \textbf{Behavioral observation protocol:} Observe silently. Record exact time to completion, hesitation points, erroneous clicks, confused queries, and moments of total task abandonment. Do not coach, correct, or apologize for system shortcomings during the test.
+\item \textbf{Diagnostic debrief:} Ask open, non-leading questions:
+\begin{itemize}
+\item What did you believe happened when you completed that step?
+\item How confident are you in the correctness of that final output?
+\item How does the effort required here compare with your current spreadsheet workflow?
+\end{itemize}
+\item \textbf{Causal synthesis:} Categorize observed friction into functional bugs, cognitive overload, misleading labels, or prerequisite gaps. Prioritize fixes by error severity rather than aesthetic preference.
+\end{enumerate}
+
+\section*{Appendix F: Quality and Reliability Specification}
+\addcontentsline{toc}{section}{Appendix F: Quality and Reliability Specification}
+
+Quality must be defined against the intended job, operating context, and failure consequences. Table~\ref{tab:quality_reliability_spec} establishes explicit verification criteria across 9 operational dimensions.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Quality and Reliability Specification Framework}
+\label{tab:quality_reliability_spec}
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.40\textwidth} >{\raggedright\arraybackslash}X}
+\toprule
+Dimension & Specification Question & Example of Valid Measurement \\
+\midrule
+Correctness & What constitutes an accurate, verified output? & Zero mathematical reconciliation errors on test fixtures. \\
+Completeness & What necessary components must be present? & All required variance citations linked to source ledger entries. \\
+Availability & When must the system or service be accessible? & 99.5\% successful request completion during core working hours. \\
+Timeliness & What turnaround time preserves customer value? & Evaluation feedback delivered within 48 hours of project submission. \\
+Usability & Can target users complete the task independently? & 80\% of unassisted test participants achieve success on first attempt. \\
+Consistency & Do distinct operators provide uniform judgments? & Inter-rater reliability correlation above 0.85 across faculty graders. \\
+Safety and Security & What catastrophic harms or breaches must be prevented? & Zero leakage of confidential employer records in public prompts. \\
+Recoverability & How quickly and completely does the system restore state? & Recovery time objective under 60 minutes with full session preservation. \\
+Maintainability & Can components be updated without breaking others? & New evaluation rubrics deployable without modifying core LMS code. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section*{Appendix G: Feature Prioritization Decision Sheet}
+\addcontentsline{toc}{section}{Appendix G: Feature Prioritization Decision Sheet}
+
+When evaluating a proposed feature or workflow modification, require the advocate to answer 6 diagnostic questions in writing before writing code:
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Observed bottleneck:} What concrete customer failure, ticket volume, or drop-off event prompted this request?
+\item \textbf{Outcome link:} How precisely does this feature alter the probability, speed, or quality of the primary value event?
+\item \textbf{Kano classification:} Is this capability a baseline table stake, a differentiating choice driver, or an extraneous decoration for the beachhead?
+\item \textbf{Total cost of ownership:} What is the estimated labor to build, test, document, operate, maintain, and support this feature over 12 months?
+\item \textbf{Systemic risk:} What dependencies does this change create, and how could its failure degrade existing reliability?
+\item \textbf{Low-commitment alternative:} Can this hypothesis be verified with a manual concierge protocol or spreadsheet before engineering custom software?
+\end{enumerate}
+
+\textbf{Illustrative trade-off comparison:} An early team is deciding between building an automated visual analytics dashboard versus a data-freshness warning badge. The dashboard is visually impressive and marketable, but user testing reveals that customers frequently make flawed decisions because source data disconnected silently over the weekend. 
+
+The data-freshness badge directly prevents catastrophic decision failures, requiring 4 hours of engineering and minimal maintenance. The dashboard requires 60 hours of engineering, introduces database query latency, and leaves the stale-data vulnerability unresolved. Disciplined product design prioritizes the freshness badge as a critical reliability safeguard.
+
+\section*{Appendix H: The First Delivery Economics Sheet}
+\addcontentsline{toc}{section}{Appendix H: The First Delivery Economics Sheet}
+
+A dependable design requires honest accounting of all operating resources. Table~\ref{tab:delivery_economics_sheet} presents a hypothetical delivery model for an expert-led 4-week cohort of 12 participants paying ₹15,000 each.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Hypothetical Unit Delivery Economics Sheet (12-Learner Pilot)}
+\label{tab:delivery_economics_sheet}
+\begin{tabularx}{0.75\textwidth}{>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{0.25\textwidth}}
+\toprule
+Financial Line Item & Illustrative Amount \\
+\midrule
+Gross participant fees (12 learners $\times$ ₹15,000) & ₹1,80,000 \\
+Per-participant payment processing and support costs (₹1,000 $\times$ 12) & -₹12,000 \\
+Fixed non-founder delivery expenses (software licenses, hosting) & -₹24,000 \\
+Direct customer acquisition expenses (targeted ads, content distribution) & -₹12,000 \\
+\midrule
+\textbf{Cash surplus before founder labor, overhead, and taxes} & \textbf{₹1,32,000} \\
+\midrule
+Normalized founder and reviewer labor (50 hours @ ₹1,000 per hour) & -₹50,000 \\
+\midrule
+\textbf{Illustrative economic contribution after fully loaded labor} & \textbf{₹82,000} \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+This simplified economic model reveals critical operational truths:
+\begin{itemize}[leftmargin=*]
+\item While the cash accounting surplus appears healthy at ₹1,32,000, 38\% of that surplus (₹50,000) is consumed by founder labor when priced at a modest professional wage of ₹1,000 per hour.
+\item If evaluation complexity increases review time by 15 minutes per student per cycle, total reviewer demand expands by 18 hours, eroding ₹18,000 of net economic contribution.
+\item Calculating normalized labor prevents the founder from confusing unpaid personal sweat equity with a scalable, profitable business model.
+\end{itemize}
+
+\section*{Appendix I: The Blameless Product Postmortem Protocol}
+\addcontentsline{toc}{section}{Appendix I: The Blameless Product Postmortem Protocol}
+
+When a consequential service failure or software outage occurs, execute a blameless postmortem within 48 hours to extract systemic learning.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Customer impact statement:} Document precisely what the customer experienced, including delayed deliverables, erroneous calculations, or operational downtime.
+\item \textbf{Factual incident timeline:} Reconstruct the chronological sequence of events: initial trigger, failure manifestation, detection alert, customer notification, containment, and final recovery.
+\item \textbf{Root cause analysis:} Distinguish superficial symptoms from systemic causes. Did the failure stem from ambiguous requirements, inadequate pre-flight checks, reviewer fatigue, unmonitored dependencies, or capacity overutilization?
+\item \textbf{Customer restitution:} Determine fair, immediate remediation: fee refund, personalized compensatory review, extended access, and transparent disclosure of what failed.
+\item \textbf{Preventive engineering controls:} Implement at least 2 concrete systemic safeguards to prevent recurrence: automated input validation checks, updated operational checklists, or redesigned handoff protocols.
+\end{enumerate}
+
+\section*{Appendix J: The Founder's Monthly Product Review}
+\addcontentsline{toc}{section}{Appendix J: The Founder's Monthly Product Review}
+
+Every 30 days, the founding team should step back from daily delivery firefighting to evaluate systemic product health across 10 core operational domains.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{The Founder's Monthly Product Review Dashboard}
+\label{tab:monthly_product_review}
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}X}
+\toprule
+Review Domain & Diagnostic Audit Question \\
+\midrule
+Customer job & Are we still solving the identical high-consequence problem observed during beachhead discovery? \\
+Primary value event & Exactly how many enrolled users successfully completed the core value milestone this month? \\
+Activation cliff & At which specific onboarding or early instructional step did users experience friction or drop out? \\
+Reliability index & What critical bugs, missed delivery deadlines, or grading inconsistencies occurred, and why? \\
+Service capacity & Did peak review volume, faculty preparation, or support load exceed budgeted hours? \\
+Unit delivery economics & Did actual delivery costs, software expenses, and acquisition spending match our pro forma model? \\
+Customer sentiment & What specific elements of the experience did paying users openly criticize, misunderstand, or praise? \\
+Evidence integrity & What verifiable student performance artifacts can we independently audit versus unproven claims? \\
+Hypothesis invalidation & Which foundational assumption about customer behavior or learning mechanisms was disproved this month? \\
+Immediate intervention & What single architectural modification will we test over the next 30 days, and what guardrails protect it? \\
+\bottomrule
+\end{tabularx}
+\end{table*}
