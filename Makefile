@@ -19,7 +19,7 @@ book: pdf
 # Build an individual chapter standalone
 # Usage: `make chapter CH=5` or `make chapter CHAPTER=05`
 chapter:
-	@RAW="$(or $(CH),$(CHAPTER),12)"; \
+	@RAW="$(or $(CH),$(CHAPTER),13)"; \
 	NUM=$$((10#$$RAW)); \
 	PAD=$$(printf "%02d" $$NUM); \
 	mkdir -p $(OUT_DIR)/chapters; \
@@ -29,7 +29,7 @@ chapter:
 
 # Short alias for chapter
 ch:
-	@$(MAKE) chapter CH=$(or $(CH),$(CHAPTER),12)
+	@$(MAKE) chapter CH=$(or $(CH),$(CHAPTER),13)
 
 # Dedicated chapter shortcuts
 ch1:
@@ -56,11 +56,13 @@ ch11:
 	@$(MAKE) chapter CH=11
 ch12:
 	@$(MAKE) chapter CH=12
+ch13:
+	@$(MAKE) chapter CH=13
 
 # Lock an individual chapter after verification
 # Usage: `make lock CH=5`
 lock:
-	@RAW="$(or $(CH),$(CHAPTER),12)"; \
+	@RAW="$(or $(CH),$(CHAPTER),13)"; \
 	NUM=$$((10#$$RAW)); \
 	PAD=$$(printf "%02d" $$NUM); \
 	mkdir -p $(OUT_DIR)/chapters $(OUT_DIR)/locked; \
@@ -98,11 +100,13 @@ lock11:
 	@$(MAKE) lock CH=11
 lock12:
 	@$(MAKE) lock CH=12
+lock13:
+	@$(MAKE) lock CH=13
 
 # Unlock a chapter for further editing
 # Usage: `make unlock CH=5`
 unlock:
-	@RAW="$(or $(CH),$(CHAPTER),12)"; \
+	@RAW="$(or $(CH),$(CHAPTER),13)"; \
 	NUM=$$((10#$$RAW)); \
 	if [ -f .chapter-locks ]; then \
 		grep -v "^$$NUM:" .chapter-locks > .chapter-locks.tmp 2>/dev/null || true; \
@@ -117,7 +121,7 @@ status:
 	@echo "=========================================================================="; \
 	echo " Bayesforce Publishing Engine :: Chapter Lock Status"; \
 	echo "=========================================================================="; \
-	for i in 1 2 3 4 5 6 7 8 9 10 11 12; do \
+	for i in 1 2 3 4 5 6 7 8 9 10 11 12 13; do \
 		PAD=$$(printf "%02d" $$i); \
 		if [ -f .chapter-locks ] && grep -q "^$$i:" .chapter-locks; then \
 			LOCK_TIME=$$(grep "^$$i:" .chapter-locks | cut -d: -f2-); \
@@ -130,7 +134,7 @@ status:
 
 # Build all active individual chapters sequentially
 chapters:
-	@for c in 1 2 3 4 5 6 7 8 9 10 11 12; do \
+	@for c in 1 2 3 4 5 6 7 8 9 10 11 12 13; do \
 		$(MAKE) chapter CH=$$c || exit 1; \
 	done
 

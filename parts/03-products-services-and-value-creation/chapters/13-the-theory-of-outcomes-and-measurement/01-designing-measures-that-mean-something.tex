@@ -1,0 +1,55 @@
+\section*{Part II: Designing Measures That Mean Something}
+
+\subsection*{7. Quality Is Multidimensional}
+
+A service may be accurate, timely, usable, safe, consistent, humane, and economically sustainable. These qualities can conflict. Increasing the amount of individual attention may improve the experience but destroy capacity. Accelerating grading may reduce turnaround time while worsening diagnosis. A higher pass rate may reflect better instruction or weaker standards.
+
+For an educational service, distinguish at least: \textbf{instructional process quality}, \textbf{learner experience}, \textbf{demonstrated learning}, \textbf{durability and transfer}, \textbf{equity and accessibility}, and \textbf{operational reliability}. For a business service, distinguish correctness, time to value, implementation burden, client control, and economic benefit. A company should not compress all of these into 1 number before it understands their trade-offs.
+
+\subsection*{8. Construct Validity: Are We Testing the Right Thing?}
+
+Suppose the intended competence is diagnosing an unreliable AI system. A multiple-choice test asking definitions of embeddings, tokens, and retrieval components may have high scoring consistency yet omit the decisions that constitute diagnostic competence. It measures terminology knowledge, not the broader judgment.
+
+This is a form of \textbf{construct underrepresentation}: important aspects of the claimed ability are absent. Conversely, a timed assessment on a poorly documented software platform might reward interface familiarity and typing speed rather than the intended engineering reasoning. This is \textbf{construct-irrelevant variance}: unwanted factors influence the result.
+
+To improve validity, describe the actual tasks professionals perform, sample them thoughtfully, include realistic constraints, and allow the forms of evidence appropriate to the target. For a quantitative proof, formal reasoning is essential. For a physical laboratory skill, observed safe enactment may be indispensable. For an enterprise decision, trade-off analysis and communication matter alongside technical output.
+
+\subsection*{9. Reliability: Does the Conclusion Survive Repetition?}
+
+If the same student submits the same work to 2 trained assessors and 1 says ``excellent'' while the other says ``incompetent,'' the organization has a consistency problem. If a learner passes an assessment only because the task happened to match a memorized example, the inference is fragile. Reliability concerns repeatability across tasks, occasions, raters, and sometimes instruments, depending on the claim.
+
+It can be improved through clear scoring criteria, common anchor examples, rater calibration, 2nd reviews of borderline work, multiple tasks, and standardized administration where appropriate. But mechanical consistency is not sufficient. A perfectly reliable exam that measures only memorization remains inappropriate for certification of professional judgment.
+
+\subsection*{10. Error Sources Must Be Separated}
+
+An observed score can differ from the learner's underlying capability because of task sampling, grading variability, temporary fatigue, ambiguous instructions, tool failures, anxiety, inappropriate assistance, or genuine fluctuations in performance. These are not always random or independent.
+
+A simplified thinking model is:
+\begin{equation}
+X_{it} = \theta_i + e_{\text{task},it} + e_{\text{rater},it} + e_{\text{occasion},it} + b_{it},
+\end{equation}
+where $X_{it}$ is observed performance, $\theta_i$ is the latent capability of interest, the $e$ terms represent kinds of variability, and $b_{it}$ denotes systematic distortion. This is a \textbf{thinking model}, not an assertion that true capability is a constant scalar or that errors can be cleanly separated from a tiny dataset. Its purpose is to make the researcher ask which disturbances are plausible.
+
+When stakes are high, use multiple observations or independent ratings and record the uncertainty. A pass-fail distinction near a borderline should not be described with unwarranted confidence.
+
+\subsection*{11. Validity, Reliability, and Fairness Are Related but Different}
+
+The joint AERA-APA-NCME testing standards treat validity, reliability or precision, and fairness as central considerations in defensible score use [M3]. A valid score interpretation needs evidence that observed performance supports the intended claim. Reliability addresses consistency. Fairness asks whether intended learners have a reasonable opportunity to demonstrate the relevant competence without systematic contamination from irrelevant barriers or biased tasks.
+
+A test can be reliably unfair, or fair in access but invalid for its purpose. Providing an accommodation can improve validity when it removes an irrelevant obstacle, but it may change the target construct when the accommodation eliminates a skill that genuinely matters. Such decisions require an explicit rationale, not automatic rules.
+
+\subsection*{12. The Argument-Based View of Assessment}
+
+Michael Kane's argument-based approach is useful because it makes each inferential step inspectable: \textbf{performance $\to$ scoring $\to$ generalization $\to$ extrapolation $\to$ decision or use} [M2].
+
+A student submits an AI system. The institution assigns a score. It infers the student could perform similar tasks. It extrapolates that they might work competently in a professional setting. It may then decide to award a credential or recommend them to an employer. Every arrow requires evidence. Was the task representative? Was the scoring consistent? Did the learner work independently? Does 1 case generalize? Is the employer's job similar enough? Does the decision threshold have acceptable error costs?
+
+This is why a defensible capability certificate is harder to build than an impressive certificate design.
+
+\subsection*{13. Evidence-Centered Design: Claim, Evidence, Task}
+
+The evidence-centered assessment tradition associated with Mislevy and colleagues encourages designers to make 3 things explicit: \textbf{What capability is claimed? What observable evidence would distinguish a capable person? Which task will elicit that evidence?} [M4].
+
+For the claim ``can evaluate a retrieval application,'' evidence might include specifying a baseline, detecting access or freshness failures, constructing relevant examples, interpreting error distributions, and defending a release decision. Tasks should elicit those decisions, not merely invite a memorized definition. A single polished artifact may fail to reveal authorship; an unseen change request and a short defense can strengthen the inference.
+
+An assessment blueprint can then track which pieces of evidence support which claims and where evidence is missing. It is better to report ``not yet assessed'' than to infer excellence from a related but insufficient task.

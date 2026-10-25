@@ -1,0 +1,72 @@
+\section*{Part III: The Causal Problem: Did We Create the Change?}
+
+\subsection*{21. The Outcome You Cannot Observe Is the One That Matters Most}
+
+A learner participates in a course and improves. The founder wants to know how much improvement the course caused. The central difficulty is that we cannot simultaneously observe the same learner, in the same period and circumstances, both taking and not taking the course.
+
+In potential-outcomes notation, let $Y_i(1)$ be the learner's outcome if exposed to the intervention and $Y_i(0)$ the outcome if not exposed. The individual causal effect is:
+\begin{equation}
+\tau_i = Y_i(1) - Y_i(0).
+\end{equation}
+But only 1 potential outcome is observed. The other is the \textbf{counterfactual}. This fundamental problem of causal inference applies just as much to an enterprise AI training program, an onboarding change, a medical intervention, or a management consultancy. ``Customers improved after hiring us'' does not establish what would have happened otherwise.
+
+\subsection*{22. The Difference Between Change and Impact}
+
+Suppose the average learner score rises from 42 to 71 points on a comparable scale. The observed mean change is \textbf{29 points}. It is not yet a causal estimate. Learners may have practiced externally, gained experience at work, received assistance, or taken an easier exit form. Some low performers may have dropped out and disappeared from the exit average.
+
+The founder can honestly report the observed change if the measures and denominators are clear. To attribute a portion of that change to the program requires additional assumptions or comparisons. A credible organization should distinguish \textbf{outcome measurement} from \textbf{impact evaluation}. The former asks what occurred. The latter asks what difference the intervention made relative to a plausible counterfactual.
+
+\subsection*{23. Threats to Pre- and Post-Inference}
+
+Consider 8 common rival explanations:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=0.4em]
+    \item \textbf{Selection:} participants were unusually prepared or motivated before enrollment.
+    \item \textbf{Maturation:} they would have developed through time and ordinary experience.
+    \item \textbf{History:} a new work project or outside event changed behavior.
+    \item \textbf{Testing:} taking the entry assessment improved later scores through rehearsal.
+    \item \textbf{Instrumentation:} the exit task or scoring became easier.
+    \item \textbf{Regression to the mean:} extreme starting scores naturally moved toward typical values.
+    \item \textbf{Attrition:} the students who did poorly or were overburdened disappeared from measurement.
+    \item \textbf{Concurrent treatment:} other courses, mentors, or AI tools contributed to growth.
+\end{itemize}
+
+These categories draw on classic experimental and quasi-experimental design thinking associated with Campbell and Stanley [M5]. Listing threats is not a ritual; identify those most plausible in the actual setting and gather data capable of challenging them.
+
+\subsection*{24. A Correct Comparison Group Changes the Question}
+
+Suppose 20 eligible learners receive a program and 20 similar learners use an existing alternative. At the end, the 1st group scores higher. That is stronger evidence than a single group's pre- and post-change; yet the interpretation depends on how the groups were formed. If the founder deliberately placed the strongest applicants in the intervention, the difference may reflect selection.
+
+Random assignment among genuinely eligible, consenting learners can help make groups comparable in expectation. It does not automatically solve small samples, noncompliance, attrition, invalid measures, or generalization to the wider market. In education, withholding useful instruction may sometimes be unethical or impractical; a delayed-start design or comparison between credible alternatives can be more appropriate. \textbf{The best feasible comparison is 1 that answers a real decision without violating reasonable obligations to learners.}
+
+\subsection*{25. A Randomized Experiment Must Specify the Estimand}
+
+What precisely are we estimating? The effect of \emph{being offered} an intervention? The effect among those who actually participated? The effect of a complete program as delivered? The marginal effect of a new feedback process over an existing good process? These can differ.
+
+If random assignment determines access but some people do not attend, comparing everyone assigned to the program with everyone assigned to the alternative estimates an \textbf{intention-to-treat effect} for that assignment policy. Comparing only completers introduces selection because completion is affected by motivation and possibly by the intervention itself. There are more elaborate methods to estimate other effects, but they require additional assumptions.
+
+A founder should define the decision-relevant estimand before collecting data. If deciding whether to offer all employees a workshop, the policy effect of offering it may be more useful than the effect among a self-selected handful of enthusiasts.
+
+\subsection*{26. The Arithmetic of a Simple Experiment}
+
+Imagine 2 randomly assigned groups on a comparable 100-point assessment. These are invented data:
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Illustrative Randomized Comparison Data}
+\begin{tabularx}{\textwidth}{p{0.30\textwidth}p{0.20\textwidth}p{0.20\textwidth}X}
+\toprule
+\textbf{Group} & \textbf{Entry Mean} & \textbf{Exit Mean} & \textbf{Observed Change} \\
+\midrule
+Proposed instruction & 42 & 70 & +28 \\
+Comparison instruction & 44 & 59 & +15 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+A difference-in-changes contrast is:
+\begin{equation}
+(70 - 42) - (59 - 44) = 28 - 15 = 13\text{ points}.
+\end{equation}
+Under suitable randomization and measurement conditions, this contrast may estimate an intervention effect. But the table contains \textbf{no sample sizes, standard deviations, uncertainty intervals, attrition, or information about how the tests were made comparable}. It would be irresponsible to publish ``Our program causes a 13-point improvement'' from this table alone. The arithmetic illustrates the logic of a contrast, not sufficient evidence for a causal claim.
