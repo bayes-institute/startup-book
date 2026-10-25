@@ -1,0 +1,65 @@
+\section*{Part III: How Practice Becomes Skill}
+
+\subsection*{29. Repetition Is Necessary in Many Skills, but Repetition Is Not a Theory}
+
+A musician plays a passage 100 times. A programmer builds 5 similar applications. A sales trainee conducts 20 calls. The hours are real. The improvement is uncertain.
+
+Repeated performance can increase speed, confidence, and familiarity. But the person may also automate errors, reinforce weak shortcuts, or stop learning once the task becomes comfortable. A course that celebrates ``100 practice problems'' without asking what each problem develops has measured volume, not skill acquisition.
+
+A more informative unit is the \textbf{improvement cycle}: a sufficiently challenging task; an observable attempt; information about the discrepancy between current and desired performance; an explanation of the likely source; and another attempt under conditions that test the correction. The number of cycles matters, but their content matters more.
+
+\subsection*{30. Deliberate Practice Is Targeted Correction, Not Just Hard Work}
+
+The deliberate-practice literature emphasizes structured work aimed at improving specific aspects of performance, often with feedback and progressively more difficult tasks. Its importance has sometimes been distorted into the assertion that a fixed number of hours guarantees exceptional achievement. A meta-analysis across domains found that deliberate practice explains a meaningful but variable portion of performance differences, not everything [R9].
+
+Imagine a learner weak at diagnosing evaluation leakage. Assigning another full-stack AI application may simply force them to repeat the same mistake within more code. A targeted exercise showing 3 deceptively similar split designs could be far more productive. After the weakness is repaired, reintegrate it into the whole application.
+
+\textbf{Whole-task practice} develops integration. \textbf{Part-task practice} repairs bottlenecks. Expertise often requires moving between them. Neither endless isolated drills nor endless unguided projects is enough.
+
+\subsection*{31. Practice Should Make the Invisible Decision Visible}
+
+A beginner can sometimes produce the right output for the wrong reason. They choose temporal validation because the assignment template includes it, not because they recognized a temporal dependence. They add caching because a mentor said so, not because they diagnosed a latency pattern.
+
+Good practice therefore elicits both \textbf{action} and \textbf{rationale}. Ask what they expect before running the code. Ask which failure they are trying to exclude. Request a short decision memo comparing plausible alternatives. When the reasoning is sound, fade the explanation requirement on routine details and move the attention to harder choices.
+
+The goal is not bureaucratic documentation of every thought. It is the instructor's ability to distinguish knowledge from lucky execution and the learner's ability to observe their own reasoning.
+
+\subsection*{32. Error Is Information Only When Someone Can Interpret It}
+
+Errors can be productive because they reveal misconceptions. But error does not automatically teach. A learner who repeatedly receives ``incorrect'' without understanding why may infer that they are incapable, memorize a superficial workaround, or give up.
+
+A useful error model has 5 stages: \textbf{expected result $\to$ actual result $\to$ discrepancy $\to$ plausible cause $\to$ discriminating next test}. The teacher's skill lies in diagnosing the \emph{reason} the attempt went wrong, not merely pointing to the wrong line.
+
+Consider 3 students who all fail an evaluation-design question. 1 does not understand sampling; 1 understands sampling but ignores operational timing; 1 understands both but misreads the assignment. Identical grades conceal different learning needs. An excellent feedback system distinguishes them.
+
+\subsection*{33. Feedback Is a Loop, Not a Comment}
+
+Feedback can tell learners where they stand, but its greater value comes when it informs the next attempt. A meta-analysis of educational feedback finds a positive overall effect with substantial heterogeneity; the information conveyed is consequential [R10].
+
+A helpful sequence is \textbf{goal $\to$ attempt $\to$ diagnosis $\to$ specific action $\to$ reattempt $\to$ check}. ``Good work'' communicates warmth, but little repair guidance. ``Your evaluation includes the same customer's later events in training and earlier events in testing; redraw the data timeline and propose a split that matches deployment'' supplies a causal diagnosis and next action.
+
+Feedback can also be counterproductive if it overwhelms the learner, arrives after the opportunity to revise, supplies the entire solution, or frames a mistake as evidence of fixed personal inadequacy. The founder should measure not only how many comments were delivered but \textbf{whether subsequent work actually improved}.
+
+\subsection*{34. Feedback Has at Least 4 Distinct Jobs}
+
+\textbf{Correctness feedback} reports whether an answer or execution meets a criterion. \textbf{Diagnostic feedback} explains a relevant misconception or failure mechanism. \textbf{Strategic feedback} challenges the learner's approach and choice among alternatives. \textbf{Metacognitive feedback} helps them improve the way they monitor, test, and regulate their future work.
+
+Each has different economics. Unit tests can provide immediate correctness information at scale. A well-crafted diagnostic rule can address common coding misconceptions. Complex system-design judgment may require a knowledgeable human who can understand context and competing trade-offs. Metacognitive coaching may be valuable when the student repeatedly misjudges readiness or avoids asking for help.
+
+Don't spend scarce faculty time manually confirming what a deterministic test can already establish; don't trust deterministic tests to judge subtle professional reasoning they cannot observe.
+
+\subsection*{35. Timing Matters Because Feedback Has to Meet a Teachable Moment}
+
+Immediate feedback can stop a novice from rehearsing an error and help them establish a new procedure. Delayed feedback can sometimes protect independent thinking or create a useful opportunity to reconsider. There is no universally optimal delay across tasks.
+
+The founder should ask: \emph{What could go wrong while waiting?} For a beginner learning basic syntax, an unresolved trivial bug can destroy the entire session. A rapid hint helps. For an advanced architecture decision, giving the recommended design immediately may erase the reasoning opportunity. A review after the learner commits to a proposal may be stronger.
+
+The feedback service should therefore distinguish \textbf{blocking errors}, \textbf{conceptual errors}, and \textbf{judgment opportunities}. Fast resolution is not always the same as fast learning, but avoidable waiting rarely helps.
+
+\subsection*{36. A Rubric Is a Map of Valued Decisions}
+
+If a course grades projects mainly on visual polish, students will optimize visual polish. If every capstone passes regardless of evaluation quality, students learn that the evaluation standard is ceremonial.
+
+A rubric makes priorities legible. For a technical system, criteria may include framing, validity of evaluation, implementation, evidence of failure testing, explanation of trade-offs, and independent defense. Rubrics should be specific enough to guide effort and reliable enough to support fair decisions, but not so mechanical that they reward checklists over judgment.
+
+1 useful mechanism is \textbf{anchor artifacts}: examples of weak, adequate, and strong work with the reasoning for each judgment. Learners can compare their work against a visible standard; instructors can calibrate their expectations. Chapter 13 will treat assessment validity and reliability more fully.

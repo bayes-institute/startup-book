@@ -1,0 +1,102 @@
+\section*{Closing Argument: What Does It Mean to Make a Person More Capable?}
+
+The answer is not a pile of information placed inside someone's head. It is not merely a successful examination. It is not the number of times they attended, the impressiveness of their project, or how fluently they can speak about a technology.
+
+A genuinely capable person has acquired knowledge they can access; models they can use; procedures they can execute; perceptions that reveal important patterns; standards that help them reject weak evidence; and the initiative to act, test, correct, and learn again. Those abilities are never unlimited. They have domains, prerequisites, contexts, and failure conditions. The intellectually honest educator names those boundaries rather than disguising them.
+
+The development of such capability is neither entirely automatic nor entirely dependent on heroic teaching. It arises from \textbf{a designed interaction between the learner's effort and an environment that supplies the right challenge, explanations, feedback, social conditions, and opportunities to use knowledge}. It is cumulative. It is frequently uncomfortable. It can be accelerated but not conjured from slogans.
+
+The powerful lesson for an educational entrepreneur is that the most important thing being sold may be \textbf{an increase in another person's ability to act well without the seller}. Most businesses seek to remain indispensable to the customer. A great learning institution must, in a meaningful sense, make the teacher less necessary.
+
+That paradox is not a weakness of education as a business. It is the basis of its legitimacy. Learners can leave with a capability that continues creating value in situations the institution never anticipated. They may return for new questions, advanced challenges, research, and community, not because the 1st course deliberately kept them dependent.
+
+The founder's responsibility is therefore both ambitious and precise:
+
+\begin{quote}
+\textbf{Create the conditions for durable, independent, adaptable capability; then make only those claims about transformation that the evidence can bear.}
+\end{quote}
+
+The next chapter will ask how to translate these cognitive and developmental mechanisms into the actual architecture of curriculum, instruction, activities, assessment, faculty roles, and delivery media. This chapter supplies the \emph{why}; the next will develop the \emph{how}.
+
+\section*{Appendix A: The Capability-Transformation Dossier}
+
+Use this before launching an educational offer. Write evidence or \textbf{UNTESTED} beside every claim that is not yet supported.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{The Capability-Transformation Dossier}
+\begin{tabularx}{\textwidth}{p{0.22\textwidth}p{0.38\textwidth}X}
+\toprule
+\textbf{Field} & \textbf{Founder's Question} & \textbf{Evidence to Collect} \\
+\midrule
+Intended learner & Who can reasonably benefit at their current level? & Real entry-task work; job context \\
+Consequential problem & What becomes possible or less error-prone? & Authentic tasks and stakes \\
+Entry state & What can the learner already do unaided? & Representative diagnostic \\
+Target capability & What family of tasks should they handle? & Defined task domain and boundaries \\
+Standards & What counts as competent performance? & Rubric and anchor examples \\
+Assistance & What tools, peers, AI, and hints are permitted? & Explicit policy \\
+Prerequisite graph & Which concepts and skills must already exist? & Task decomposition; error analysis \\
+Learning mechanism & Which cognitive work will actually cause improvement? & Explanations, attempts, contrast, feedback, retrieval \\
+Practice sequence & How do tasks become harder and more authentic? & Graduated task bank \\
+Feedback design & What identifies the misconception, and who repairs it? & Reviewer plan and retry tasks \\
+Persistence & When is the ability tested after a delay? & Retention checkpoints \\
+Transfer & In which different situation must it work? & Varied, unlabeled cases \\
+Motivation & Can the learner protect time and see progress? & Schedule, support, readiness interviews \\
+Evidence quality & Which claims do the observations justify? & Assessment conditions and limitations \\
+Economics & Can we deliver it repeatedly at sustainable cost? & Founder/reviewer hours and financial model \\
+Failure threshold & Which result would make us revise or stop? & Predeclared decision rule \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\textbf{A filled example, explicitly hypothetical.} Learner: working backend engineer. Entry: writes reliable API code but weak at AI evaluation design. Target: construct a defensible evaluation plan for an unfamiliar retrieval system. Standard: identifies representative cases, baselines, relevant split and leakage risks, error categories, and limitations. Mechanism: contrast valid/invalid evaluations; worked example; independent task; feedback; unseen variant. Evidence: rubric-assessed independent diagnostic at entry, exit, and optional delayed check. Commercial status: no assumptions about willingness to pay until real priced tests are conducted.
+
+\section*{Appendix B: The Misconception and Feedback Register}
+
+Use the following as an operating table after each teaching encounter. Every row should connect a learner error to an intervention and a fresh observation rather than merely record a grade.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{The Misconception and Feedback Register}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth}p{0.20\textwidth}p{0.20\textwidth}p{0.20\textwidth}X}
+\toprule
+\textbf{Task / Concept} & \textbf{Observed Error} & \textbf{Possible Cause} & \textbf{Intervention} & \textbf{Recheck} \\
+\midrule
+Temporal validation & Randomly splits future observations & Confuses iid and dependent observations & Timeline diagram plus contrasting examples & New temporal dataset \\
+Retrieval quality & Optimizes average relevance only & Does not model high-risk failures & Error-category analysis & Unseen failure traces \\
+Causal inference & Equates before/after with causal effect & Missing counterfactual model & Matched contrasting cases & New business intervention case \\
+Service reliability & Adds retries without a limit & Does not recognize retry storms & Failure simulation and traces & Changed latency/load case \\
+Statistical interpretation & Ignores base rates & Formula memorization without population model & Natural-frequency table and prediction & Different screening scenario \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+A founder should periodically aggregate this table. If many learners exhibit the same error, investigate instruction or prerequisite design. If only a few learners struggle, targeted support may be more efficient. If an intervention appears successful on a familiar retry but fails on an unseen case, the error may not be repaired.
+
+\textbf{Important:} Error categories are hypotheses about causes. A wrong answer does not uniquely identify a misconception. Ask the learner to explain the reasoning before intervening.
+
+\section*{Appendix C: An Example of a Learning Cycle in 3 Stages}
+
+\textbf{Target:} detect data leakage in predictive-model evaluation and defend an alternative.
+
+\subsection*{C1. Build the Model}
+
+Open with a fictional company boasting 99\% validation accuracy yet suffering severe future deployment failures. Ask for possible explanations. Show a timeline of when each predictor becomes available. Provide 1 worked case, 1 counterexample, and a short explanation of the governing decision rule. Include a prerequisite bridge for learners unfamiliar with sampling or train-test splits.
+
+\textbf{Evidence sought:} Learners correctly identify why a particular variable is unavailable at prediction time and can explain the failure mechanism in plain language.
+
+\subsection*{C2. Make the Learner Decide}
+
+Give 3 new cases, not labeled by mistake type. 1 has ordinary random samples; 1 contains repeated entities; 1 has temporal dependencies. Ask learners to choose valid evaluation plans and defend them. Provide diagnostic feedback on the \emph{first false assumption} in their reasoning. Require a corrected attempt.
+
+\textbf{Evidence sought:} Learners can select a method rather than merely perform the announced 1.
+
+\subsection*{C3. Remove the Cues and Change the Context}
+
+After a delay, give a new operational case, perhaps predictive maintenance or loan-risk forecasting, with a conflicting stakeholder request for a very flattering metric. The learner must identify the sampling problem, propose an evaluation design, and explain why the flattering result cannot yet be trusted.
+
+\textbf{Evidence sought:} Independent recognition and reasoning in a different context. The task does not prove universal causal-inference expertise or long-term workplace transfer.
+
+This sequence should be altered for a learner who already understands evaluation but struggles with engineering implementation. The same sequence is not universally appropriate for every population.

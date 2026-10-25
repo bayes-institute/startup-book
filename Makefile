@@ -5,7 +5,7 @@ OUT_DIR := build
 LATEXMK := latexmk
 LATEX_FLAGS := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 
-.PHONY: pdf book chapter ch ch1 ch2 ch3 ch4 ch5 ch6 ch7 ch8 ch9 ch10 chapters lock lock1 lock2 lock3 lock4 lock5 lock6 lock7 lock8 lock9 lock10 unlock status watch clean clean-chapters help
+.PHONY: pdf book chapter ch ch1 ch2 ch3 ch4 ch5 ch6 ch7 ch8 ch9 ch10 ch11 chapters lock lock1 lock2 lock3 lock4 lock5 lock6 lock7 lock8 lock9 lock10 lock11 unlock status watch clean clean-chapters help
 
 # Default target: compile the full book
 pdf:
@@ -19,7 +19,7 @@ book: pdf
 # Build an individual chapter standalone
 # Usage: `make chapter CH=5` or `make chapter CHAPTER=05`
 chapter:
-	@RAW="$(or $(CH),$(CHAPTER),10)"; \
+	@RAW="$(or $(CH),$(CHAPTER),11)"; \
 	NUM=$$((10#$$RAW)); \
 	PAD=$$(printf "%02d" $$NUM); \
 	mkdir -p $(OUT_DIR)/chapters; \
@@ -29,7 +29,7 @@ chapter:
 
 # Short alias for chapter
 ch:
-	@$(MAKE) chapter CH=$(or $(CH),$(CHAPTER),10)
+	@$(MAKE) chapter CH=$(or $(CH),$(CHAPTER),11)
 
 # Dedicated chapter shortcuts
 ch1:
@@ -52,11 +52,13 @@ ch9:
 	@$(MAKE) chapter CH=9
 ch10:
 	@$(MAKE) chapter CH=10
+ch11:
+	@$(MAKE) chapter CH=11
 
 # Lock an individual chapter after verification
 # Usage: `make lock CH=5`
 lock:
-	@RAW="$(or $(CH),$(CHAPTER),10)"; \
+	@RAW="$(or $(CH),$(CHAPTER),11)"; \
 	NUM=$$((10#$$RAW)); \
 	PAD=$$(printf "%02d" $$NUM); \
 	mkdir -p $(OUT_DIR)/chapters $(OUT_DIR)/locked; \
@@ -90,11 +92,13 @@ lock9:
 	@$(MAKE) lock CH=9
 lock10:
 	@$(MAKE) lock CH=10
+lock11:
+	@$(MAKE) lock CH=11
 
 # Unlock a chapter for further editing
 # Usage: `make unlock CH=5`
 unlock:
-	@RAW="$(or $(CH),$(CHAPTER),10)"; \
+	@RAW="$(or $(CH),$(CHAPTER),11)"; \
 	NUM=$$((10#$$RAW)); \
 	if [ -f .chapter-locks ]; then \
 		grep -v "^$$NUM:" .chapter-locks > .chapter-locks.tmp 2>/dev/null || true; \
@@ -109,7 +113,7 @@ status:
 	@echo "=========================================================================="; \
 	echo " Bayesforce Publishing Engine :: Chapter Lock Status"; \
 	echo "=========================================================================="; \
-	for i in 1 2 3 4 5 6 7 8 9 10; do \
+	for i in 1 2 3 4 5 6 7 8 9 10 11; do \
 		PAD=$$(printf "%02d" $$i); \
 		if [ -f .chapter-locks ] && grep -q "^$$i:" .chapter-locks; then \
 			LOCK_TIME=$$(grep "^$$i:" .chapter-locks | cut -d: -f2-); \
@@ -122,9 +126,10 @@ status:
 
 # Build all active individual chapters sequentially
 chapters:
-	@for c in 1 2 3 4 5 6 7 8 9 10; do \
+	@for c in 1 2 3 4 5 6 7 8 9 10 11; do \
 		$(MAKE) chapter CH=$$c || exit 1; \
 	done
+
 
 # Continuous watch mode (works for full book or individual chapter)
 # Usage: `make watch` or `make watch CH=4`
