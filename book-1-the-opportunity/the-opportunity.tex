@@ -1,28 +1,16 @@
 \documentclass[11pt,twoside,openright]{book}
-\usepackage{../shared/bayesinstitute}
-
+\usepackage{bayesinstitute}
+\input{book-info.tex}
 \begin{document}
-\frontmatter
-\RaggedRight
-
-\BITitlePage
-  {Book One of Five}
-  {The Opportunity}
-  {Is there a game worth playing, and can I see the opening?}
-  {Sagar Udasi}
-
-\tableofcontents
-\mainmatter
-
-\subimport{chapters/}{ch01-why-play-the-game.tex}
-\subimport{chapters/}{ch02-the-founder-as-starting-asset.tex}
-\subimport{chapters/}{ch03-ambition-mission-boundaries.tex}
-\subimport{chapters/}{ch04-thinking-under-uncertainty.tex}
-\subimport{chapters/}{ch05-markets-opportunity-selection.tex}
-\subimport{chapters/}{ch06-customer-understanding.tex}
-\subimport{chapters/}{ch07-the-beachhead.tex}
-\subimport{chapters/}{ch08-differentiation-positioning.tex}
-\subimport{chapters/}{ch09-validation-product-market-fit.tex}
-
-\backmatter
+\ifnum\BIOnlyChapter=0 \BIFrontMatter\else\mainmatter\fi
+\BIIncludeChapter{1}{chapters/ch01-why-play-the-game.tex}
+\BIIncludeChapter{2}{chapters/ch02-the-founder-as-starting-asset.tex}
+\BIIncludeChapter{3}{chapters/ch03-ambition-mission-boundaries.tex}
+\BIIncludeChapter{4}{chapters/ch04-thinking-under-uncertainty.tex}
+\BIIncludeChapter{5}{chapters/ch05-markets-opportunity-selection.tex}
+\BIIncludeChapter{6}{chapters/ch06-customer-understanding.tex}
+\BIIncludeChapter{7}{chapters/ch07-the-beachhead.tex}
+\BIIncludeChapter{8}{chapters/ch08-differentiation-positioning.tex}
+\BIIncludeChapter{9}{chapters/ch09-validation-product-market-fit.tex}
+\ifnum\BIOnlyChapter=0 \cleardoublepage\fi
 \end{document}

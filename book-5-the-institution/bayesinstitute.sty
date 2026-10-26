@@ -1,0 +1,337 @@
+% Building What Lasts: book-local print design. Interiors contain black ink only.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bayesinstitute}[2026/10/26 Five-volume print edition]
+\newif\ifBICover
+\DeclareOption{cover}{\BICovertrue}
+\ProcessOptions\relax
+\RequirePackage{fontspec}
+\RequirePackage{fix-cm}
+\RequirePackage[table]{xcolor}
+\RequirePackage{geometry,graphicx,titlesec,fancyhdr,needspace,microtype,ragged2e,etoolbox}
+\RequirePackage{import,enumitem,booktabs,tabularx,longtable,amsmath,amssymb,mathtools,caption,tikz,float}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18,BIchart/.style={
+  width=\linewidth,height=2.55in,axis lines=left,
+  tick label style={font=\sffamily\scriptsize},label style={font=\sffamily\scriptsize},
+  legend style={font=\sffamily\scriptsize,draw=none},
+  tick style={black},axis line style={black},
+  every axis plot/.append style={black,line width=0.8pt},
+  major tick length=3pt,scaled ticks=false}}
+\RequirePackage{xurl}
+\RequirePackage[unicode,hidelinks,hypertexnames=false]{hyperref}
+\AtBeginDvi{\special{pdf:minorversion 7}}
+
+% Cover colours never enter an interior PDF. Even legacy colour aliases are
+% DeviceGray black or white; no grey text, pale rules, tinted fills or rich black.
+\definecolor{BayesBurgundy}{gray}{0}
+\definecolor{BayesDeepBurgundy}{gray}{0}
+\definecolor{BayesInk}{gray}{0}
+\definecolor{BayesSoftInk}{gray}{0}
+\definecolor{BayesRule}{gray}{0}
+\definecolor{BayesWarmGray}{gray}{1}
+\definecolor{BayesWarmWhite}{gray}{1}
+\ifBICover
+  \definecolor{BayesBurgundy}{HTML}{5B0F1A}
+  \definecolor{BayesDeepBurgundy}{HTML}{430A13}
+  \definecolor{BayesInk}{HTML}{211D1E}
+  \definecolor{BayesWarmWhite}{HTML}{F7F2EE}
+\fi
+\color{BayesInk}
+
+% Static instances of the supplied OFL fonts. No synthetic weights or slants.
+% Emphasis stays upright. Legacy italic requests select a real semibold face;
+% EB Garamond italic is deliberately excluded from the reading system.
+\setmainfont{EBGaramond-Regular.ttf}[Path=fonts/,
+  BoldFont=EBGaramond-SemiBold.ttf,
+  ItalicFont=EBGaramond-SemiBold.ttf,BoldItalicFont=EBGaramond-SemiBold.ttf]
+\setsansfont{Inter-Regular.ttf}[Path=fonts/,BoldFont=Inter-SemiBold.ttf,
+  ItalicFont=Inter-SemiBold.ttf,BoldItalicFont=Inter-SemiBold.ttf,Scale=0.88]
+\newfontfamily\BayesDisplayFont{EBGaramond-Regular.ttf}[Path=fonts/,
+  BoldFont=EBGaramond-SemiBold.ttf,ItalicFont=EBGaramond-SemiBold.ttf,
+  BoldItalicFont=EBGaramond-SemiBold.ttf]
+\DeclareEmphSequence{\bfseries,\mdseries}
+
+\geometry{paperwidth=7in,paperheight=10in,inner=0.875in,outer=0.70in,
+  top=0.65in,bottom=0.65in,headheight=15pt,headsep=13pt,footskip=25pt,includeheadfoot}
+\setlength{\headwidth}{\textwidth}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 0.5pt minus 0.3pt}
+\setlength{\JustifyingParindent}{0pt}
+\setlength{\RaggedRightParindent}{0pt}
+\setlength{\RaggedRightRightskip}{0pt plus 2.2em}
+\pretolerance=1000
+\tolerance=2000
+\emergencystretch=2em
+% Justify using word spacing; never split a word to make a line fit.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\frenchspacing\raggedbottom
+\AtBeginDocument{\fontsize{11.5}{14.6}\selectfont\justifying}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{0}
+
+% Quiet editorial hierarchy: numbered chapters, unnumbered sections, no
+% repeated decorative bars. Contents pages show chapters rather than a syllabus.
+\titleformat{\chapter}[display]{\normalfont}
+  {\sffamily\bfseries\fontsize{9}{12}\selectfont LESSON\enspace\ifnum\value{chapter}<10 0\fi\thechapter}
+  {15pt}{\BayesDisplayFont\fontsize{34}{36}\selectfont\raggedright\hyphenpenalty=10000}
+\titlespacing*{\chapter}{0pt}{18pt}{18pt}
+\titleformat{name=\chapter,numberless}[display]{\normalfont}{}{0pt}
+  {\BayesDisplayFont\fontsize{30}{34}\selectfont\raggedright\hyphenpenalty=10000}
+\titlespacing*{name=\chapter,numberless}{0pt}{10pt}{14pt}
+\titleformat{\section}{\BayesDisplayFont\bfseries\fontsize{17}{20}\selectfont\raggedright\hyphenpenalty=10000}{}{0pt}{}
+\titlespacing*{\section}{0pt}{13pt plus 2pt minus 2pt}{4pt}
+\titleformat{\subsection}{\sffamily\bfseries\fontsize{10}{14}\selectfont}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 1pt}{3.5pt}
+\titleformat{\subsubsection}[runin]{\normalfont\bfseries}{}{0pt}{}[.]
+\titlespacing*{\subsubsection}{0pt}{9pt}{0.6em}
+\pretocmd{\section}{\Needspace{8\baselineskip}}{}{}
+\pretocmd{\subsection}{\if@nobreak\else\Needspace{5\baselineskip}\fi}{}{}
+
+\providecommand{\BookNumber}{1}
+\providecommand{\BookTitle}{The Opportunity}
+\providecommand{\BookSubtitle}{How to Find a Market Worth Serving and a Business Worth Building}
+\providecommand{\BookTagline}{How to Find a Market Worth Serving\\and a Business Worth Building}
+\providecommand{\BookQuestion}{Is there a game worth playing?}
+\providecommand{\BookScope}{}
+\providecommand{\BookAuthor}{Sagar Udasi}
+\providecommand{\BookAuthorQualification}{MSc Statistics (specialization in Computational Finance)}
+\providecommand{\BookAuthorUniversity}{University of Edinburgh}
+\providecommand{\BIOnlyChapter}{0}
+\newcommand{\SeriesTitle}{Building What Lasts}
+\newsavebox{\BIHeadBox}
+\newcommand{\BIRunningHead}[1]{%
+  \sbox{\BIHeadBox}{\sffamily\fontsize{8.5}{11}\selectfont #1}%
+  \ifdim\wd\BIHeadBox>\headwidth
+    \resizebox{\headwidth}{!}{\usebox{\BIHeadBox}}%
+  \else\usebox{\BIHeadBox}\fi}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE]{\BIRunningHead{\SeriesTitle\enspace /\enspace\BookTitle}}
+\fancyhead[RO]{\BIRunningHead{\nouppercase{\leftmark}}}
+\fancyfoot[LE,RO]{\sffamily\bfseries\fontsize{9}{12}\selectfont\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[LE,RO]{\sffamily\bfseries\fontsize{9}{12}\selectfont\thepage}}
+\let\BIOriginalClearDoublePage\cleardoublepage
+\renewcommand{\cleardoublepage}{\clearpage{\pagestyle{empty}\BIOriginalClearDoublePage}}
+
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=4pt,parsep=0pt,label=\textbullet}
+\setlist[enumerate]{leftmargin=*,widest=99,itemsep=2pt,topsep=4pt,parsep=0pt}
+\arrayrulecolor{black}
+\setlength{\heavyrulewidth}{0.7pt}
+\setlength{\lightrulewidth}{0.5pt}
+\setlength{\cmidrulewidth}{0.5pt}
+\renewcommand{\arraystretch}{1.20}
+\captionsetup{font={sf,small},labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=false,skip=7pt}
+\tikzset{every picture/.style={line width=0.7pt},>=Stealth}
+\tcbset{BIaside/.style={enhanced,breakable,colback=white,colframe=black,
+  coltitle=black,colbacktitle=white,frame hidden,sharp corners,
+  borderline west={0.7pt}{0pt}{black},boxsep=0pt,left=11pt,right=5pt,top=5pt,bottom=5pt,
+  before skip=10pt,after skip=10pt,fontupper=\fontsize{11}{14}\selectfont,
+  halign=justify,after upper={\par},fonttitle=\sffamily\bfseries\small,
+  attach title to upper={\par\smallskip}}}
+\newtcolorbox{InsightBox}[1]{BIaside,title={#1}}
+\newtcolorbox{ExampleBox}[1]{BIaside,title={#1}}
+\newtcolorbox{WarningBox}[1]{BIaside,title={#1}}
+\newtcolorbox{DefinitionBox}[1]{BIaside,title={#1}}
+\newtcolorbox{NoteBox}[1][Note]{BIaside,title={#1}}
+\newtcolorbox{TipBox}[1][A useful move]{BIaside,title={#1}}
+\newtcolorbox{KeyIdea}{BIaside,title={THE KEY IDEA},fontupper=\BayesDisplayFont\fontsize{14}{18}\selectfont}
+\newcommand{\ChapterLead}[1]{%
+  {\noindent\BayesDisplayFont\upshape\fontsize{14}{18}\selectfont\raggedright\hyphenpenalty=10000 #1\par}\medskip}
+\newcommand{\FigureSource}[1]{\par\vspace{3pt}{\raggedright\sffamily\scriptsize Source: #1\par}}
+% Cases start on a fresh page, but do not force a blank verso between founders.
+\newcommand{\BICaseIntro}{}
+\newcommand{\CaseStudies}[1]{\renewcommand{\BICaseIntro}{#1}}
+\newcommand{\CaseStudy}[4]{\clearpage
+  \markboth{Three founders, one lesson}{Three founders, one lesson}\thispagestyle{plain}
+  \noindent\rule{\linewidth}{1.5pt}\par\vspace{9pt}
+  {\noindent\sffamily\bfseries\small APPLY THE LESSON\enspace /\enspace CASE #1\enspace /\enspace #2\par}
+  \vspace{14pt}{\noindent\BayesDisplayFont\fontsize{27}{31}\selectfont #3\par}
+  \vspace{9pt}{\noindent\sffamily\small #4\par}\vspace{15pt}
+  \ifnum#1=1 \noindent\BICaseIntro\par\medskip\fi}
+\newcommand{\CasePrompt}[1]{\begin{TipBox}[Your turn]#1\end{TipBox}}
+\newcommand{\CaseSection}[1]{\par\Needspace{3\baselineskip}\vspace{9pt}
+  {\noindent\sffamily\bfseries\small #1\par}\nobreak\vspace{3pt}\noindent\ignorespaces}
+\newcommand{\LessonTakeaway}[1]{\begin{KeyIdea}#1\end{KeyIdea}}
+% Editorial teaching elements. Each has a distinct purpose; none is mandatory.
+% The panels are breakable and contain only black rules on white paper.
+\tcbset{BIeditorial/.style={enhanced,breakable,frame hidden,sharp corners,
+  colback=white,colframe=black,coltitle=black,colbacktitle=white,
+  borderline north={0.7pt}{0pt}{black},borderline south={0.4pt}{0pt}{black},
+  boxsep=0pt,left=0pt,right=0pt,top=7pt,bottom=7pt,
+  before skip=11pt,after skip=11pt,
+  fontupper=\fontsize{11}{14}\selectfont,fonttitle=\sffamily\bfseries\small,
+  halign=justify,after upper={\par},attach title to upper={\par\smallskip}}}
+\newenvironment{LessonBrief}{%
+  \begin{tcolorbox}[BIeditorial,unbreakable,title={THE LESSON IN BRIEF},halign=flush left]
+  \begin{description}[leftmargin=0.95in,labelwidth=0.85in,labelsep=0.10in,
+    font=\sffamily\bfseries\small,style=multiline,itemsep=3pt,parsep=0pt,topsep=2pt]
+}{\end{description}\end{tcolorbox}}
+\newcommand{\BriefPoint}[2]{\item[#1]#2}
+\newcounter{BIWorkedExample}[chapter]
+\renewcommand{\theBIWorkedExample}{\thechapter.\arabic{BIWorkedExample}}
+\newenvironment{WorkedExample}[2][unbreakable]{%
+  \refstepcounter{BIWorkedExample}%
+  \begin{tcolorbox}[BIeditorial,#1,title={WORKED EXAMPLE \theBIWorkedExample\enspace /\enspace #2}]
+}{\end{tcolorbox}}
+\newcommand{\WorkedStep}[3]{\par\smallskip\noindent\textbf{#1.\enspace #2}\enspace #3\par}
+\newtcolorbox{EvidenceNote}[1]{BIaside,title={READ THE EVIDENCE\enspace /\enspace #1}}
+\newcommand{\EvidenceLine}[2]{\par\noindent\textbf{#1.}\enspace #2\par}
+\newenvironment{DecisionChecklist}[1]{%
+  \begin{tcolorbox}[BIeditorial,unbreakable,title={BEFORE YOU DECIDE\enspace /\enspace #1},halign=flush left]
+  \begin{itemize}[label={\raisebox{0.1ex}{\scriptsize$\square$}},leftmargin=15pt,
+    itemsep=4pt,parsep=0pt,topsep=3pt]
+}{\end{itemize}\end{tcolorbox}}
+\newenvironment{LessonReview}{%
+  \par\Needspace{7\baselineskip}\medskip
+  {\noindent\sffamily\bfseries\small TAKE THE LESSON WITH YOU\par}
+  \begin{enumerate}[label=\arabic*.,leftmargin=18pt,itemsep=3pt,topsep=5pt]
+}{\end{enumerate}\par\smallskip}
+\newcommand{\TransferQuestion}[1]{\par\noindent\textbf{A question for your business.}\enspace #1\par}
+\newcommand{\NotesSection}{\section*{Notes and Sources}}
+\newcommand{\BookEquation}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\BookReference}[2]{\emph{#1}, Chapter~#2}
+
+% Explicit development plans, not empty sections masquerading as finished prose.
+\newcounter{BIPlanItem}
+\newenvironment{ChapterPlan}{%
+  \setcounter{BIPlanItem}{0}\par\medskip
+  \noindent{\bfseries Chapter in development}\par
+  \noindent The following sequence is the writing plan for this chapter.\par\medskip
+  \begin{list}{\arabic{BIPlanItem}}{\usecounter{BIPlanItem}%
+    \setlength{\leftmargin}{20pt}\setlength{\labelwidth}{13pt}%
+    \setlength{\labelsep}{7pt}\setlength{\itemsep}{7pt}\setlength{\parsep}{0pt}}%
+}{\end{list}\par\medskip}
+\newcommand{\PlanSection}[2]{\item\phantomsection\label{#2}#1}
+
+\newcommand{\BIInteriorTitle}{%
+  \begin{titlepage}\thispagestyle{empty}\raggedright
+  \begin{tikzpicture}[remember picture,overlay]
+    \BIBookTab{black}{white}{0.70in}{1.05in}
+  \end{tikzpicture}\par
+  \vspace*{53pt}
+  {\noindent\BayesDisplayFont\fontsize{43}{44}\selectfont Building\\What Lasts\par}
+  \vspace{28pt}{\noindent\rule{40pt}{1pt}\par}\vspace{18pt}
+  {\noindent\BayesDisplayFont\fontsize{27}{32}\selectfont\BookTitle\par}
+  \vspace{13pt}{\noindent\sffamily\fontsize{13.5}{19}\selectfont\BookTagline\par}
+  \vspace{33pt}
+  {\noindent\BayesDisplayFont\bfseries\fontsize{22}{27}\selectfont\BookAuthor\par}
+  \vspace{6pt}{\noindent\sffamily\fontsize{9.5}{14}\selectfont
+    \BookAuthorQualification\\\BookAuthorUniversity\par}
+  \vfill\noindent\hfill\includegraphics[width=1.15in]{assets/knowledge-black.pdf}
+  \end{titlepage}}
+\newcommand{\BICopyright}{%
+  \thispagestyle{empty}\null\vfill
+  {\small\noindent\textbf{\SeriesTitle: \BookTitle}\par\noindent Book \BookNumber\ of five\par
+  \medskip\noindent Copyright \textcopyright\ 2026 \BookAuthor. All rights reserved.\par
+  \medskip\noindent Published by Bayes Institute.\par
+  \medskip\noindent Development edition. Chapter plans identify unwritten material.
+  Demonstration cases and datasets are explicitly identified as illustrative.\par
+  \medskip\noindent No part of this work may be reproduced or distributed without
+  the author's permission, except for brief quotations in reviews or scholarship.\par
+  \medskip\noindent Typeset in EB Garamond and Inter.\par}
+  \clearpage}
+\newcommand{\BIPreface}{%
+  \chapter*{Preface}\addcontentsline{toc}{chapter}{Preface}\markboth{Preface}{Preface}
+  A business begins with a choice. Somebody sees a problem, imagines a better
+  outcome, and decides to do something about it. What follows is rarely as tidy
+  as the plan. Customers surprise us. The economics change. A solution that
+  worked for ten people becomes unreliable for a hundred.
+
+  \medskip\noindent\SeriesTitle\ is being written to make those choices easier
+  to understand. Its aim is to explain the mechanisms behind a business: why an
+  opportunity is attractive, how an offering becomes useful, where the money
+  comes from, and what allows an organisation to endure. A useful explanation
+  should leave you able to make a better decision, in a situation different
+  from the one on the page.
+
+  \medskip\noindent Each chapter is a lesson. We begin with a concrete puzzle,
+  develop the idea in ordinary language, and use mathematics or data where it
+  makes the reasoning clearer. The lesson closes by following three fictional
+  founders in technology, fashion, and education. Their different constraints
+  show where the same idea travels well and where judgment must take over.
+
+  \medskip\noindent This development edition establishes the reading design
+  and chapter sequence. The prose, evidence, and cases will be developed chapter
+  by chapter. This preface is a working editorial introduction for that process.
+
+  \vspace{18pt}\noindent\textbf{\BookAuthor}\\Bayes Institute}
+\newcommand{\BIFrontMatter}{%
+  \hypersetup{pdftitle={\SeriesTitle: \BookTitle},pdfauthor={\BookAuthor},pdfsubject={Book \BookNumber\ of five}}%
+  \frontmatter\BIInteriorTitle\BICopyright\BIPreface
+  \chapter*{A way into this book}\addcontentsline{toc}{chapter}{A way into this book}
+  \markboth{A way into this book}{A way into this book}
+  \BookScope\par\medskip
+  \noindent\textbf{The question at the centre}\par\noindent\BookQuestion\par
+  \medskip\noindent Read the argument first. Pause at a figure or equation to
+  ask what it changes about the decision. Then try the founder cases before
+  reading their proposed moves. A box marks a definition, caution, or useful
+  question; it does not replace the connected explanation around it.
+  \section*{Five books, five decisions}
+  Each volume stands on its own. Begin with the problem you face; the sequence
+  also offers a route from an initial opportunity to an enduring institution.
+  \begin{enumerate}[label=\arabic*.,itemsep=5pt]
+  \item \textbf{The Opportunity.} Choosing a worthwhile business.
+  \item \textbf{The Offering.} Designing and delivering the promise.
+  \item \textbf{The Engine.} Earning, surviving, and growing.
+  \item \textbf{The Advantage.} Building capabilities that endure.
+  \item \textbf{The Institution.} Allocating capital and outlasting the founder.
+  \end{enumerate}
+  \tableofcontents\mainmatter}
+\newcommand{\BIIncludeChapter}[2]{%
+  \ifnum\BIOnlyChapter=0 \input{#2}%
+  \else\ifnum\BIOnlyChapter=#1 \setcounter{chapter}{\numexpr#1-1\relax}\input{#2}\fi\fi}
+
+% Shared bookmark tab: the interior version uses black, the cover burgundy.
+\newcommand{\BIBookTab}[4]{%
+  \fill[#1] ([xshift=-#3]current page.north east) --
+    ([xshift=-#3-0.78in]current page.north east) --
+    ([xshift=-#3-0.78in,yshift=-#4]current page.north east) --
+    ([xshift=-#3-0.39in,yshift=-#4+0.12in]current page.north east) --
+    ([xshift=-#3,yshift=-#4]current page.north east) -- cycle;
+  \node[anchor=north,inner sep=0pt,text=#2] at
+    ([xshift=-#3-0.39in,yshift=-0.30in]current page.north east)
+    {\sffamily\bfseries\fontsize{8}{10}\selectfont\addfontfeatures{LetterSpace=8} BOOK};
+  \node[anchor=north,inner sep=0pt,text=#2] at
+    ([xshift=-#3-0.39in,yshift=-0.49in]current page.north east)
+    {\BayesDisplayFont\fontsize{28}{30}\selectfont\BookNumber};}
+
+% Trim-size front only. The watermark is confined to the colour cover.
+\newcommand{\BICoverPage}{%
+  \hypersetup{pdftitle={\SeriesTitle: \BookTitle, front cover},pdfauthor={\BookAuthor}}%
+  \begin{titlepage}\thispagestyle{empty}
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[BayesWarmWhite] (current page.south west) rectangle (current page.north east);
+    \node[anchor=center,inner sep=0pt,opacity=0.065] at
+      ([xshift=1.55in,yshift=0.10in]current page.center)
+      {\includegraphics[width=5.8in]{assets/emblem-primary.pdf}};
+    \BIBookTab{BayesBurgundy}{BayesWarmWhite}{0.65in}{1.10in}
+    \node[anchor=north west,inner sep=0pt,text=BayesBurgundy,align=left,text width=5.8in] at
+      ([xshift=0.62in,yshift=-1.43in]current page.north west)
+      {\BayesDisplayFont\fontsize{64}{62}\selectfont\addfontfeatures{LetterSpace=-0.5} Building\\What Lasts};
+    \draw[BayesBurgundy,line width=0.55pt]
+      ([xshift=0.65in,yshift=-3.67in]current page.north west) --
+      ([xshift=1.20in,yshift=-3.67in]current page.north west);
+    \node[anchor=north west,inner sep=0pt,text=BayesBurgundy,text width=5.6in] at
+      ([xshift=0.65in,yshift=-3.98in]current page.north west)
+      {\BayesDisplayFont\fontsize{32}{37}\selectfont\BookTitle};
+    \node[anchor=north west,inner sep=0pt,text=BayesInk,text width=4.45in] at
+      ([xshift=0.65in,yshift=-4.78in]current page.north west)
+      {\BayesDisplayFont\bfseries\upshape\fontsize{18}{24}\selectfont\color{black}\raggedright\BookTagline\par};
+    \fill[BayesBurgundy] (current page.south west) rectangle
+      ([yshift=1.52in]current page.south east);
+    \node[anchor=south west,inner sep=0pt,text=BayesWarmWhite,align=left] at
+      ([xshift=0.65in,yshift=0.65in]current page.south west)
+      {\BayesDisplayFont\bfseries\fontsize{24}{29}\selectfont\BookAuthor};
+    \node[anchor=south east,inner sep=0pt] at
+      ([xshift=-0.65in,yshift=0.59in]current page.south east)
+      {\includegraphics[width=1.35in]{assets/knowledge-white.pdf}};
+  \end{tikzpicture}\null\end{titlepage}}

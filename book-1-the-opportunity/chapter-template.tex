@@ -1,0 +1,127 @@
+% Copy the contents into an existing chapter file; keep its source label.
+% Chapter numbers are local to the volume, assigned by its main .tex file.
+\chapter{A chapter title that makes a promise}
+\label{ch:replace-with-existing-source-label}
+
+\ChapterLead{One or two sentences establishing the chapter's central question.}
+
+% Begin with a concrete situation and establish the problem in connected prose.
+% Introduce the necessary context here; do not assume another book was read.
+% Optional: a compact route through a long lesson, after its hook or lead.
+% \begin{LessonBrief}
+% \BriefPoint{The question}{The consequential question this lesson answers.}
+% \BriefPoint{The insight}{The mechanism that changes the reader's understanding.}
+% \BriefPoint{The decision}{The choice that understanding makes possible.}
+% \end{LessonBrief}
+
+\section{The first turn in the argument}
+\label{sec:replace-with-existing-section-label}
+
+% Develop the claim, mechanism, example, evidence, and limit in paragraphs.
+% A section should answer a question, not list everything related to a noun.
+% Use subsections only when the argument needs an additional level.
+
+\section{What changes when the conditions change}
+
+% A counterexample or boundary makes the argument useful outside one case.
+% Use a table or diagram only when it clarifies a relationship described here.
+
+\section{Making the decision}
+
+% Apply the argument to the continuing case and show the actual choice.
+% Close with the decision now possible, then transition to the next chapter.
+
+% Available asides (use sparingly):
+% \begin{NoteBox}[A useful qualification] ... \end{NoteBox}
+% \begin{TipBox}[Try this] ... \end{TipBox}
+% \begin{DefinitionBox}{The term} ... \end{DefinitionBox}
+% \begin{WarningBox}{A tempting shortcut} ... \end{WarningBox}
+% \begin{KeyIdea}One short central claim.\end{KeyIdea}
+% Emphasis is upright semibold. Do not introduce EB Garamond italics.
+
+% Captionable diagram example. Explain it in the prose before using it.
+% \begin{figure}[htbp]
+% \centering
+% \begin{tikzpicture}[node distance=12mm,
+%   every node/.style={draw,align=center,font=\sffamily\small}]
+% \node (a) {Starting condition};
+% \node[right=of a] (b) {Mechanism};
+% \node[right=of b] (c) {Changed outcome};
+% \draw[->] (a)--(b); \draw[->,dashed] (b)--(c);
+% \end{tikzpicture}
+% \caption{Explain the relationship and what the dashed link means.}
+% \label{fig:unique-label}
+% \FigureSource{Actual source and context, or an explicit illustrative-data statement.}
+% \end{figure}
+% Use Figure~\ref{fig:unique-label} in the prose.
+% The design specimen includes reusable bar/pie/radar/waterfall examples.
+% PGFPlots is loaded: use \begin{axis}[BIchart,...] inside tikzpicture.
+
+% Tables use tabularx/booktabs, caption, and label inside a table environment.
+% Use \sffamily\small for dense data; keep ordinary text at the reading size.
+% Equations use equation/aligned or \BookEquation{...}; label meaningful results.
+
+% A short worked example stays together and receives a chapter-local number.
+% \begin{WorkedExample}{An explanatory title}
+% \label{ex:unique-label}
+% \WorkedStep{1}{Set the boundary.}{State the inputs, units, and assumptions.}
+% \WorkedStep{2}{Do the work.}{Show the reasoning or calculation.}
+% \WorkedStep{3}{Interpret it.}{Explain the result and its limits.}
+% \end{WorkedExample}
+% Refer to Worked Example~\ref{ex:unique-label} in the prose.
+% For a genuinely long example, use \begin{WorkedExample}[breakable]{Title}.
+
+% Place an evidence note beside the claim it qualifies.
+% \begin{EvidenceNote}{The study or dataset}
+% \EvidenceLine{Source}{Actual citation, population, sample size, and period.}
+% \EvidenceLine{Finding}{The supported result, with units and uncertainty.}
+% \EvidenceLine{Limit}{What the design cannot establish or generalise to.}
+% \end{EvidenceNote}
+% For invented data, state explicitly that no empirical study was conducted.
+
+% A short decision checklist fits before the cases, not after every section.
+% \begin{DecisionChecklist}{A specific decision}
+% \item A concrete fact, calculation, or condition the reader can verify.
+% \item An assumption to test before committing resources.
+% \item Evidence that would change the decision.
+% \end{DecisionChecklist}
+
+\LessonTakeaway{The decision this lesson now makes possible.}
+
+\CaseStudies{Introduce the shared decision. These are fictional teaching cases;
+each founder operates under different constraints.}
+
+\CaseStudy{1}{TECHNOLOGY}{A title that names the decision}
+  {Founder name\quad /\quad Business context\quad /\quad Stage}
+% Establish a concrete situation in prose.
+\CaseSection{The decision}
+% Explain the alternatives and the binding constraint.
+\CasePrompt{Ask the reader to choose and state their reasoning.}
+\CaseSection{A defensible move}
+% Apply the chapter's mechanism, including evidence and tradeoffs.
+\CaseSection{What would change the answer?}
+% Give a boundary or changed condition, not a universal prescription.
+
+\CaseStudy{2}{FASHION}{A title that names the decision}
+  {Founder name\quad /\quad Business context\quad /\quad Stage}
+% Follow the same reasoning moves with genuinely different constraints.
+
+\CaseStudy{3}{EDUCATION}{A title that names the decision}
+  {Founder name\quad /\quad Business context\quad /\quad Stage}
+% Show how the mechanism changes when the promised result is capability.
+
+% Aim for 250-300 words per short case; allow longer cases to flow.
+% An optional captioned comparison table can connect the three decisions.
+
+% Optional closing recap after the cases. Avoid repeating a lesson brief verbatim.
+% \begin{LessonReview}
+% \item One transferable mechanism, stated in a complete sentence.
+% \item A boundary or failure condition.
+% \item The decision now possible.
+% \end{LessonReview}
+% \TransferQuestion{A question applying the lesson to the reader's own business.}
+
+\NotesSection
+
+% Add real research notes and sources. Distinguish observed facts from
+% hypothetical figures and the author's judgment. Never invent citations.

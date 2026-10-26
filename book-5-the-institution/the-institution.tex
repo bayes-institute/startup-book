@@ -1,24 +1,12 @@
 \documentclass[11pt,twoside,openright]{book}
-\usepackage{../shared/bayesinstitute}
-
+\usepackage{bayesinstitute}
+\input{book-info.tex}
 \begin{document}
-\frontmatter
-\RaggedRight
-
-\BITitlePage
-  {Book Five of Five}
-  {The Institution}
-  {Can I build something that outlasts me?}
-  {Sagar Udasi}
-
-\tableofcontents
-\mainmatter
-
-\subimport{chapters/}{ch32-capital-allocation-financing.tex}
-\subimport{chapters/}{ch33-research-innovation-enterprises.tex}
-\subimport{chapters/}{ch34-physical-expansion.tex}
-\subimport{chapters/}{ch35-institutional-governance.tex}
-\subimport{chapters/}{ch36-institutional-evolution.tex}
-
-\backmatter
+\ifnum\BIOnlyChapter=0 \BIFrontMatter\else\mainmatter\fi
+\BIIncludeChapter{1}{chapters/ch32-capital-allocation-financing.tex}
+\BIIncludeChapter{2}{chapters/ch33-research-innovation-enterprises.tex}
+\BIIncludeChapter{3}{chapters/ch34-physical-expansion.tex}
+\BIIncludeChapter{4}{chapters/ch35-institutional-governance.tex}
+\BIIncludeChapter{5}{chapters/ch36-institutional-evolution.tex}
+\ifnum\BIOnlyChapter=0 \cleardoublepage\fi
 \end{document}

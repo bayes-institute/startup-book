@@ -1,27 +1,15 @@
 \documentclass[11pt,twoside,openright]{book}
-\usepackage{../shared/bayesinstitute}
-
+\usepackage{bayesinstitute}
+\input{book-info.tex}
 \begin{document}
-\frontmatter
-\RaggedRight
-
-\BITitlePage
-  {Book Three of Five}
-  {The Engine}
-  {Can I make money from it, and can I grow?}
-  {Sagar Udasi}
-
-\tableofcontents
-\mainmatter
-
-\subimport{chapters/}{ch15-willingness-to-pay.tex}
-\subimport{chapters/}{ch16-pricing-value-capture.tex}
-\subimport{chapters/}{ch17-business-models-unit-economics.tex}
-\subimport{chapters/}{ch18-financial-survival.tex}
-\subimport{chapters/}{ch19-trust-credibility.tex}
-\subimport{chapters/}{ch20-distribution.tex}
-\subimport{chapters/}{ch21-sales-conversion.tex}
-\subimport{chapters/}{ch22-retention-organic-growth.tex}
-
-\backmatter
+\ifnum\BIOnlyChapter=0 \BIFrontMatter\else\mainmatter\fi
+\BIIncludeChapter{1}{chapters/ch15-willingness-to-pay.tex}
+\BIIncludeChapter{2}{chapters/ch16-pricing-value-capture.tex}
+\BIIncludeChapter{3}{chapters/ch17-business-models-unit-economics.tex}
+\BIIncludeChapter{4}{chapters/ch18-financial-survival.tex}
+\BIIncludeChapter{5}{chapters/ch19-trust-credibility.tex}
+\BIIncludeChapter{6}{chapters/ch20-distribution.tex}
+\BIIncludeChapter{7}{chapters/ch21-sales-conversion.tex}
+\BIIncludeChapter{8}{chapters/ch22-retention-organic-growth.tex}
+\ifnum\BIOnlyChapter=0 \cleardoublepage\fi
 \end{document}

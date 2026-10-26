@@ -1,28 +1,16 @@
 \documentclass[11pt,twoside,openright]{book}
-\usepackage{../shared/bayesinstitute}
-
+\usepackage{bayesinstitute}
+\input{book-info.tex}
 \begin{document}
-\frontmatter
-\RaggedRight
-
-\BITitlePage
-  {Book Four of Five}
-  {The Advantage}
-  {Can I build a company that is genuinely hard to displace?}
-  {Sagar Udasi}
-
-\tableofcontents
-\mainmatter
-
-\subimport{chapters/}{ch23-hiring-talent-selection.tex}
-\subimport{chapters/}{ch24-specialized-hiring.tex}
-\subimport{chapters/}{ch25-operational-excellence.tex}
-\subimport{chapters/}{ch26-organizational-design-culture.tex}
-\subimport{chapters/}{ch27-theory-of-scaling.tex}
-\subimport{chapters/}{ch28-competitive-advantage-moats.tex}
-\subimport{chapters/}{ch29-strategic-adjacencies.tex}
-\subimport{chapters/}{ch30-ecosystems-partnerships.tex}
-\subimport{chapters/}{ch31-international-expansion.tex}
-
-\backmatter
+\ifnum\BIOnlyChapter=0 \BIFrontMatter\else\mainmatter\fi
+\BIIncludeChapter{1}{chapters/ch23-hiring-talent-selection.tex}
+\BIIncludeChapter{2}{chapters/ch24-specialized-hiring.tex}
+\BIIncludeChapter{3}{chapters/ch25-operational-excellence.tex}
+\BIIncludeChapter{4}{chapters/ch26-organizational-design-culture.tex}
+\BIIncludeChapter{5}{chapters/ch27-theory-of-scaling.tex}
+\BIIncludeChapter{6}{chapters/ch28-competitive-advantage-moats.tex}
+\BIIncludeChapter{7}{chapters/ch29-strategic-adjacencies.tex}
+\BIIncludeChapter{8}{chapters/ch30-ecosystems-partnerships.tex}
+\BIIncludeChapter{9}{chapters/ch31-international-expansion.tex}
+\ifnum\BIOnlyChapter=0 \cleardoublepage\fi
 \end{document}

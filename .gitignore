@@ -43,5 +43,15 @@ scratch/
 tmp/
 .tempmediaStorage/
 
+# Standalone book caches and downloaded build tools
+.cache/
+__pycache__/
+**/tools/tectonic/
+**/tools/tectonic.zip
+**/tools/python-packages/
+
+# Vector logos are source assets for each independently exported book
+!book-*/assets/*.pdf
+
 .creds
 claude_code.ps1

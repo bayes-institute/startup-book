@@ -1,0 +1,12 @@
+build/
+.cache/
+tools/tectonic/
+__pycache__/
+*.pdf
+!assets/*.pdf
+*.aux
+*.log
+*.toc
+*.out
+*.xdv
+*.synctex.gz

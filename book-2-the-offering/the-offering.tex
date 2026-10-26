@@ -1,24 +1,12 @@
 \documentclass[11pt,twoside,openright]{book}
-\usepackage{../shared/bayesinstitute}
-
+\usepackage{bayesinstitute}
+\input{book-info.tex}
 \begin{document}
-\frontmatter
-\RaggedRight
-
-\BITitlePage
-  {Book Two of Five}
-  {The Offering}
-  {Can I build and deliver what I promised?}
-  {Sagar Udasi}
-
-\tableofcontents
-\mainmatter
-
-\subimport{chapters/}{ch10-product-service-design.tex}
-\subimport{chapters/}{ch11-learning-human-transformation.tex}
-\subimport{chapters/}{ch12-architecture-effective-instruction.tex}
-\subimport{chapters/}{ch13-outcomes-measurement.tex}
-\subimport{chapters/}{ch14-economics-of-delivery.tex}
-
-\backmatter
+\ifnum\BIOnlyChapter=0 \BIFrontMatter\else\mainmatter\fi
+\BIIncludeChapter{1}{chapters/ch10-product-service-design.tex}
+\BIIncludeChapter{2}{chapters/ch11-learning-human-transformation.tex}
+\BIIncludeChapter{3}{chapters/ch12-architecture-effective-instruction.tex}
+\BIIncludeChapter{4}{chapters/ch13-outcomes-measurement.tex}
+\BIIncludeChapter{5}{chapters/ch14-economics-of-delivery.tex}
+\ifnum\BIOnlyChapter=0 \cleardoublepage\fi
 \end{document}
