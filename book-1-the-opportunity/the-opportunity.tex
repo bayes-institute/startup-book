@@ -1,64 +1,17 @@
 \documentclass[11pt,twoside,openright]{book}
-
-% ============================================================
-% PREAMBLE — BAYES INSTITUTE THEME (to be completed)
-% ============================================================
-% Fonts (install via fonts/ directory):
-%   Display : EB Garamond (regular weight for headings)
-%   Body    : Manrope (regular / semibold for hierarchy)
-%
-% Color palette:
-%   Burgundy      #5B0F1A   primary accent
-%   Deep Burgundy #430A13   deep backgrounds
-%   Ink           #211D1E   primary text
-%   Soft Ink      #696164   secondary text / captions
-%   Rule          #E9E4DF   dividers and table lines
-%   Warm Gray     #F7F6F4   alternate surface
-%
-% Geometry: 6in x 9in, twoside, inner 0.875in, outer 0.75in
-% ============================================================
-
-\usepackage[T1]{fontenc}
-\usepackage{geometry}
-\geometry{
-  paperwidth=6in,
-  paperheight=9in,
-  inner=0.875in,
-  outer=0.75in,
-  top=0.75in,
-  bottom=0.75in,
-  headheight=14pt,
-  headsep=10pt,
-  footskip=20pt,
-  includeheadfoot
-}
-\usepackage{microtype}
-\usepackage{import}
-
-\title{The Opportunity}
-\author{Sagar Udasi}
-\date{}
+\usepackage{../shared/bayesinstitute}
 
 \begin{document}
-
 \frontmatter
+\RaggedRight
 
-\begin{titlepage}
-  \centering
-  \vspace*{2cm}
-  {\small\scshape Building What Lasts — Book One of Five\par}
-  \vspace{1.5cm}
-  {\Huge\itshape The Opportunity\par}
-  \vspace{0.5cm}
-  {\large Is there a game worth playing, and can I see the opening?\par}
-  \vfill
-  {\large Sagar Udasi\par}
-  \vspace{0.5cm}
-  {\small Bayes Institute\par}
-\end{titlepage}
+\BITitlePage
+  {Book One of Five}
+  {The Opportunity}
+  {Is there a game worth playing, and can I see the opening?}
+  {Sagar Udasi}
 
 \tableofcontents
-
 \mainmatter
 
 \subimport{chapters/}{ch01-why-play-the-game.tex}
@@ -71,4 +24,5 @@
 \subimport{chapters/}{ch08-differentiation-positioning.tex}
 \subimport{chapters/}{ch09-validation-product-market-fit.tex}
 
+\backmatter
 \end{document}
