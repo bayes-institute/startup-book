@@ -53,8 +53,8 @@
   BoldItalicFont=EBGaramond-SemiBold.ttf]
 \DeclareEmphSequence{\bfseries,\mdseries}
 
-\geometry{paperwidth=7in,paperheight=10in,inner=0.875in,outer=0.70in,
-  top=0.65in,bottom=0.65in,headheight=15pt,headsep=13pt,footskip=25pt,includeheadfoot}
+\geometry{paperwidth=7in,paperheight=10in,inner=1.0in,outer=0.75in,
+  top=0.875in,bottom=0.875in,headheight=15pt,headsep=13pt,footskip=28pt,includeheadfoot}
 \setlength{\headwidth}{\textwidth}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3pt plus 0.5pt minus 0.3pt}
@@ -72,7 +72,7 @@
 \displaywidowpenalty=10000
 \frenchspacing\raggedbottom
 \AtBeginDocument{\fontsize{11.5}{14.6}\selectfont\justifying}
-\setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{0}
 
 % Quiet editorial hierarchy: numbered chapters, unnumbered sections, no
@@ -84,7 +84,7 @@
 \titleformat{name=\chapter,numberless}[display]{\normalfont}{}{0pt}
   {\BayesDisplayFont\fontsize{30}{34}\selectfont\raggedright\hyphenpenalty=10000}
 \titlespacing*{name=\chapter,numberless}{0pt}{10pt}{14pt}
-\titleformat{\section}{\BayesDisplayFont\bfseries\fontsize{17}{20}\selectfont\raggedright\hyphenpenalty=10000}{}{0pt}{}
+\titleformat{\section}{\BayesDisplayFont\bfseries\fontsize{17}{20}\selectfont\raggedright\hyphenpenalty=10000}{\thesection\enspace}{0pt}{}
 \titlespacing*{\section}{0pt}{13pt plus 2pt minus 2pt}{4pt}
 \titleformat{\subsection}{\sffamily\bfseries\fontsize{10}{14}\selectfont}{}{0pt}{}
 \titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 1pt}{3.5pt}
